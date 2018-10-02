@@ -1,0 +1,79 @@
+object CmMainForm: TCmMainForm
+  Left = 290
+  Height = 49
+  Top = 21
+  Width = 754
+  Caption = 'CmMainForm'
+  Menu = MainMenu
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnDropFiles = FormDropFiles
+  LCLVersion = '1.2.6.0'
+  object MainMenu: TMainMenu
+    left = 40
+    object FileMn: TMenuItem
+      Caption = 'File'
+      object OpenMn: TMenuItem
+        Caption = 'Open'
+        OnClick = OpenMnClick
+      end
+    end
+    object MenuItem9: TMenuItem
+      Caption = 'Edit'
+      object MenuItem10: TMenuItem
+        Caption = 'Backbone'
+        OnClick = MenuItem10Click
+      end
+    end
+    object MenuItem1: TMenuItem
+      Caption = 'Tests'
+      object MenuItem2: TMenuItem
+        Caption = 'BiGGER'
+        OnClick = MenuItem2Click
+      end
+      object MenuItem3: TMenuItem
+        Caption = 'RotationSampling'
+        OnClick = MenuItem3Click
+      end
+      object MenuItem4: TMenuItem
+        Caption = 'TestBogie'
+        OnClick = MenuItem4Click
+      end
+      object MenuItem5: TMenuItem
+        Caption = 'OptimizeAddedRad'
+        OnClick = MenuItem5Click
+      end
+      object MenuItem6: TMenuItem
+        Caption = 'Test constraints'
+        OnClick = MenuItem6Click
+      end
+      object MenuItem7: TMenuItem
+        Caption = 'Test Angles'
+        OnClick = MenuItem7Click
+      end
+      object MenuItem8: TMenuItem
+        Caption = 'Save Rotation'
+        OnClick = MenuItem8Click
+      end
+      object SavePOVmi: TMenuItem
+        Caption = 'SavePovray'
+        OnClick = SavePOVmiClick
+      end
+      object MenuItem11: TMenuItem
+        Caption = 'Show Rotation'
+        OnClick = MenuItem11Click
+      end
+      object MenuItem13: TMenuItem
+        Caption = 'Create Shape Points'
+        OnClick = MenuItem13Click
+      end
+      object MenuItem12: TMenuItem
+        Caption = 'Test Symmetry'
+        OnClick = MenuItem12Click
+      end
+    end
+  end
+  object OpenDlg: TOpenDialog
+    left = 138
+  end
+end

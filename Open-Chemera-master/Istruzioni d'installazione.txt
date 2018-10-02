@@ -1,0 +1,13 @@
+1. Installa Lazarus e avvialo.
+2. Vai su Pacchetto\Installa/Disinstalla pacchetti e installa il pacchetto "lazopenglcontext.lpk".
+3. Se i file sono già stati riparati prosegui al punto 4, altrimenti apri il file "oclconfiguration",
+vai alla riga "uses Interfaces, Classes, SysUtils..." e aggiungi alla lista la libreria "LazFileUtils".
+In pratica il problema è dovuto alla funzione deprecata "AppendPathDelim" della libreria "FileUtil", che
+è stato ridefinito dentro a "LazFileUtils".
+4. Copia tutti i file della cartella "oclibrary/data" dentro a "[Utente]/AppData/Local/oclibrary".
+5. Esegui il programma premendo F9.
+
+UTILIZZO DELL'APPLICAZIONE
+
+Da quanto ho capito dovrebbe accettare sicuramente i file provenienti dal sito "http://www.ebi.ac.uk/msd-srv/chempdb",
+è necessario capire come ottenere dei file corretti e come funziona l'applicazione.
