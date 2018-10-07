@@ -8,7 +8,6 @@ class OpenFile(Frame):
         Frame.__init__(self, parent)
 
         self.parent = parent
-        #self.onOpen(destination)
 
     def openFile(self):
         return self.onOpen()
@@ -20,7 +19,6 @@ class OpenFile(Frame):
 
         if fl != '':
             return self.readFile(fl)
-            #self.txt.insert(END, text)
 
     def readFile(self, filename):
         f = open(filename, "r")
