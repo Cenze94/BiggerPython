@@ -1,9 +1,13 @@
 from guizero import App, PushButton
 import Tooltip
+import Openfile
 
 
 def loadFile():
-    file = "banana"
+    openFile = Openfile.OpenFile(app.tk)
+    pdb = openFile.openFile()
+    if pdb != "":
+        print("Banana")
 
 
 app = App(title="BiggerPython")
