@@ -1,0 +1,5 @@
+1. Installa Python dal web (versione 3 mi raccomando)
+2. Apri Windows PowerShell come Amministratore
+3. (Opzionale, ossia io l'ho fatto ma non dovrebbe servire perché alla fine non ho usato questo plugin) Installa pipenv digitando "pip install pipenv"
+4. Installa Guizero digitando "pip install guizero"
+5. Installa PyCharm come IDE (è molto simile a IntelliJ, dato che è fatto sempre dalla JetBrains)
