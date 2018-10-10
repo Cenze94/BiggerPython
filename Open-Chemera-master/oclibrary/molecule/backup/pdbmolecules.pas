@@ -676,7 +676,6 @@ function TPDBModelMan.LoadLayer(PdbFileName: string; ChargeFrom: PDBChargeOrigin
   ): TMolecule;
 
 begin
-  //AddNewLayer è un TPBDModel
   Result:=AddNewLayer.LoadPDB(PdbFileName, ChargeFrom);
 end;
 

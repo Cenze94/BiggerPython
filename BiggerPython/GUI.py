@@ -1,13 +1,14 @@
 from guizero import App, PushButton
 import Tooltip
 import Openfile
+import LoadPDB
 
 
 def loadFile():
     openFile = Openfile.OpenFile(app.tk)
     pdb = openFile.openFile()
     if pdb != "":
-        print("Banana")
+        LoadPDB.PDB(pdb)
 
 
 app = App(title="BiggerPython")
