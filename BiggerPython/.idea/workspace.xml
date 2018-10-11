@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3a5d4cd-4e09-4507-9323-95c42a60ef12" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/LoadPDB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/chemeramain.lfm" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/chemeramain.lfm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/chemeramain.pas" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/chemeramain.pas" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/molecule/pdbmolecules.pas" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/molecule/pdbmolecules.pas" afterDir="false" />
-    </list>
+    <list default="true" id="e3a5d4cd-4e09-4507-9323-95c42a60ef12" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +12,7 @@
     <session id="2109489389">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.75" value="1" />
           <entry key="project.opened" value="2" />
@@ -124,8 +117,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="246" />
-    <option name="y" value="118" />
+    <option name="x" value="121" />
+    <option name="y" value="293" />
     <option name="width" value="1260" />
     <option name="height" value="749" />
   </component>
@@ -217,7 +210,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="246" y="118" width="1260" height="749" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959083" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
