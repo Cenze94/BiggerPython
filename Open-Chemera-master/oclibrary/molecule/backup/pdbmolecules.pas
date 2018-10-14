@@ -277,6 +277,9 @@ begin
   if Self <> nil then
   begin
     ClearChains;
+    // Questo metodo deriva dalla classe base TObject, perciò con inherited
+    // viene eseguito il corpo del metodo base, che in questo caso consiste
+    // nel distruttore della classe
     inherited;
   end;
 end;
@@ -288,12 +291,15 @@ begin
   FProtein.Cleanup;
 end;
 
+// TSimpleStrings è un array di Stringhe definito dentro al file "basetypes"
 procedure TPDBModel.CreateChains(const IDs: TSimpleStrings);
 
 var
   f:integer;
 
 begin
+  // High è un metodo che in questo caso dovrebbe restituire l'ultimo elemento
+  // (o il maggiore se ha senso, ma dipende dal contesto)
   for f := 0 to High(IDs) do
     FProtein.NewGroup(IDs[f], f + 1);
 end;
@@ -676,6 +682,7 @@ function TPDBModelMan.LoadLayer(PdbFileName: string; ChargeFrom: PDBChargeOrigin
   ): TMolecule;
 
 begin
+  //AddNewLayer è un TPBDModel
   Result:=AddNewLayer.LoadPDB(PdbFileName, ChargeFrom);
 end;
 

@@ -8,7 +8,7 @@ def loadFile():
     openFile = Openfile.OpenFile(app.tk)
     pdb = openFile.openFile()
     if pdb != "":
-        LoadPDB.PDB(pdb)
+        LoadPDB.TPDBModels(pdb)
 
 
 app = App(title="BiggerPython")
