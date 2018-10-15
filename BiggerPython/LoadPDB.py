@@ -94,6 +94,104 @@ class TPDBModel:
             if Result is not None:
                 return Result.GetGroupById(ResIx)
 
+    # ChainIx = integer, ResIx = integer, AtomIx = integer
+    def GetAtom(self, ChainIx, ResIx, AtomIx):
+        # mol = TMolecule
+        mol = self.FProtein.GetGroup(ChainIx)
+        if mol is not None:
+            mol = mol.GetGroup(ResIx)
+            if mol is not None:
+                # return TAtom
+                return mol.GetAtom(AtomIx)
+        return None
+
+    # PdbFileName = string, ChargeFrom = PDBChargeOrigin
+    def LoadPDB(self, PdbFileName, ChargeFrom):
+        self.ClearChains()
+        self.FFileName = PdbFileName
+        # parser = TPDBReader
+        parser = TPDBReader.Create(PdbFileName)
+        self.FProtein.Name = self.ChangeFileExt(self.ExtractFileName(PdbFileName), '')
+        self.CreateChains(parser.ChainIDs)
+
+        # Read atoms
+        # cc = integer
+        cc = -1  # Current chain
+        # TODO: check parser.Atoms type, because if it is an ordinal type (e. g. a number) range must stop at the
+        # highest value
+        for f in range(parser.Atoms):
+            patom = parser.Atoms[f]
+            cr = 0  # Originally there wasn't an initialization of cr
+            if cc is not patom.ChainNum():  # ChainNumber is always >= 0
+                cc = patom.ChainName()
+                # cr = integer
+                cr = -1  # Current residue number, also >= 0
+            if patom.ResSeq is not cr:  # Get new residue
+                cres = self.FProtein.GetGroup(cc).NewGroup(patom.ResName, patom.ResSeq)
+                cr = patom.ResSeq
+            atom = cres.NewAtom(patom.AtomName, patom.Serial)
+            atom.Coords = patom.Coords
+            # Element may be present in the PDB file. However, this is superseded if there is monomer template data
+            # AtomicNumber is a function from "oclconfiguration"
+            atom.AtomicNumber = AtomicNumber(patom.Element)
+            # VdWRadius is a function of "oclconfiguration"
+            atom.Radius = VdWRadius(atom.AtomicNumber)
+            if ChargeFrom is PDBChargeOrigin.pdbOccupancy:
+                atom.Charge = TPDBAtom.Occupancy
+            elif ChargeFrom is PDBChargeOrigin.pdbOccTemp:
+                atom.Charge = TPDBAtom.OccTemp
+            elif ChargeFrom is PDBChargeOrigin.pdbCharge:
+                if len(patom.Charge) is 2:
+                    atom.Charge = patom.Charge[1]
+                if patom.Charge[2] is '-':
+                    atom.Charge = -atom.Charge
+        # Assign element, radius, charge, et al, from the monomer templates will replace information on PDB
+        self.AssignAtomicData()
+        # Return TMolecule
+        return self.FProtein
+
+    # ATemplates = TTemplates
+    def ResetTemplates(self, ATemplates):
+        self.FTemplates = ATemplates
+
+    # Return Integer
+    def ChainCount(self):
+        return self.FProtein.GroupCount
+
+    # Return TSimpleStrings
+    def ListChains(self):
+        return self.FProtein.ListGroupNames
+
+    # FirstChar = Char, LastChar = Char
+    def RenameChains(self, FirstChar, LastChar):
+        name = FirstChar
+        for f in range(self.FProtein.GroupCount - 1):
+            self.FProtein.GetGroup(f).Name = name
+            name = ord(name) + 1
+            if name > LastChar:
+                name = FirstChar
+
+    # ChainIx = Integer, return Integer
+    def ResidueCount(self, ChainIx):
+        return self.FProtein.GetGroup(ChainIx).GroupCount()
+
+    def AssignAtomicData(self):
+        # atoms = TAtoms
+        atoms = self.FProtein.AllAtoms()
+        # TODO: check parser.Atoms type, because if it is an ordinal type (e. g. a number) range must stop at the
+        # highest value
+        for f in range(atoms):
+            # tempix = Integer
+            tempix = self.TemplateIx(atoms[f].Parent.Name)
+            if tempix >= 0:
+                # atomix = Integer, LastIndexOf is a function of "stringutils"
+                atomix = LastIndexOf(atoms[f].Name, self.FTemplates[tempix].Atoms)
+                if atomix >= 0:
+                    atoms[f].AtomicNumber = self.FTemplates[tempix].AtomicNumbers[atomix]
+                    if atoms[f].Atomicumber > 0:
+                        # AtomData is an array of "oclconfiguration"
+                        atoms[f].Radius = AtomData[atoms[f].AtomicNumber - 1].VdWradius
+
 
 class TPDBModels:
     def __init__(self, file):

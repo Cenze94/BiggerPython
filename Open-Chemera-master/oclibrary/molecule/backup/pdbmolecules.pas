@@ -67,6 +67,7 @@ type
   TPDBModel = class
   protected
     FTemplates: TTemplates;
+    // TMolecule è un tipo definito in "molecules"
     FProtein: TMolecule;
     FFileName: string;
     FInfo: TPDBInfo;
@@ -314,6 +315,8 @@ var
   function ResidueToDelete(Residue:TMolecule):Boolean;
 
   begin
+    // AAOneLetterCode è una funzione di "oclconfiguration"
+    // LastIndexOf è una funzione di "stringutils"
     Result:= ((resAA in Options) and (AAOneLetterCode(Residue.Name)<>'')) or
              ((resNonAA in Options) and (AAOneLetterCode(Residue.Name)='')) or
              (LastIndexOf(Residue.Name,ResTypes)>=0);
@@ -414,6 +417,8 @@ begin
         cc:=ChainNum;
         cr:=-1;                           //current residue number, also >=0
         end;
+      // cr e cres non sono inizializzati, io porrei cr pari a 0, mentre cres
+      // forse usa un metodo in cui non occorre l'inizializzazione dell'oggetto
       if ResSeq<>cr then                  //get new residue
         begin
         cres:=FProtein.GetGroup(cc).NewGroup(ResName,ResSeq);
