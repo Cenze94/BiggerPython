@@ -1,7 +1,7 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 
-
+# TODO: It never worked, so it must be deleted or fixed
 class Tooltip:
     def __init__(self, widget,
                  *,
