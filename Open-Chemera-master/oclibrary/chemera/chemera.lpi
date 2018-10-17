@@ -31,7 +31,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="36">
+    <Units Count="35">
       <Unit0>
         <Filename Value="chemera.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -71,8 +71,8 @@
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="398"/>
-        <CursorPos X="22" Y="412"/>
+        <TopLine Value="244"/>
+        <CursorPos X="27" Y="254"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
       </Unit4>
@@ -96,7 +96,7 @@
         <Filename Value="..\UI\glutwindow.pas"/>
         <TopLine Value="191"/>
         <CursorPos X="21" Y="203"/>
-        <UsageCount Value="35"/>
+        <UsageCount Value="25"/>
       </Unit7>
       <Unit8>
         <Filename Value="..\display\base3ddisplay.pas"/>
@@ -183,7 +183,7 @@
         <Filename Value="..\..\sharedunits\utils\geomhash.pas"/>
         <TopLine Value="113"/>
         <CursorPos X="9" Y="66"/>
-        <UsageCount Value="60"/>
+        <UsageCount Value="50"/>
       </Unit18>
       <Unit19>
         <Filename Value="..\..\sharedunits\display\displayobjects.pas"/>
@@ -241,7 +241,7 @@
         <Filename Value="C:\lazarus\fpc\2.6.0\source\packages\opengl\src\gl.pp"/>
         <TopLine Value="1122"/>
         <CursorPos X="3" Y="1138"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="15"/>
       </Unit25>
       <Unit26>
         <Filename Value="..\..\sharedunits\display\povray.pas"/>
@@ -263,7 +263,7 @@
         <Filename Value="C:\lazarus\lcl\forms.pp"/>
         <TopLine Value="691"/>
         <CursorPos X="45" Y="715"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="30"/>
       </Unit28>
       <Unit29>
         <Filename Value="..\docking\dockconstraints.pas"/>
@@ -275,167 +275,157 @@
         <Loaded Value="True"/>
       </Unit29>
       <Unit30>
-        <Filename Value="C:\lazarus\fpc\2.6.0\source\rtl\inc\objpash.inc"/>
-        <TopLine Value="185"/>
-        <CursorPos X="24" Y="201"/>
-        <UsageCount Value="9"/>
-      </Unit30>
-      <Unit31>
         <Filename Value="..\docking\bogie.pas"/>
         <EditorIndex Value="16"/>
         <UsageCount Value="103"/>
         <Loaded Value="True"/>
-      </Unit31>
-      <Unit32>
+      </Unit30>
+      <Unit31>
         <Filename Value="..\molecule\surface.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="17"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
-      </Unit32>
-      <Unit33>
+      </Unit31>
+      <Unit32>
         <Filename Value="..\..\sharedunits\forms\formdocker.pas"/>
         <IsPartOfProject Value="True"/>
         <TopLine Value="14"/>
         <CursorPos X="81" Y="26"/>
         <UsageCount Value="206"/>
-      </Unit33>
-      <Unit34>
+      </Unit32>
+      <Unit33>
         <Filename Value="..\sequence\alignment.pas"/>
         <IsPartOfProject Value="True"/>
         <WindowIndex Value="1"/>
         <UsageCount Value="272"/>
-      </Unit34>
-      <Unit35>
+      </Unit33>
+      <Unit34>
         <Filename Value="..\docking\rotations.pas"/>
         <EditorIndex Value="3"/>
         <TopLine Value="264"/>
         <CursorPos X="5" Y="279"/>
         <UsageCount Value="106"/>
         <Loaded Value="True"/>
-      </Unit35>
+      </Unit34>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="29" HistoryIndex="27">
       <Position1>
-        <Filename Value="chemeramain.pas"/>
-        <Caret Line="899" Column="14" TopLine="884"/>
+        <Filename Value="..\molecule\pdbmolecules.pas"/>
+        <Caret Line="52" Column="42" TopLine="38"/>
       </Position1>
       <Position2>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="124" Column="17" TopLine="105"/>
+        <Caret Line="311" Column="27" TopLine="297"/>
       </Position2>
       <Position3>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="679" Column="18" TopLine="661"/>
+        <Caret Line="301" Column="51" TopLine="287"/>
       </Position3>
       <Position4>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="680" Column="16" TopLine="661"/>
+        <Caret Line="52" Column="3" TopLine="38"/>
       </Position4>
       <Position5>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="123" Column="30" TopLine="109"/>
+        <Caret Line="60" Column="29" TopLine="38"/>
       </Position5>
       <Position6>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="96" Column="14" TopLine="82"/>
+        <Caret Line="78" Column="17" TopLine="64"/>
       </Position6>
       <Position7>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="395" Column="10" TopLine="378"/>
+        <Caret Line="291" Column="52" TopLine="283"/>
       </Position7>
       <Position8>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="52" Column="42" TopLine="38"/>
+        <Caret Line="308" Column="46" TopLine="301"/>
       </Position8>
       <Position9>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="311" Column="27" TopLine="297"/>
+        <Caret Line="323" Column="18" TopLine="314"/>
       </Position9>
       <Position10>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="301" Column="51" TopLine="287"/>
+        <Caret Line="318" Column="48" TopLine="302"/>
       </Position10>
       <Position11>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="52" Column="3" TopLine="38"/>
+        <Caret Line="322" Column="23" TopLine="302"/>
       </Position11>
       <Position12>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="60" Column="29" TopLine="38"/>
+        <Caret Line="404" Column="10" TopLine="392"/>
       </Position12>
       <Position13>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="78" Column="17" TopLine="64"/>
+        <Caret Line="418" Column="29" TopLine="405"/>
       </Position13>
       <Position14>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="291" Column="52" TopLine="283"/>
+        <Caret Line="406" Column="5" TopLine="392"/>
       </Position14>
       <Position15>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="308" Column="46" TopLine="301"/>
+        <Caret Line="417" TopLine="393"/>
       </Position15>
       <Position16>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="323" Column="18" TopLine="314"/>
+        <Caret Line="418" TopLine="395"/>
       </Position16>
       <Position17>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="318" Column="48" TopLine="302"/>
+        <Caret Line="411" Column="12" TopLine="393"/>
       </Position17>
       <Position18>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="322" Column="23" TopLine="302"/>
+        <Caret Line="413" Column="12" TopLine="397"/>
       </Position18>
       <Position19>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="404" Column="10" TopLine="392"/>
+        <Caret Line="411" TopLine="397"/>
       </Position19>
       <Position20>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="418" Column="29" TopLine="405"/>
+        <Caret Line="412" Column="13" TopLine="398"/>
       </Position20>
       <Position21>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="406" Column="5" TopLine="392"/>
+        <Caret Line="413" Column="31" TopLine="398"/>
       </Position21>
       <Position22>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="417" TopLine="393"/>
+        <Caret Line="414" Column="25" TopLine="398"/>
       </Position22>
       <Position23>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="418" TopLine="395"/>
+        <Caret Line="421" Column="42" TopLine="404"/>
       </Position23>
       <Position24>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="411" Column="12" TopLine="393"/>
+        <Caret Line="412" Column="22" TopLine="398"/>
       </Position24>
       <Position25>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="413" Column="12" TopLine="397"/>
+        <Caret Line="433" Column="17" TopLine="419"/>
       </Position25>
       <Position26>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="411" TopLine="397"/>
+        <Caret Line="695" Column="14" TopLine="676"/>
       </Position26>
       <Position27>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="412" Column="13" TopLine="398"/>
+        <Caret Line="602" Column="13" TopLine="596"/>
       </Position27>
       <Position28>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="413" Column="31" TopLine="398"/>
+        <Caret Line="685" Column="26" TopLine="674"/>
       </Position28>
       <Position29>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="414" Column="25" TopLine="398"/>
+        <Caret Line="78" Column="17" TopLine="64"/>
       </Position29>
-      <Position30>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="421" Column="42" TopLine="404"/>
-      </Position30>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
@@ -474,15 +464,6 @@
     </Other>
   </CompilerOptions>
   <Debugging>
-    <BreakPoints Count="1">
-      <Item1>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="..\molecule\pdbmolecules.pas"/>
-        <Line Value="416"/>
-      </Item1>
-    </BreakPoints>
     <Exceptions Count="4">
       <Item1>
         <Name Value="EAbort"/>

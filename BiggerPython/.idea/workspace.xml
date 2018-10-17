@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3a5d4cd-4e09-4507-9323-95c42a60ef12" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/LoadPDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/LoadPDB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +14,7 @@
     <session id="2109489389">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.75" value="1" />
@@ -37,62 +37,48 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="GUI" value="225" />
-          <entry key="dummy" value="3" />
-          <entry key="py" value="15520" />
+          <entry key="dummy" value="15" />
+          <entry key="py" value="15718" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="15745" />
+          <entry key="PLAIN_TEXT" value="15" />
+          <entry key="Python" value="15943" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+            <state relative-caret-position="358">
+              <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1539277019114" expanded="true" signature="99:223" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/LoadPDB.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="417" column="60" lean-forward="true" selection-start-line="417" selection-start-column="60" selection-end-line="417" selection-end-column="60" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-                <marker date="1539804751778" expanded="true" signature="759:9412" ph="..." />
-                <marker date="1539804751778" expanded="true" signature="2437:2446" ph="..." />
-                <marker date="1539804751778" expanded="true" signature="9431:9436" ph="..." />
-                <marker date="1539804751778" expanded="true" signature="10873:10882" ph="..." />
-                <marker date="1539804751778" expanded="true" signature="12291:12354" ph="..." />
-                <marker date="1539804751778" expanded="true" signature="12426:12435" ph="..." />
-                <marker date="1539804751778" expanded="true" signature="14837:15477" ph="..." />
-                <marker date="1539804751778" expanded="true" signature="15590:15744" ph="..." />
+                <marker date="1539805160749" expanded="true" signature="161:290" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Openfile.py">
+        <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+            <state relative-caret-position="296">
+              <caret line="419" column="35" selection-start-line="419" selection-start-column="35" selection-end-line="419" selection-end-column="35" />
               <folding>
-                <element signature="e#0#25#0" expanded="true" />
-                <marker date="1538937623370" expanded="true" signature="81:82" ph="..." />
-                <marker date="1538937623370" expanded="true" signature="206:241" ph="..." />
+                <element signature="e#0#21#0" expanded="true" />
+                <marker date="1539804927379" expanded="true" signature="759:9412" ph="..." />
+                <marker date="1539804927379" expanded="true" signature="2437:2446" ph="..." />
+                <marker date="1539804927379" expanded="true" signature="9431:9436" ph="..." />
+                <marker date="1539804927379" expanded="true" signature="10873:10882" ph="..." />
+                <marker date="1539804927379" expanded="true" signature="12291:12354" ph="..." />
+                <marker date="1539804927379" expanded="true" signature="12426:12435" ph="..." />
+                <marker date="1539804927379" expanded="true" signature="14837:15609" ph="..." />
+                <marker date="1539804927379" expanded="true" signature="15722:15876" ph="..." />
               </folding>
             </state>
           </provider>
@@ -101,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tooltip.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2074">
-              <caret line="123" column="22" selection-start-line="123" selection-start-column="22" selection-end-line="123" selection-end-column="22" />
+            <state relative-caret-position="51">
+              <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -124,11 +110,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/GUI" />
-        <option value="$PROJECT_DIR$/Tooltip.py" />
         <option value="$PROJECT_DIR$/Openfile.py" />
         <option value="$PROJECT_DIR$/PDBUtilities/LoadPDB.py" />
-        <option value="$PROJECT_DIR$/GUI.py" />
         <option value="$PROJECT_DIR$/LoadPDB.py" />
+        <option value="$PROJECT_DIR$/GUI.py" />
+        <option value="$PROJECT_DIR$/Tooltip.py" />
       </list>
     </option>
   </component>
@@ -226,7 +212,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="80" y="107" width="1260" height="744" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959083" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -255,7 +240,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/GUI.py</url>
-          <line>10</line>
+          <line>12</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
@@ -265,20 +250,10 @@
     <entry file="file://$PROJECT_DIR$/Pipfile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tooltip.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2074">
-          <caret line="123" column="22" selection-start-line="123" selection-start-column="22" selection-end-line="123" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Openfile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        <state>
+          <caret selection-end-line="1" selection-end-column="30" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
             <marker date="1538937623370" expanded="true" signature="81:82" ph="..." />
@@ -287,31 +262,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI.py">
+    <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        <state relative-caret-position="296">
+          <caret line="419" column="35" selection-start-line="419" selection-start-column="35" selection-end-line="419" selection-end-column="35" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1539277019114" expanded="true" signature="99:223" ph="..." />
+            <element signature="e#0#21#0" expanded="true" />
+            <marker date="1539804927379" expanded="true" signature="759:9412" ph="..." />
+            <marker date="1539804927379" expanded="true" signature="2437:2446" ph="..." />
+            <marker date="1539804927379" expanded="true" signature="9431:9436" ph="..." />
+            <marker date="1539804927379" expanded="true" signature="10873:10882" ph="..." />
+            <marker date="1539804927379" expanded="true" signature="12291:12354" ph="..." />
+            <marker date="1539804927379" expanded="true" signature="12426:12435" ph="..." />
+            <marker date="1539804927379" expanded="true" signature="14837:15609" ph="..." />
+            <marker date="1539804927379" expanded="true" signature="15722:15876" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LoadPDB.py">
+    <entry file="file://$PROJECT_DIR$/Tooltip.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="417" column="60" lean-forward="true" selection-start-line="417" selection-start-column="60" selection-end-line="417" selection-end-column="60" />
+        <state relative-caret-position="51">
+          <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <marker date="1539804751778" expanded="true" signature="759:9412" ph="..." />
-            <marker date="1539804751778" expanded="true" signature="2437:2446" ph="..." />
-            <marker date="1539804751778" expanded="true" signature="9431:9436" ph="..." />
-            <marker date="1539804751778" expanded="true" signature="10873:10882" ph="..." />
-            <marker date="1539804751778" expanded="true" signature="12291:12354" ph="..." />
-            <marker date="1539804751778" expanded="true" signature="12426:12435" ph="..." />
-            <marker date="1539804751778" expanded="true" signature="14837:15477" ph="..." />
-            <marker date="1539804751778" expanded="true" signature="15590:15744" ph="..." />
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1539805160749" expanded="true" signature="161:290" ph="..." />
           </folding>
         </state>
       </provider>
