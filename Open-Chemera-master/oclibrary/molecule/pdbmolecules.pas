@@ -687,11 +687,11 @@ begin
   FLayers[High(FLayers)] := Result;
 end;
 
+// Metodo invocato per caricare il file PDB
 function TPDBModelMan.LoadLayer(PdbFileName: string; ChargeFrom: PDBChargeOrigin
   ): TMolecule;
 
 begin
-  //AddNewLayer è un TPBDModel
   Result:=AddNewLayer.LoadPDB(PdbFileName, ChargeFrom);
 end;
 

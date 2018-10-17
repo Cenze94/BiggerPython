@@ -472,6 +472,10 @@ begin
   Result:=FProtein.ListGroupNames;
 end;
 
+// Da quanto ho capito questo metodo rinomina ogni catena con una lettera, che
+// parte da FirstChar, prende il carattere successivo ad ogni iterazione e
+// quando raggiunge LastChar ricomincia da FirstChar, finché non sono stati
+// modificati tutti i gruppi
 procedure TPDBModel.RenameChains(FirstChar: Char; LastChar: Char);
 
 var
