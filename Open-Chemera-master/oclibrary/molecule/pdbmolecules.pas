@@ -251,6 +251,8 @@ begin
     sl.Add(AtomRecord(atoms[f].Name,rname,chname,atoms[f].ID,rid,atoms[f].Coords,
     Element(atoms[f].AtomicNumber)));
     end;
+  // SaveToFile elimina il contenuto precedente del file, quindi aggiunge ogni
+  // stringa seguita da un a capo
   sl.SaveToFile(FileName);
   sl.Free;
 

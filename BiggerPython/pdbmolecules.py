@@ -29,9 +29,9 @@ class TTemplate:
 
 
 class TPDBModel:
-    # templates = TTemplates, AID = Integer
-    def __init__(self, templates, AID):
-        self.FTemplates = templates
+    # Templates = TTemplates, AID = Integer
+    def __init__(self, Templates, AID):
+        self.FTemplates = Templates
         self.FProtein = TMolecule.Create('', AID, None)
         self.FInfo = TPDBInfo
 
@@ -48,21 +48,30 @@ class TPDBModel:
         for f in range(IDs):
             self.FProtein.NewGroup(IDs[f], f+1)
 
-    # Options = PDBResidueTypes, ResTypes = TSimpleStrings, OnDelete = TOnDeleteCallback
-    def DeleteResidues(self, Options, ResTypes, OnDelete=None):
-        for c in range(self.FProtein.GroupCount-1):
-            # chain = TMolecule
-            chain = self.FProtein.GetGroup(c)
-            chain.TagAllAtoms(0)
-            for r in range(chain.GroupCount-1):
-                # res = TMolecules
-                res = chain.GetGroup(r)
-                if ((Options.name is 'resAA') and (AAOneLetterCode(res.Name) is not '')) or \
-                        ((Options.name is 'resNonAA') and (AAOneLetterCode(res.Name) is '')) or \
-                        (LastIndexOf(res.Name, ResTypes) > 0):
-                    res.TagAllAtoms(1)
-            chain.DeleteTaggedAtoms(1, OnDelete)
-        self.FProtein.DeleteEmptyGroups()
+    # First method: Options = PDBResidueTypes, ResTypes = TSimpleStrings, OnDelete = TOnDeleteCallback
+    # Second method: Options = Name = string, ResTypes = OnDelete = TOnDeleteCallback
+    def DeleteResidues(self, Options, ResTypes=None, OnDelete=None):
+        if isinstance(Options, PDBResidueTypes):
+            for c in range(self.FProtein.GroupCount-1):
+                # chain = TMolecule
+                chain = self.FProtein.GetGroup(c)
+                chain.TagAllAtoms(0)
+                for r in range(chain.GroupCount-1):
+                    # res = TMolecules
+                    res = chain.GetGroup(r)
+                    if ((Options.name is 'resAA') and (AAOneLetterCode(res.Name) is not '')) or \
+                            ((Options.name is 'resNonAA') and (AAOneLetterCode(res.Name) is '')) or \
+                            (LastIndexOf(res.Name, ResTypes) > 0):
+                        res.TagAllAtoms(1)
+                chain.DeleteTaggedAtoms(1, OnDelete)
+            self.FProtein.DeleteEmptyGroups()
+        else:
+            Name = Options
+            OnDelete = ResTypes
+            # names = TSimpleStrings
+            names = []
+            names[0] = Name
+            self.DeleteResidues(None, names, OnDelete)
 
     # ChainName = string, ChainID = integer
     def NewEmptyChain(self, ChainName, ChainID):
@@ -217,16 +226,9 @@ class TPDBModel:
         # Result = TMolecule
         return Result
 
-    # Name = string, InDelete = TOnDeleteCallback
-    def DeleteResidues(self, Name, OnDelete = None):
-        # names = TSimpleStrings
-        names = []
-        names[0] = Name
-        self.DeleteResidues([], names, OnDelete)
-
     # OnDelete = TOnDeleteCallback
     def DeleteNonAAResidues(self, OnDelete = None):
-        self.DeleteResidues([PDBResidueTypes.resNonAA], None, OnDelete)
+        self.DeleteResidues(PDBResidueTypes.resNonAA, None, OnDelete)
 
     # OnDelete = TOnDeleteCallback
     def DeleteWater(self, OnDelete = None):
@@ -253,7 +255,7 @@ class TPDBModelMan:
     # For the moment I passed only the string with file path as srec
     def SetTemplate(self, srec, pdbparser):
         # TODO: Check if we have to take the last value of FTemplates or the last
-        t = self.FTemplates(len(self.FTemplates) - 1)
+        t = self.FTemplates[len(self.FTemplates) - 1]
         # Extract name and remove file extension
         t.Name = os.path.splitext(srec.Name)[0]
         # Fill atom data
@@ -417,8 +419,9 @@ def SaveToPDB(Molecule, FileName):
         # AtomRecord is a function of "pdbparser", Element is a function of "oclconfiguration"
         s1.append(AtomRecord(atoms[f].Name, rname, chname, atoms[f].ID, rid, atoms[f].Coords,
                              Element(atoms[f].AtomicNumber)))
-    # TODO: s1.SaveToFile(FileName)
-
+    with open(FileName, 'w') as f:
+        for item in s1:
+            f.write(item + "\n")
 
 # Protein = const TMolecule, ChainName = const string, ResId = Integer
 def GetResidue(Protein, ChainName, ResId):

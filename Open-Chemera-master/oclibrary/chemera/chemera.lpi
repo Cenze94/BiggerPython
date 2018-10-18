@@ -44,7 +44,7 @@
         <ComponentName Value="CmMainForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="883"/>
+        <TopLine Value="897"/>
         <CursorPos X="27" Y="902"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
@@ -96,7 +96,7 @@
         <Filename Value="..\UI\glutwindow.pas"/>
         <TopLine Value="191"/>
         <CursorPos X="21" Y="203"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="24"/>
       </Unit7>
       <Unit8>
         <Filename Value="..\display\base3ddisplay.pas"/>
@@ -183,7 +183,7 @@
         <Filename Value="..\..\sharedunits\utils\geomhash.pas"/>
         <TopLine Value="113"/>
         <CursorPos X="9" Y="66"/>
-        <UsageCount Value="50"/>
+        <UsageCount Value="49"/>
       </Unit18>
       <Unit19>
         <Filename Value="..\..\sharedunits\display\displayobjects.pas"/>
@@ -241,7 +241,7 @@
         <Filename Value="C:\lazarus\fpc\2.6.0\source\packages\opengl\src\gl.pp"/>
         <TopLine Value="1122"/>
         <CursorPos X="3" Y="1138"/>
-        <UsageCount Value="15"/>
+        <UsageCount Value="14"/>
       </Unit25>
       <Unit26>
         <Filename Value="..\..\sharedunits\display\povray.pas"/>
@@ -263,7 +263,7 @@
         <Filename Value="C:\lazarus\lcl\forms.pp"/>
         <TopLine Value="691"/>
         <CursorPos X="45" Y="715"/>
-        <UsageCount Value="30"/>
+        <UsageCount Value="29"/>
       </Unit28>
       <Unit29>
         <Filename Value="..\docking\dockconstraints.pas"/>

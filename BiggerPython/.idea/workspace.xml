@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3a5d4cd-4e09-4507-9323-95c42a60ef12" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdbmolecules.py" beforeDir="false" afterPath="$PROJECT_DIR$/pdbmolecules.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,10 +15,11 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="3" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.75" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -38,24 +39,24 @@
         <counts>
           <entry key="GUI" value="225" />
           <entry key="dummy" value="15" />
-          <entry key="py" value="15718" />
+          <entry key="py" value="16166" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="15943" />
+          <entry key="Python" value="16391" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+            <state relative-caret-position="392">
+              <caret line="42" column="33" lean-forward="true" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <marker date="1539805160749" expanded="true" signature="161:290" ph="..." />
@@ -64,21 +65,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="419" column="35" selection-start-line="419" selection-start-column="35" selection-end-line="419" selection-end-column="35" />
+            <state relative-caret-position="270">
+              <caret line="338" column="27" lean-forward="true" selection-start-line="338" selection-start-column="27" selection-end-line="338" selection-end-column="27" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <marker date="1539804927379" expanded="true" signature="759:9412" ph="..." />
-                <marker date="1539804927379" expanded="true" signature="2437:2446" ph="..." />
-                <marker date="1539804927379" expanded="true" signature="9431:9436" ph="..." />
-                <marker date="1539804927379" expanded="true" signature="10873:10882" ph="..." />
-                <marker date="1539804927379" expanded="true" signature="12291:12354" ph="..." />
-                <marker date="1539804927379" expanded="true" signature="12426:12435" ph="..." />
-                <marker date="1539804927379" expanded="true" signature="14837:15609" ph="..." />
-                <marker date="1539804927379" expanded="true" signature="15722:15876" ph="..." />
+                <marker date="1539880194455" expanded="true" signature="8888:8894" ph="..." />
               </folding>
             </state>
           </provider>
@@ -87,7 +81,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tooltip.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
+            <state relative-caret-position="34">
               <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
@@ -101,6 +95,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>Free</find>
+      <find>PDBResidueTypes</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -115,12 +110,13 @@
         <option value="$PROJECT_DIR$/LoadPDB.py" />
         <option value="$PROJECT_DIR$/GUI.py" />
         <option value="$PROJECT_DIR$/Tooltip.py" />
+        <option value="$PROJECT_DIR$/pdbmolecules.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="80" />
-    <option name="y" value="107" />
+    <option name="x" value="156" />
+    <option name="y" value="117" />
     <option name="width" value="1260" />
     <option name="height" value="744" />
   </component>
@@ -130,6 +126,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -145,7 +142,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -211,7 +207,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="80" y="107" width="1260" height="744" extended-state="0" />
+    <frame x="156" y="117" width="1260" height="744" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959083" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -254,35 +251,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="1" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <marker date="1538937623370" expanded="true" signature="81:82" ph="..." />
-            <marker date="1538937623370" expanded="true" signature="206:241" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
+    <entry file="file://$PROJECT_DIR$/GUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="419" column="35" selection-start-line="419" selection-start-column="35" selection-end-line="419" selection-end-column="35" />
+        <state relative-caret-position="392">
+          <caret line="42" column="33" lean-forward="true" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <marker date="1539804927379" expanded="true" signature="759:9412" ph="..." />
-            <marker date="1539804927379" expanded="true" signature="2437:2446" ph="..." />
-            <marker date="1539804927379" expanded="true" signature="9431:9436" ph="..." />
-            <marker date="1539804927379" expanded="true" signature="10873:10882" ph="..." />
-            <marker date="1539804927379" expanded="true" signature="12291:12354" ph="..." />
-            <marker date="1539804927379" expanded="true" signature="12426:12435" ph="..." />
-            <marker date="1539804927379" expanded="true" signature="14837:15609" ph="..." />
-            <marker date="1539804927379" expanded="true" signature="15722:15876" ph="..." />
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1539805160749" expanded="true" signature="161:290" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tooltip.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
+        <state relative-caret-position="34">
           <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
@@ -290,13 +275,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI.py">
+    <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+        <state relative-caret-position="270">
+          <caret line="338" column="27" lean-forward="true" selection-start-line="338" selection-start-column="27" selection-end-line="338" selection-end-column="27" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1539805160749" expanded="true" signature="161:290" ph="..." />
+            <element signature="e#0#21#0" expanded="true" />
+            <marker date="1539880194455" expanded="true" signature="8888:8894" ph="..." />
           </folding>
         </state>
       </provider>
