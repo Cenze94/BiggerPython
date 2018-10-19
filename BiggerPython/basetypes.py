@@ -83,7 +83,7 @@ def RemoveFromArray(Ixs, A):
 def IndexOf(i, a):
     Result = len(a) - 1
     while (Result >= 0) and (a[Result] is not i):
-        Result = Result -1
+        Result = Result - 1
     # Return Integer
     return Result
 
