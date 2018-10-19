@@ -30,3 +30,65 @@ def PushIntoArray(I, A):
 # v = Integer, v = TIntegers OT TFloats OR TCardinals OR TCoords OR TSimpleStrings
 def RemoveFromArray(v, a):
     a.pop(v)
+
+
+# a1, a2 = TCoords OR TSimpleStrings
+def Concatenate(a1, a2):
+    Result = []
+    for f in range(len(a1)):
+        Result.append(a1[f])
+    for f in range(len(a2)):
+        Result.append(a2[f])
+    # Return TCoords OR TSimpleStrings
+    return Result
+
+
+# Ints = const TIntegers OR const TFloats, Ix1, Ix2 = Integer; Ints = const TCoords, Ix1 = TIntegers
+def Slice(Ints, Ix1, Ix2=None):
+    Result = []
+    if Ix2 is None:
+        for f in range(len(Ix1)):
+            Result[f] = Ints(Ix1[f])
+    else:
+        for f in range(Ix1, Ix2):
+            Result[f - Ix1] = Ints[Ix1]
+    # Return TIntegers OR TFloats OR TCoords
+    return Result
+
+
+# I = Integer, Ints = const TIntegers
+def CountInArray(I, Ints):
+    Result = 0
+    for f in range(len(Ints)):
+        if Ints[f] is I:
+            Result = Result + 1
+    # Return Integer
+    return Result
+
+
+# Ixs, A = TIntegers
+def RemoveFromArray(Ixs, A):
+    top = len(A)
+    f = 0
+    while f < top:
+        if IsInArray(f, Ixs):
+            top = top - 1
+            A[f] = A[top]
+        f = f + 1
+    for f in range(top, len(A)):
+        del A[f]
+
+
+# i = const Integer OR const Cardinal OR const string, a = const TIntegers OR const TCardinals OR const TSimpleStrings
+def IndexOf(i, a):
+    Result = len(a) - 1
+    while (Result >= 0) and (a[Result] is not i):
+        Result = Result -1
+    # Return Integer
+    return Result
+
+
+# i = const Integer OR const Cardinal OR const string, a = const TIntegers OR const TCardinals OR const TSimpleStrings
+def IsInArray(i, a):
+    # return Boolean
+    return IndexOf(i, a) >= 0
