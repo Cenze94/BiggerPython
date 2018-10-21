@@ -1,8 +1,31 @@
-
+import numpy as np
 
 # Class to avoid global variables
 class TypesConstants:
     Tiny = 1e-12
+
+
+# The purpose of this class is to distinguish between coordinates and arrays of there numbers
+class TCoord:
+    coord = []
+
+    def __init__(self, coord1=None, coord2=None, coord3=None):
+        if coord1 is None:
+            coord1 = 0
+        if coord2 is None:
+            coord2 = 0
+        if coord3 is None:
+            coord3 = 0
+        if isinstance(coord1, float) and isinstance(coord2, float) and isinstance(coord3, float):
+            self.coord.append(coord1)
+            self.coord.append(coord2)
+            self.coord.append(coord3)
+
+    def __getitem__(self, item):
+        return self.coord[item]
+
+    def __setitem__(self, key, value):
+        self.coord[key] = value
 
 
 # This method could be inline, it's defined only to help the transposition of Pascal code to Python one
@@ -92,3 +115,307 @@ def IndexOf(i, a):
 def IsInArray(i, a):
     # return Boolean
     return IndexOf(i, a) >= 0
+
+
+# Elm = const String OR const Cardinal OR const Integer, Arr = TSimpleStrings OR TCardinals OR TIntegers
+def AddUniqueToArray(elm, Arr):
+    if IndexOf(elm, Arr) < 0:
+        AddToArray(elm, Arr)
+
+
+# Suffix = const TCoords OR const TSimpleStrings OR const TCardinals OR const TIntegers OR TFloats,
+# Arr = TCoords OR TSimpleStrings OR TCardinals OR TIntegers OR TFloats
+def AppendToArray(Suffix, Arr):
+    if Suffix is not None:
+        for f in range(len(Suffix)):
+            Arr.append(Suffix[f])
+
+
+# vals = TFloats OR TMatrix OR TCoords OR TIntegers
+# vals, vals2 = TCoord OR Integer
+def Min(vals, vals2=None):
+    Result = 0
+    if vals is not None:
+        if vals2 is not None:
+            if isinstance(vals2, TCoord):
+                Result = TCoord()
+                if vals[0] < vals2[0]:
+                    Result[0] = vals[0]
+                else:
+                    Result[0] = vals2[0]
+                if vals[1] < vals2[1]:
+                    Result[1] = vals[1]
+                else:
+                    Result[1] = vals2[1]
+                if vals[2] < vals2[2]:
+                    Result[2] = vals[2]
+                else:
+                    Result[2] = vals2[2]
+            else:
+                if vals < vals2:
+                    Result = vals
+                else:
+                    Result = vals2
+        else:
+            if isinstance(vals, np.ndarray) and (vals[0] is not None):
+                Result = vals[0, 0]
+                for f in range(len(vals)):
+                    for g in range(len(vals[f])):
+                        if vals[f, g] < Result:
+                            Result = vals[f, g]
+            else:
+                Result = vals[0]
+                for f in range(1, len(vals)):
+                    if vals[f] < Result:
+                        Result = vals[f]
+    # Return TFloat OR TCoord OR Integer
+    elif isinstance(vals[0], TCoord):
+        return TCoord(0, 0, 0)
+    return Result
+
+
+# vals = TFloats OR TMatrix OR TCoords OR TIntegers
+# vals, vals2 = TCoord OR Integer
+def Max(vals, vals2=None):
+    Result = 0
+    if vals is not None:
+        if vals2 is not None:
+            if isinstance(vals2, TCoord):
+                Result = TCoord()
+                if vals[0] > vals2[0]:
+                    Result[0] = vals[0]
+                else:
+                    Result[0] = vals2[0]
+                if vals[1] > vals2[1]:
+                    Result[1] = vals[1]
+                else:
+                    Result[1] = vals2[1]
+                if vals[2] > vals2[2]:
+                    Result[2] = vals[2]
+                else:
+                    Result[2] = vals2[2]
+            else:
+                if vals > vals2:
+                    Result = vals
+                else:
+                    Result = vals2
+        else:
+            if isinstance(vals, np.ndarray) and (vals[0] is not None):
+                Result = vals[0, 0]
+                for f in range(len(vals)):
+                    for g in range(len(vals[f])):
+                        if vals[f, g] > Result:
+                            Result = vals[f, g]
+            else:
+                Result = vals[0]
+                for f in range(1, len(vals)):
+                    if vals[f] > Result:
+                        Result = vals[f]
+    # Return TFloat OR TCoord OR Integer
+    elif isinstance(vals[0], TCoord):
+        return TCoord(0, 0, 0)
+    return Result
+
+
+# vals = TFloats
+def MinIx(vals):
+    Result = -1
+    if vals is not None:
+        Result = 0
+        mi = vals[0]
+        for f in range(len(vals)):
+            if vals[f] < mi:
+                mi = vals[f]
+                Result = f
+    # Return Integer
+    return Result
+
+
+# vals = TFloats
+def MaxIx(vals):
+    Result = -1
+    if vals is not None:
+        Result = 0
+        mi = vals[0]
+        for f in range(len(vals)):
+            if vals[f] > mi:
+                mi = vals[f]
+                Result = f
+    # Return Integer
+    return Result
+
+
+# vals = TFloats OR TCoords OR TIntegers
+# vals, vals2 = const TFLoats
+def Sum(vals, vals2=None):
+    Result = 0
+    if vals is not None:
+        if vals2 is not None:
+            Result = []
+            length = min(len(vals), len(vals2))
+            for f in range(length):
+                Result[f] = vals[f] + vals2[f]
+        else:
+            if isinstance(vals[0], TCoord):
+                Result = TCoord()
+                for f in range(len(vals)):
+                    Result[0] = Result[0] + vals[f][0]
+                    Result[1] = Result[1] + vals[f][1]
+                    Result[2] = Result[2] + vals[f][2]
+            else:
+                for f in range(len(vals)):
+                    Result = Result + vals[f]
+    # Return TFloat OR TCoord OR TFloats OR Integer
+    return Result
+
+
+# Vals = TFloats, MinVal = TFloat, MinIx = Integer (the last 2 are not present because they are useless)
+def MinValIx(Vals):
+    MinIx = -1
+    MinVal = 0
+    if Vals is not None:
+        MinIx = 0
+        MinVal = Vals[0]
+        for f in range(len(Vals)):
+            if Vals[f] < MinVal:
+                MinVal = Vals[f]
+                MinIx = f
+    # Return TFloat, Integer
+    return MinVal, MinIx
+
+
+# Vals = TFloats, MaxVal = TFloat, MaxIx = Integer (the last 2 are not present because they are useless)
+def MaxValIx(Vals):
+    MaxIx = -1
+    MaxVal = 0
+    if Vals is not None:
+        MaxIx = 0
+        MaxVal = Vals[0]
+        for f in range(len(Vals)):
+            if Vals[f] > MaxVal:
+                MaxVal = Vals[f]
+                MaxIx = f
+    # Return TFloat, Integer
+    return MaxVal, MaxIx
+
+
+# X, Y, Z = TFloat
+def Coord(X, Y, Z):
+    Result = TCoord()
+    Result[0] = X
+    Result[1] = Y
+    Result[2] = Z
+    # Return TCoord
+    return Result
+
+
+# SS = TSimpleStrings
+def StringsToFloats(SS):
+    Result = []
+    for f in range(len(SS)):
+        Result[f] = StringToFloat(SS[f])
+    # Return TFloats
+    return Result
+
+
+# Len, Val = Integer
+def FilledInts(Len, Val):
+    Result = []
+    for f in range(Len):
+        Result[f] = Val
+    # Return TIntegers
+    return Result
+
+
+# Len = Integer, Val = TFloat
+def FilledFloats(Len, Val):
+    # FilledInts and FilledFloats are the same in Python, so it's possible to use FilledInts inside FilledFloats
+    # Return TFloats
+    return FilledInts(Len, Val)
+
+
+# A1, A2 = TIntegers
+def IsEqual(A1, A2):
+    Result = len(A1) is len(A2)
+    if Result:
+        for f in range(len(A1)):
+            if A1[f] is not A2[f]:
+                return False
+    # Return Boolean
+    return Result
+
+
+# S = const String
+def StringToFloat(S):
+    # Return TFloat
+    return float(S)
+
+
+# Mat = TMatrix, Scale = TFloat
+def ScaleMatrix(Mat, Scale):
+    Result = np.copy(Mat)
+    for x in range(len(Mat)):
+        for y in range(len(Mat[x])):
+            Result[x, y] = Result[x, y] * Scale
+    # Return TMatrix
+    return Result
+
+
+# Mat1, Mat2 = TMatrix
+def AddMatrices(Mat1, Mat2):
+    if (Mat1 is None) or (Mat2 is None) or (len(Mat1) is not len(Mat2)) or (len(Mat1[0]) is not len(Mat2[0])):
+        return None
+    else:
+        Result = np.copy(Mat1)
+        for x in range(len(Mat1)):
+            for y in range(len(Mat1[x])):
+                Result[x, y] = Result[x, y] + Mat2[x, y]
+        return Result
+
+
+# S = string
+def StringToFloats(S):
+    t = ''
+    if S is None:
+        return None
+    Result = []
+    for f in range(len(S)):
+        if S[f] > ' ':
+            t = t + S[f]
+        elif t is not '':
+            Result.append(StringToFloat(t))
+            t = ''
+    if t is not '':
+        Result.append(StringToFloat(t))
+    return Result
+
+
+# Cuboid1, Cuboid2 = TCuboid
+def InContact(Cuboid1, Cuboid2):
+    # c1, c2 = TCoord
+    c1 = max(Cuboid1[0], Cuboid2[0])
+    c2 = min(Cuboid1[1], Cuboid2[1])
+    # Return Boolean
+    return (c1[0] <= c2[0]) and (c1[1] <= c2[1]) and (c1[2] <= c2[2])
+
+
+# Fs = TFloats OR TIntegers
+def Average(Fs)
+    Result = 0
+    if Fs:
+        for f in range(len(Fs)):
+            Result = Result + Fs[f]
+        Result = Result / len(Fs)
+    # Return TFloat
+    return Result
+
+
+# GFs = TFloats OR TIntegers
+def Median(Fs):
+    Result = 0
+    if Fs:
+        ixs = QSAscendingIndex(Fs)
+        ix = int(len(Fs) / 2)
+        Result = Fs[ixs[ix]]
+    # Return TFloat OR Integer
+    return Result

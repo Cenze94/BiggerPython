@@ -3,7 +3,8 @@
 3. (Opzionale, ossia io l'ho fatto ma non dovrebbe servire perché alla fine non ho usato questo plugin) Installa pipenv digitando "pip install pipenv"
 4. Installa Guizero digitando "pip install guizero"
 5. Installa PyInstaller digitando "pip install pyinstaller". Questo modulo serve per creare l'eseguibile del progetto in Windows.
-6. Installa PyCharm come IDE (è molto simile a IntelliJ, dato che è fatto sempre dalla JetBrains)
+6. Installa Numpy digitando "pip install numpy". Questo modulo serve per costruire e gestire le matrici in modo migliore.
+7. Installa PyCharm come IDE (è molto simile a IntelliJ, dato che è fatto sempre dalla JetBrains)
 
 Come usare PyInstaller: da riga di comando vai alla cartella dove è contenuto "GUI.py" e digiti "pyinstaller --onefile GUI.py".
 L'eseguibile sarà dentro alla cartella "dist", mentre in "build" dovrebbero esserci le librerie utilizzate.
