@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3a5d4cd-4e09-4507-9323-95c42a60ef12" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/quicksort.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/basetypes.py" beforeDir="false" afterPath="$PROJECT_DIR$/basetypes.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,26 +28,26 @@
         <counts>
           <entry key="GUI" value="1" />
           <entry key="Pipfile" value="1" />
-          <entry key="py" value="5" />
+          <entry key="py" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="6" />
+          <entry key="Python" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="GUI" value="225" />
           <entry key="dummy" value="15" />
-          <entry key="py" value="24193" />
+          <entry key="py" value="26444" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="24418" />
+          <entry key="Python" value="26669" />
         </counts>
       </usages-collector>
     </session>
@@ -81,13 +83,29 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/basetypes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="420" column="17" lean-forward="true" selection-start-line="420" selection-start-column="17" selection-end-line="420" selection-end-column="17" />
+            <state relative-caret-position="238">
+              <caret line="408" column="32" lean-forward="true" selection-start-line="408" selection-start-column="32" selection-end-line="408" selection-end-column="32" />
               <folding>
-                <marker date="1540145314444" expanded="true" signature="202:784" ph="..." />
-                <marker date="1540145314444" expanded="true" signature="749:754" ph="..." />
-                <marker date="1540145314444" expanded="true" signature="1061:1066" ph="..." />
-                <marker date="1540145314444" expanded="true" signature="11315:11485" ph="..." />
+                <element signature="e#0#18#0" expanded="true" />
+                <marker date="1540233973580" expanded="true" signature="243:825" ph="..." />
+                <marker date="1540233973580" expanded="true" signature="790:795" ph="..." />
+                <marker date="1540233973580" expanded="true" signature="1102:1107" ph="..." />
+                <marker date="1540233973580" expanded="true" signature="12089:12275" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/quicksort.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="409">
+              <caret line="69" column="34" lean-forward="true" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
+              <folding>
+                <marker date="1540233760518" expanded="true" signature="44:49" ph="..." />
+                <marker date="1540233760518" expanded="true" signature="262:267" ph="..." />
+                <marker date="1540233760518" expanded="true" signature="521:1001" ph="..." />
+                <marker date="1540233760518" expanded="true" signature="1498:1667" ph="..." />
               </folding>
             </state>
           </provider>
@@ -118,6 +136,8 @@
     <findStrings>
       <find>Free</find>
       <find>PDBResidueTypes</find>
+      <find>Ix</find>
+      <find>Ix[</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,13 +153,14 @@
         <option value="$PROJECT_DIR$/GUI.py" />
         <option value="$PROJECT_DIR$/Tooltip.py" />
         <option value="$PROJECT_DIR$/pdbmolecules.py" />
+        <option value="$PROJECT_DIR$/quicksort.py" />
         <option value="$PROJECT_DIR$/basetypes.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="108" />
-    <option name="y" value="82" />
+    <option name="x" value="124" />
+    <option name="y" value="88" />
     <option name="width" value="1260" />
     <option name="height" value="744" />
   </component>
@@ -230,7 +251,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="108" y="82" width="1260" height="744" extended-state="0" />
+    <frame x="124" y="88" width="1260" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959083" />
@@ -314,15 +335,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/quicksort.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="69" column="34" lean-forward="true" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
+          <folding>
+            <marker date="1540233760518" expanded="true" signature="44:49" ph="..." />
+            <marker date="1540233760518" expanded="true" signature="262:267" ph="..." />
+            <marker date="1540233760518" expanded="true" signature="521:1001" ph="..." />
+            <marker date="1540233760518" expanded="true" signature="1498:1667" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/basetypes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="420" column="17" lean-forward="true" selection-start-line="420" selection-start-column="17" selection-end-line="420" selection-end-column="17" />
+        <state relative-caret-position="238">
+          <caret line="408" column="32" lean-forward="true" selection-start-line="408" selection-start-column="32" selection-end-line="408" selection-end-column="32" />
           <folding>
-            <marker date="1540145314444" expanded="true" signature="202:784" ph="..." />
-            <marker date="1540145314444" expanded="true" signature="749:754" ph="..." />
-            <marker date="1540145314444" expanded="true" signature="1061:1066" ph="..." />
-            <marker date="1540145314444" expanded="true" signature="11315:11485" ph="..." />
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1540233973580" expanded="true" signature="243:825" ph="..." />
+            <marker date="1540233973580" expanded="true" signature="790:795" ph="..." />
+            <marker date="1540233973580" expanded="true" signature="1102:1107" ph="..." />
+            <marker date="1540233973580" expanded="true" signature="12089:12275" ph="..." />
           </folding>
         </state>
       </provider>

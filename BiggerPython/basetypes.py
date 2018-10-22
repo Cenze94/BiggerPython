@@ -1,4 +1,7 @@
 import numpy as np
+import math
+import time
+import quicksort
 
 # Class to avoid global variables
 class TypesConstants:
@@ -400,7 +403,7 @@ def InContact(Cuboid1, Cuboid2):
 
 
 # Fs = TFloats OR TIntegers
-def Average(Fs)
+def Average(Fs):
     Result = 0
     if Fs:
         for f in range(len(Fs)):
@@ -414,8 +417,37 @@ def Average(Fs)
 def Median(Fs):
     Result = 0
     if Fs:
-        ixs = QSAscendingIndex(Fs)
+        ixs = quicksort.QSAscendingIndex(Fs)
         ix = int(len(Fs) / 2)
         Result = Fs[ixs[ix]]
     # Return TFloat OR Integer
     return Result
+
+
+# Fs = TFloats, Avg = TFloat
+def Variance(Fs, Avrg):
+    Result = 0
+    for f in range(len(Fs)):
+        Result = Result + math.sqrt(Fs[f] - Avrg)
+    # Return TFloat
+    return Result / len(Fs)
+
+
+# Val, Extreme1, Extreme2 = TFloat
+def IsBetween(Val, Extreme1, Extreme2):
+    # return Boolean
+    return ((Val >= Extreme1) and (Val <= Extreme2)) or ((Val <= Extreme1) and (Val >= Extreme2))
+
+
+def GetTickCount():
+    # Time is in milliseconds
+    # Return DWORD
+    return int(time.time() * 1000)
+
+
+# StartTick = DWORD
+def GetTimeInterval(StartTick):
+    endtick = GetTickCount()
+    # endtick is returned as the new StartTick, because it can't be modifies inside the method
+    # Return Integer
+    return StartTick - endtick, endtick
