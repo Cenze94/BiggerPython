@@ -1,6 +1,7 @@
 from enum import Enum
 import os
 import glob
+import basetypes
 
 
 # Enumerations, I don't know what is their purpose
@@ -32,8 +33,9 @@ class TPDBModel:
     # Templates = TTemplates, AID = Integer
     def __init__(self, Templates, AID):
         self.FTemplates = Templates
-        self.FProtein = TMolecule.Create('', AID, None)
+        self.FProtein = TMolecule('', AID, None)
         self.FInfo = TPDBInfo
+        self.FFileName = ""
 
     def __del__(self):
         if self is not None:
@@ -208,8 +210,7 @@ class TPDBModel:
 
     # Name = string
     def TemplateIx(self, Name):
-        # TODO: High is a function that returns the bigger value of FTemplates (or the last)
-        Result = High(self.FTemplates)
+        Result = len(self.FTemplates)
         while Result > 0 and Name is not self.FTemplates[Result].Name:
             Result = Result - 1
         # Result = Integer
@@ -271,8 +272,11 @@ class TPDBModelMan:
             # stop at the highest value
         for f in range(len(pdbparser.Connections) - 1):
             # IndexOf and Copy are functions of "basetypes"
-            ix = IndexOf(pdbparser.Connections[f].AtomID, t.AtomIDs)
-            t.Connects[ix] = Copy(pdbparser.Connections[f].Connects, 0, len(pdbparser.Connections[f].Connects))
+            ix = basetypes.IndexOf(pdbparser.Connections[f].AtomID, t.AtomIDs)
+            copy = []
+            for x in range(len(pdbparser.Connections[f].Connects)):
+                copy.append(pdbparser.Connections[f].Connects[x])
+            t.Connects[ix] = copy
 
     # Path = string
     def LoadTemplates(self, Path):
@@ -294,7 +298,7 @@ class TPDBModelMan:
         # pdbparser.Free()
         # Reassign templates to layers
         for f in range(len(self.FLayers)):
-            FLayers[f].ResetTemplates(self.FTemplates)
+            self.FLayers[f].ResetTemplates(self.FTemplates)
 
     def Count(self):
         # Return integer
@@ -407,6 +411,9 @@ def SaveToPDB(Molecule, FileName):
     atoms = Molecule.AllAtoms()
     for f in range(len(atoms)):
         res = atoms[f].Parent()
+        rname = ""
+        rid = 0
+        chname = ""
         if res is not None:
             rname = res.Name
             rid = res.ID
