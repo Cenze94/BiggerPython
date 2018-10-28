@@ -197,6 +197,25 @@ def GetString(AString, Start, Finish):
 # Returns last index of string, -1 if not found
 # s = string OR Integer OR const string, a = TSimpleStrings OR TIntegers OR const string
 def LastIndexOf(s, a):
+    if isinstance(a, list):
+        Result = len(a)
+        while (Result >= 0) and (a[Result] is not s):
+            Result = Result - 1
+    else:
+        # s = substring, a = string
+        Result = -1
+        leng = len(s)
+        for f in range(len(a) - len(s), -1, -1):
+            g = 1
+            out = False
+            while (g <= leng) and (s[g] is a[f + g]) and not out:
+                g = g +1
+                if g < leng:
+                    Result = f + 1
+                    out = True
+    # Return Integer
+    return Result
+
 
 
 # -1 if not found
