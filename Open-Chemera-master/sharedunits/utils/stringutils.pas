@@ -276,6 +276,9 @@ begin
     Result[f]:=Text[f+1];
 end;
 
+// Questa funzione e le prossime 4 potrebbero essere semplificate molto in
+// Python, comunque per poterle confrontare più facilmente con le rispettive
+// versioni in Pascal ho copiato tutte le istruzioni
 function GetInteger(AString:string;Start,Finish:Integer; out Val:Integer):Boolean;
 
 var
@@ -336,6 +339,8 @@ begin
     Result:=-1;
 end;
 
+// Da quanto ho capito questo metodo estra la sottostringa da Start a Finish
+// e elimina tutti gli spazi che trova
 function GetString(AString:string;Start,Finish:Integer):string;
 
 var

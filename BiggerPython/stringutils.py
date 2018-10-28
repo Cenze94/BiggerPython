@@ -1,3 +1,4 @@
+import basetypes
 
 
 # Returns substring to separator. Text is not altered
@@ -20,16 +21,21 @@ def GrabWord(Text, Sep=' '):
         Text = Text[len(Sep) + 1:]
     p = Text.find(Sep)
     if p < 0:
-        # Return string
+        # Return string (and string in Python)
         return Text, ''
     else:
-        # Return string
+        # Return string (and string in Python)
         return Text[:p], Text[len(Sep) + 1:]
 
 
 # Returns substring between separators deleting that from Text
 # Text = string, Sep1, Sep2 = string
 def GrabBetween(Text, Sep1, Sep2):
+    p1 = Text.find(Sep1)
+    p2 = Text.find(Sep2)
+    if p1 < p2:
+        # Return string (and string in Python)
+        return Text[p1 + len(Sep1):p2], (Text[:p1 - 1] + Text[p2 + len(Sep2):])
 
 
 # First method: Text = string, Sep = const string; Splits using grabword (i.e. skipping repeated separators)
@@ -37,40 +43,155 @@ def GrabBetween(Text, Sep1, Sep2):
 #                same as above, but adds result to the Words TStringList, which must have been created by caller
 # Third method: Text = string; splits on all whitespace (<=32)
 def SplitString(Text, Words=None, Sep=None):
-    if Sep is None:
-        if Words is None:
+    if Words is not None:
+        if Sep is None:
             # First method
+            Sep = Words
+            Result = []
+            while Text is not '':
+                PartialText, Text = GrabWord(Text, Sep)
+                basetypes.AddToArray(PartialText, Result)
+            # Return TSimpleStrings
+            return Result
         else:
             # Second method
-            Sep = Words
+            while Text is not '':
+                PartialText, Text = GrabWord(Text, Sep)
+                Words.append(PartialText)
     else:
+        # Third method
+        s = ''
+        Result = []
+        for f in range(1, len(Text)):
+            # 32 in ASCII is space char
+            if ord(Text[f]) > 32:
+                s = s + Text[f]
+            else:
+                if s is not '':
+                    basetypes.AddToArray(s, Result)
+                    s = ''
+        if s is not '':
+            basetypes.AddToArray(s, Result)
+        # Return TSimpleStrings
+        return Result
 
 
 # Splits string on all separators, including empty strings if repeated separators
 # Text = string, Sep = const string
 def SplitOnAll(Text, Sep):
+    Result = []
+    c = len(Sep)
+    s = ''
+    f = 1
+    while f <= len(Text):
+        if Text[f:c] is Sep:
+            basetypes.AddToArray(s, Result)
+            s = ''
+            f = f + c
+        else:
+            s = s + Text[f]
+            f = f +1
+    # Return TSimpleStrings
+    return Result
 
 
 # Splits on all end of line chars (10) rejecting #13 but keeping empty lines)
 # Text = string
 def SplitLines(Text):
+    s = ''
+    Result = []
+    for f in range(1, len(Text)):
+        # 10 in ASCII is "Line Feed", called also "LF" and "\n"
+        if ord(Text[f]) is 10:
+            basetypes.AddToArray(s, Result)
+            s = ''
+        # 13 in ASCII is "Carriage Return", called also "CR" and "\r"
+        elif ord(Text[f]) is not 13:
+            s = s + Text[f]
+    basetypes.AddToArray(s, Result)
+    # Return TSimpleStrings
+    return Result
 
 
 # Split one char per string
 # Text = string
 def SplitChars(Text):
+    Result = []
+    for f in range(len(Text)):
+        Result[f] = Text[f+1]
+    # Return TSimpleStrings
+    return Result
 
 
-# AString = string, Start, Finish = Integer, Val = Integer
+# First method: AString = string, Start, Finish = Integer, Val = Integer
+# Second method: AString = string, Start, Finish = Integer
 def GetInteger(AString, Start, Finish, Val=None):
+    s = ''
+    f = Start
+    while (f <= len(AString)) and (f <= Finish):
+        if AString[f] is not ' ':
+            s = s + AString[f]
+        f = f + 1
+    try:
+        Value = int(s)
+        if Val is None:
+            # Second method
+            # Return Integer
+            return Value
+        # First method
+        # Return Boolean (and integer in Python)
+        return True, Value
+    except ValueError:
+        if Val is None:
+            # Second method
+            # Return Integer
+            return -1
+        # First method
+        # Return Boolean (and integer in Python)
+        return False, 0
 
 
-# AString = string, Start, Finish = Integer, Val = Double
+# First method: AString = string, Start, Finish = Integer, Val = Double
+# Second method: AString = string, Start, Finish = Integer
 def GetFloat(AString, Start, Finish, Val=None):
+    s = ''
+    f = Start
+    while (f <= len(AString)) and (f <= Finish):
+        if (AString[f] is ',') or (AString[f] is '.'):
+            s = s + '.'
+        elif AString[f] is not ' ':
+            s = s + AString[f]
+        f = f + 1
+    try:
+        Value = float(s)
+        if Val is None:
+            # Second method
+            # Return Double
+            return Value
+        # First method
+        # Return Boolean (and float in Python)
+        return True, Value
+    except ValueError:
+        if Val is None:
+            # Second method
+            # Return Double
+            return -1
+        # First method
+        # Return Boolean (and float in Python)
+        return False, 0
 
 
+# Returns substring from Start to Finish indexes without spaces
 # AString = string, Start, Finish = Integer
 def GetString(AString, Start, Finish):
+    Result = ''
+    f = Start
+    while (f <= len(AString)) and (f <= Finish):
+        if AString[f] is not ' ':
+            Result = Result + AString[f]
+        f = f + 1
+    # Return Result
+    return Result
 
 
 # Returns last index of string, -1 if not found
