@@ -370,6 +370,9 @@ begin
     Dec(Result);
 end;
 
+// Per me questo metodo non funziona, perché se trovo una sottostringa con
+// almeno una lettera in comune con quella cercata me la restituisce come
+// risultato
 function LastIndexOf(const SubS, S: string): Integer;
 
 var
@@ -420,6 +423,9 @@ begin
       end;
 end;
 
+// Per me questo metodo non funziona, perché se trovo una sottostringa con
+// almeno una lettera in comune con quella cercata me la restituisce come
+// risultato
 function FirstIndexOf(const SubS, S: string): Integer;
 
 var
@@ -620,6 +626,8 @@ begin
     Result[f]:=C;
 end;
 
+// Questo metodo è sbagliato, perché la stringa resituita conterrà soltanto
+// i caratteri cambiati, mentre mancheranno tutti gli altri caratteri di s
 function FixLineBreaks(s:string):string;
 
 var f:Integer;
@@ -735,6 +743,8 @@ begin
     begin
     Result:=f+1;
     for g:=last downto 1 do
+      // Da notare che se la lettera di Substr è già maiuscola e quella di Str
+      // no questo metodo non funziona
       if (Substr[g]<>Str[f+g]) and (ucsubstr[g]<>Str[f+g]) then
         begin
         Result:=-1;
@@ -857,6 +867,7 @@ var
   f,current:Integer;
   tmp:string;
 
+// Non capisco se le istruzioni con #13+#10 dopo la prima cambino qualcosa
 procedure ConvertHtml(var s:string);
 
 begin

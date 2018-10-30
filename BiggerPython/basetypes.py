@@ -390,6 +390,7 @@ def StringToFloats(S):
             t = ''
     if t is not '':
         Result.append(StringToFloat(t))
+    # Return TFloats
     return Result
 
 
