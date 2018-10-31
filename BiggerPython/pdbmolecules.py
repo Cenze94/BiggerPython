@@ -2,6 +2,7 @@ from enum import Enum
 import os
 import glob
 import basetypes
+import stringutils
 
 
 # Enumerations, I don't know what is their purpose
@@ -63,7 +64,7 @@ class TPDBModel:
                     res = chain.GetGroup(r)
                     if ((Options.name is 'resAA') and (AAOneLetterCode(res.Name) is not '')) or \
                             ((Options.name is 'resNonAA') and (AAOneLetterCode(res.Name) is '')) or \
-                            (LastIndexOf(res.Name, ResTypes) > 0):
+                            (stringutils.LastIndexOf(res.Name, ResTypes) > 0):
                         res.TagAllAtoms(1)
                 chain.DeleteTaggedAtoms(1, OnDelete)
             self.FProtein.DeleteEmptyGroups()
@@ -201,7 +202,7 @@ class TPDBModel:
             tempix = self.TemplateIx(atoms[f].Parent.Name)
             if tempix >= 0:
                 # atomix = Integer, LastIndexOf is a function of "stringutils"
-                atomix = LastIndexOf(atoms[f].Name, self.FTemplates[tempix].Atoms)
+                atomix = stringutils.LastIndexOf(atoms[f].Name, self.FTemplates[tempix].Atoms)
                 if atomix >= 0:
                     atoms[f].AtomicNumber = self.FTemplates[tempix].AtomicNumbers[atomix]
                     if atoms[f].Atomicumber > 0:
@@ -286,7 +287,7 @@ class TPDBModelMan:
         # Clear and load
         self.FTemplates = None
         # TPdbReader is a class of "pdbparser"
-        pdbparser = TPdbReader.Create()
+        pdbparser = TPdbReader()
         # srec shouldn't be needed
         # srec = TSearchRec
         fileList = glob.glob(Path + "*.pdb")
