@@ -353,6 +353,7 @@ def AtomIsAABackbone(Atom):
     # Return Boolean
     return (Atom.Name is "A") or (Atom.Name is "O") or (Atom.Name is "CA") or (Atom.Name is "C")
 
+
 # Atoms = TAtoms => list of TAtom
 def BackboneOnly(Atoms):
     Result = []
@@ -363,6 +364,7 @@ def BackboneOnly(Atoms):
             c = c + 1
     # Return TAtoms
     return Result
+
 
 # Atoms = TAtoms => list of TAtom
 def NoBackbone(Atoms):
@@ -375,11 +377,13 @@ def NoBackbone(Atoms):
     # Return TAtoms
     return Result
 
+
 # Residue = TMolecule
 def ResidueIsAminoAcid(Residue):
     # AAOneLetterCode is a function of "oclconfiguration"
     # Return Boolean
     return (Residue.GroupCount() is 0) and (AAOneLetterCode(Residue.Name) is not "")
+
 
 # Chain = TMolecule, MissingMarker = string
 def ChainSequence(Chain, MissingMarker = "X"):
@@ -403,6 +407,7 @@ def ChainSequence(Chain, MissingMarker = "X"):
                 Result = Result + tmp
     # Return string
     return Result
+
 
 # Molecule = TMolecule, FileName = string
 def SaveToPDB(Molecule, FileName):
@@ -430,6 +435,7 @@ def SaveToPDB(Molecule, FileName):
     with open(FileName, 'w') as f:
         for item in s1:
             f.write(item + "\n")
+
 
 # Protein = const TMolecule, ChainName = const string, ResId = Integer
 def GetResidue(Protein, ChainName, ResId):
