@@ -3,6 +3,7 @@ import os
 import glob
 import basetypes
 import stringutils
+import oclconfiguration
 
 
 # Enumerations, I don't know what is their purpose
@@ -62,8 +63,8 @@ class TPDBModel:
                 for r in range(chain.GroupCount-1):
                     # res = TMolecules
                     res = chain.GetGroup(r)
-                    if ((Options.name is 'resAA') and (AAOneLetterCode(res.Name) is not '')) or \
-                            ((Options.name is 'resNonAA') and (AAOneLetterCode(res.Name) is '')) or \
+                    if ((Options.name is 'resAA') and (oclconfiguration.AAOneLetterCode(res.Name) is not '')) or \
+                            ((Options.name is 'resNonAA') and (oclconfiguration.AAOneLetterCode(res.Name) is '')) or \
                             (stringutils.LastIndexOf(res.Name, ResTypes) > 0):
                         res.TagAllAtoms(1)
                 chain.DeleteTaggedAtoms(1, OnDelete)
@@ -83,13 +84,14 @@ class TPDBModel:
 
     # ChainName = string, ChainID = integer, Size = integer
     def NewChain(self, ChainName, ChainID, Size):
-        # Return TMolecule
         Result = self.NewEmptyChain(ChainName, ChainID)
         Result.CreateEmptyGroups(Size)
+        # Return TMolecule
         return Result
 
     # ChainIx = integer OR ChainIX = string
     def GetChain(self, ChainIx):
+        # Return TMolecule
         return self.FProtein.GetGroup(ChainIx)
 
     # Chain = TMolecule
@@ -99,14 +101,14 @@ class TPDBModel:
     # ChainIx = string OR ChainIx = integer, ResIx = integer OR ResIx = Integer
     def GetResidue(self, ChainIx, ResIx):
         if isinstance(ChainIx, int):
-            # Result = TMolecule
             Result = self.FProtein.GetGroup(ChainIx)
             if Result is not None:
+                # Return TMolecule
                 return Result.GetGroup(ResIx)
         else:
-            # Result = TMolecule
             Result = self.FProtein.GetChain(ChainIx)
             if Result is not None:
+                # Return TMolecule
                 return Result.GetGroupById(ResIx)
 
     # ChainIx = integer, ResIx = integer, AtomIx = integer
@@ -121,7 +123,7 @@ class TPDBModel:
         return None
 
     # PdbFileName = string, ChargeFrom = PDBChargeOrigin
-    def LoadPDB(self, PdbFileName, ChargeFrom):
+    def LoadPDB(self, PdbFileName, ChargeFrom = PDBChargeOrigin.pdbNone):
         self.ClearChains()
         self.FFileName = PdbFileName
         # parser = TPDBReader
@@ -150,9 +152,9 @@ class TPDBModel:
             atom.Coords = patom.Coords
             # Element may be present in the PDB file. However, this is superseded if there is monomer template data
             # AtomicNumber is a function from "oclconfiguration"
-            atom.AtomicNumber = AtomicNumber(patom.Element)
+            atom.AtomicNumber = oclconfiguration.AtomicNumber(patom.Element)
             # VdWRadius is a function of "oclconfiguration"
-            atom.Radius = VdWRadius(atom.AtomicNumber)
+            atom.Radius = oclconfiguration.VdWRadius(atom.AtomicNumber)
             if ChargeFrom is PDBChargeOrigin.pdbOccupancy:
                 atom.Charge = TPDBAtom.Occupancy
             elif ChargeFrom is PDBChargeOrigin.pdbOccTemp:
@@ -171,16 +173,16 @@ class TPDBModel:
     def ResetTemplates(self, ATemplates):
         self.FTemplates = ATemplates
 
-    # Return Integer
     def ChainCount(self):
+        # Return Integer
         return self.FProtein.GroupCount
 
-    # Return TSimpleStrings
     def ListChains(self):
+        # Return TSimpleStrings
         return self.FProtein.ListGroupNames
 
     # FirstChar = Char, LastChar = Char
-    def RenameChains(self, FirstChar, LastChar):
+    def RenameChains(self, FirstChar = 'A', LastChar = 'Z'):
         name = FirstChar
         for f in range(self.FProtein.GroupCount - 1):
             self.FProtein.GetGroup(f).Name = name
@@ -201,13 +203,12 @@ class TPDBModel:
             # tempix = Integer
             tempix = self.TemplateIx(atoms[f].Parent.Name)
             if tempix >= 0:
-                # atomix = Integer, LastIndexOf is a function of "stringutils"
+                # atomix = Integer
                 atomix = stringutils.LastIndexOf(atoms[f].Name, self.FTemplates[tempix].Atoms)
                 if atomix >= 0:
                     atoms[f].AtomicNumber = self.FTemplates[tempix].AtomicNumbers[atomix]
                     if atoms[f].Atomicumber > 0:
-                        # AtomData is an array of "oclconfiguration"
-                        atoms[f].Radius = AtomData[atoms[f].AtomicNumber - 1].VdWradius
+                        atoms[f].Radius = oclconfiguration.AtomData[atoms[f].AtomicNumber - 1].VdWradius
 
     # Name = string
     def TemplateIx(self, Name):
@@ -266,7 +267,7 @@ class TPDBModelMan:
             t.AtomIds[f] = pdbparser.Atoms[f].Serial
             t.Coords[f] = pdbparser.Atoms[f].Coords
             # AtomicNumber is a method of "oclconfiguration"
-            t.AtomicNumbers[f] = AtomicNumber(pdbparser.Atoms[f].Element)
+            t.AtomicNumbers[f] = oclconfiguration.AtomicNumber(pdbparser.Atoms[f].Element)
             # Empty connections
             t.Connects[f] = None
             # TODO: check pdbparser.Connections type, because if it is an ordinal type (e. g. a number) range must
@@ -287,7 +288,7 @@ class TPDBModelMan:
         # Clear and load
         self.FTemplates = None
         # TPdbReader is a class of "pdbparser"
-        pdbparser = TPdbReader()
+        pdbparser = TPDBReader()
         # srec shouldn't be needed
         # srec = TSearchRec
         fileList = glob.glob(Path + "*.pdb")
@@ -325,7 +326,7 @@ class TPDBModelMan:
         return Result
 
     # PDBFileName = string, ChargeFrom = PDBChargeOrigin
-    def LoadLayer(self, PDBFileName, ChargeFrom):
+    def LoadLayer(self, PDBFileName, ChargeFrom = PDBChargeOrigin.pdbNone):
         # Return TMolecule
         return self.AddNewLayer().LoadPDB(PDBFileName, ChargeFrom)
 
@@ -382,9 +383,11 @@ def NoBackbone(Atoms):
 def ResidueIsAminoAcid(Residue):
     # AAOneLetterCode is a function of "oclconfiguration"
     # Return Boolean
-    return (Residue.GroupCount() is 0) and (AAOneLetterCode(Residue.Name) is not "")
+    return (Residue.GroupCount() is 0) and (oclconfiguration.AAOneLetterCode(Residue.Name) is not "")
 
 
+# Returns string with one letter aa code for each residue. Non AA residues and gaps in the sequence of residue
+# IDs are filled with the MissingMarker
 # Chain = TMolecule, MissingMarker = string
 def ChainSequence(Chain, MissingMarker = "X"):
     Result = ""
@@ -400,7 +403,7 @@ def ChainSequence(Chain, MissingMarker = "X"):
                 Result = Result + MissingMarker
             # AAOneLetterCode is a function of "oclconfiguration"
             # tmp = string
-            tmp = AAOneLetterCode(res.Name)
+            tmp = oclconfiguration.AAOneLetterCode(res.Name)
             if tmp is "":
                 Result = Result + MissingMarker
             else:
@@ -431,12 +434,13 @@ def SaveToPDB(Molecule, FileName):
                 oldchain = chain
         # AtomRecord is a function of "pdbparser", Element is a function of "oclconfiguration"
         s1.append(AtomRecord(atoms[f].Name, rname, chname, atoms[f].ID, rid, atoms[f].Coords,
-                             Element(atoms[f].AtomicNumber)))
+                             oclconfiguration.Element(atoms[f].AtomicNumber)))
     with open(FileName, 'w') as f:
         for item in s1:
             f.write(item + "\n")
 
 
+# Assumes Protein is a protein, with chains and residues
 # Protein = const TMolecule, ChainName = const string, ResId = Integer
 def GetResidue(Protein, ChainName, ResId):
     Result = Protein.GetGroup(ChainName)

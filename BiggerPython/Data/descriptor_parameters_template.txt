@@ -1,0 +1,51 @@
+[Structure]
+; Optional, so it's not necessary to include full path on structures
+; PDBFolder=
+Target=                     
+  ;target pdb file
+
+TargetChainIndexes=         
+  ;comma separated list of chain indexes: 1,2,3...
+
+TargetChainIDs=             
+  ;comma separated list of chain IDs: A,B,C...
+  ;NOTE: ChainIDs are ignored if indexes are given
+
+Probe=                      ;probe pdb file
+ProbeChainIndexes=          ;comma separated list of chain indexes: 1,2,3...
+ProbeChainIDs=              ;comma separated list of chain IDs: A,B,C...
+;NOTE: ChainIDs are ignored if indexes are given
+SurfaceCutoff=
+  ;Value to determine which residues are at surface (Sidechain SAS)
+
+ComputeContactsByDistance=0
+  ;set to 1 to use distance for contact determination instead of surface
+ContactDistance=5
+  ;contact distance if ComputeContactsByDistance=1
+  
+[SequenceFolders]
+;list of name and folders containing the msa files. E.g:
+;Seqs1= C:/somefolder/seqsA
+;Seqs2= C:/somefolder/seqsB
+
+[TargetSequenceFiles]
+;list of files with target sequence msa in each folder, one for each chain. E.g:
+;Seqs1= targetA.msa,targetB.msa
+;Seqs2= targetA.msa,targetB.msa
+
+[ProbeSequenceFiles]
+;list of files with probe sequence msa in each folder, one for each chain. E.g:
+;Seqs1= probeC.msa,probeD.msa
+;Seqs2= probeC.msa,probeD.msa
+
+[ScoreFiles]
+; colon separated file names for contact matrixes
+Contacts= AAcontacts.txt,CAcontacts.txt
+; substitution matrix
+Substitutions= gonnet.txt
+
+[Output]
+;descriptors file
+Descriptors =
+;sequence and neighbours lists
+Stats =

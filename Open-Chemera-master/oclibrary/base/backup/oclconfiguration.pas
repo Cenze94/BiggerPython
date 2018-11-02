@@ -29,7 +29,7 @@ unit oclconfiguration;
 interface
 
 uses
-  Interfaces, Classes, SysUtils, Forms, FileUtil, basetypes, stringutils,LCLProc LazFileUtils;
+  Interfaces, Classes, SysUtils, Forms, FileUtil, basetypes, stringutils,LCLProc, LazFileUtils;
 
 type
   TOCLConfig=record
