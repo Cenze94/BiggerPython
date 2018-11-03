@@ -3,6 +3,7 @@ import math
 import time
 import quicksort
 
+
 # Class to avoid global variables
 class TypesConstants:
     Tiny = 1e-12
@@ -10,19 +11,20 @@ class TypesConstants:
 
 # The purpose of this class is to distinguish between coordinates and arrays of there numbers
 class TCoord:
-    coord = []
-
     def __init__(self, coord1=None, coord2=None, coord3=None):
+        self.coord = []
         if coord1 is None:
             coord1 = 0
         if coord2 is None:
             coord2 = 0
         if coord3 is None:
             coord3 = 0
-        if isinstance(coord1, float) and isinstance(coord2, float) and isinstance(coord3, float):
-            self.coord.append(coord1)
-            self.coord.append(coord2)
-            self.coord.append(coord3)
+        coord1 = float(coord1)
+        coord2 = float(coord2)
+        coord3 = float(coord3)
+        self.coord.append(coord1)
+        self.coord.append(coord2)
+        self.coord.append(coord3)
 
     def __getitem__(self, item):
         return self.coord[item]
@@ -53,9 +55,21 @@ def PushIntoArray(I, A):
     A.insert(0, I)
 
 
-# v = Integer, v = TIntegers OT TFloats OR TCardinals OR TCoords OR TSimpleStrings
-def RemoveFromArray(v, a):
-    a.pop(v)
+# First method: v = Integer, a = TIntegers OT TFloats OR TCardinals OR TCoords OR TSimpleStrings
+# Second method: Ixs, A = TIntegers
+def RemoveFromArray(Ixs, A):
+    if isinstance(Ixs, list):
+        top = len(A)
+        f = 0
+        while f < top:
+            if IsInArray(f, Ixs):
+                top = top - 1
+                A[f] = A[top]
+            f = f + 1
+        for f in range(top, len(A)):
+            del A[f]
+    else:
+        A.pop(Ixs)
 
 
 # a1, a2 = TCoords OR TSimpleStrings
@@ -90,19 +104,6 @@ def CountInArray(I, Ints):
             Result = Result + 1
     # Return Integer
     return Result
-
-
-# Ixs, A = TIntegers
-def RemoveFromArray(Ixs, A):
-    top = len(A)
-    f = 0
-    while f < top:
-        if IsInArray(f, Ixs):
-            top = top - 1
-            A[f] = A[top]
-        f = f + 1
-    for f in range(top, len(A)):
-        del A[f]
 
 
 # i = const Integer OR const Cardinal OR const string, a = const TIntegers OR const TCardinals OR const TSimpleStrings

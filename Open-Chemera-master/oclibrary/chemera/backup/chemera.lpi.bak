@@ -31,7 +31,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="33">
+    <Units Count="32">
       <Unit0>
         <Filename Value="chemera.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -44,8 +44,9 @@
         <ComponentName Value="CmMainForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="899"/>
-        <CursorPos X="27" Y="902"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="130"/>
+        <CursorPos Y="147"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -70,8 +71,8 @@
         <Filename Value="..\molecule\pdbmolecules.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="522"/>
-        <CursorPos X="29" Y="619"/>
+        <TopLine Value="221"/>
+        <CursorPos X="22" Y="324"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
       </Unit4>
@@ -126,8 +127,8 @@
         <Filename Value="..\base\oclconfiguration.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="48"/>
-        <CursorPos X="22" Y="65"/>
+        <TopLine Value="211"/>
+        <CursorPos X="18" Y="232"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit11>
@@ -151,16 +152,15 @@
       <Unit14>
         <Filename Value="..\..\sharedunits\general\basetypes.pas"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="900"/>
-        <CursorPos X="3" Y="39"/>
+        <TopLine Value="795"/>
+        <CursorPos X="19" Y="818"/>
         <UsageCount Value="114"/>
         <Loaded Value="True"/>
       </Unit14>
       <Unit15>
         <Filename Value="..\..\sharedunits\utils\stringutils.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="1018"/>
+        <TopLine Value="996"/>
         <CursorPos X="46" Y="988"/>
         <UsageCount Value="168"/>
         <Loaded Value="True"/>
@@ -174,20 +174,14 @@
         <Loaded Value="True"/>
       </Unit16>
       <Unit17>
-        <Filename Value="..\..\sharedunits\utils\geomhash.pas"/>
-        <TopLine Value="113"/>
-        <CursorPos X="9" Y="66"/>
-        <UsageCount Value="3"/>
-      </Unit17>
-      <Unit18>
         <Filename Value="..\..\sharedunits\display\displayobjects.pas"/>
         <EditorIndex Value="10"/>
         <TopLine Value="134"/>
         <CursorPos Y="149"/>
         <UsageCount Value="100"/>
         <Loaded Value="True"/>
-      </Unit18>
-      <Unit19>
+      </Unit17>
+      <Unit18>
         <Filename Value="..\gui\moleculetree.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="MolTreeForm"/>
@@ -196,15 +190,15 @@
         <TopLine Value="19"/>
         <CursorPos X="81" Y="35"/>
         <UsageCount Value="200"/>
-      </Unit19>
-      <Unit20>
+      </Unit18>
+      <Unit19>
         <Filename Value="..\..\sharedunits\forms\notifications.pas"/>
         <IsPartOfProject Value="True"/>
         <TopLine Value="18"/>
         <CursorPos X="61" Y="31"/>
         <UsageCount Value="200"/>
-      </Unit20>
-      <Unit21>
+      </Unit19>
+      <Unit20>
         <Filename Value="..\..\sharedunits\utils\geomutils.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="14"/>
@@ -212,17 +206,17 @@
         <CursorPos X="10" Y="81"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
-      </Unit21>
-      <Unit22>
+      </Unit20>
+      <Unit21>
         <Filename Value="..\molecule\molutils.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="47"/>
+        <TopLine Value="16"/>
         <CursorPos X="19" Y="75"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
-      </Unit22>
-      <Unit23>
+      </Unit21>
+      <Unit22>
         <Filename Value="..\docking\linegrids.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="9"/>
@@ -230,15 +224,15 @@
         <CursorPos X="16" Y="500"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
-      </Unit23>
-      <Unit24>
+      </Unit22>
+      <Unit23>
         <Filename Value="..\..\sharedunits\display\povray.pas"/>
         <IsPartOfProject Value="True"/>
         <WindowIndex Value="1"/>
         <CursorPos X="16" Y="25"/>
         <UsageCount Value="202"/>
-      </Unit24>
-      <Unit25>
+      </Unit23>
+      <Unit24>
         <Filename Value="..\docking\dockdomains.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="15"/>
@@ -246,8 +240,8 @@
         <CursorPos X="19" Y="69"/>
         <UsageCount Value="202"/>
         <Loaded Value="True"/>
-      </Unit25>
-      <Unit26>
+      </Unit24>
+      <Unit25>
         <Filename Value="..\docking\dockconstraints.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="16"/>
@@ -255,170 +249,170 @@
         <CursorPos X="23" Y="378"/>
         <UsageCount Value="204"/>
         <Loaded Value="True"/>
-      </Unit26>
-      <Unit27>
+      </Unit25>
+      <Unit26>
         <Filename Value="..\docking\bogie.pas"/>
         <EditorIndex Value="17"/>
         <UsageCount Value="103"/>
         <Loaded Value="True"/>
-      </Unit27>
-      <Unit28>
+      </Unit26>
+      <Unit27>
         <Filename Value="..\molecule\surface.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="18"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
-      </Unit28>
-      <Unit29>
+      </Unit27>
+      <Unit28>
         <Filename Value="..\..\sharedunits\forms\formdocker.pas"/>
         <IsPartOfProject Value="True"/>
         <TopLine Value="14"/>
         <CursorPos X="81" Y="26"/>
         <UsageCount Value="206"/>
-      </Unit29>
-      <Unit30>
+      </Unit28>
+      <Unit29>
         <Filename Value="..\sequence\alignment.pas"/>
         <IsPartOfProject Value="True"/>
         <WindowIndex Value="1"/>
         <UsageCount Value="272"/>
-      </Unit30>
-      <Unit31>
+      </Unit29>
+      <Unit30>
         <Filename Value="..\docking\rotations.pas"/>
         <EditorIndex Value="3"/>
         <TopLine Value="264"/>
         <CursorPos X="5" Y="279"/>
         <UsageCount Value="106"/>
         <Loaded Value="True"/>
-      </Unit31>
-      <Unit32>
+      </Unit30>
+      <Unit31>
         <Filename Value="..\..\sharedunits\utils\quicksort.pas"/>
         <EditorIndex Value="5"/>
         <TopLine Value="140"/>
         <CursorPos X="28" Y="140"/>
         <UsageCount Value="131"/>
         <Loaded Value="True"/>
-      </Unit32>
+      </Unit31>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="28">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="411" TopLine="397"/>
+        <Caret Line="133" Column="17" TopLine="118"/>
       </Position1>
       <Position2>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="412" Column="13" TopLine="398"/>
-      </Position2>
-      <Position3>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="413" Column="31" TopLine="398"/>
-      </Position3>
-      <Position4>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="414" Column="25" TopLine="398"/>
-      </Position4>
-      <Position5>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="421" Column="42" TopLine="404"/>
-      </Position5>
-      <Position6>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="412" Column="22" TopLine="398"/>
-      </Position6>
-      <Position7>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="433" Column="17" TopLine="419"/>
-      </Position7>
-      <Position8>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="695" Column="14" TopLine="676"/>
-      </Position8>
-      <Position9>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="602" Column="13" TopLine="596"/>
-      </Position9>
-      <Position10>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="685" Column="26" TopLine="674"/>
-      </Position10>
-      <Position11>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="133" Column="17" TopLine="118"/>
-      </Position11>
-      <Position12>
         <Filename Value="..\..\sharedunits\general\basetypes.pas"/>
         <Caret Line="187" Column="11" TopLine="172"/>
-      </Position12>
-      <Position13>
+      </Position2>
+      <Position3>
         <Filename Value="..\..\sharedunits\general\basetypes.pas"/>
         <Caret Line="208" Column="26" TopLine="199"/>
-      </Position13>
-      <Position14>
+      </Position3>
+      <Position4>
         <Filename Value="..\..\sharedunits\general\basetypes.pas"/>
         <Caret Line="373" Column="8" TopLine="371"/>
-      </Position14>
-      <Position15>
+      </Position4>
+      <Position5>
         <Filename Value="..\..\sharedunits\general\basetypes.pas"/>
         <Caret Line="552" Column="24" TopLine="544"/>
-      </Position15>
-      <Position16>
+      </Position5>
+      <Position6>
         <Filename Value="..\..\sharedunits\general\basetypes.pas"/>
         <Caret Line="608" Column="21" TopLine="589"/>
-      </Position16>
-      <Position17>
+      </Position6>
+      <Position7>
         <Filename Value="..\..\sharedunits\general\basetypes.pas"/>
         <Caret Line="597" Column="33" TopLine="589"/>
-      </Position17>
-      <Position18>
+      </Position7>
+      <Position8>
         <Filename Value="..\..\sharedunits\general\basetypes.pas"/>
         <Caret Line="866" Column="57" TopLine="862"/>
-      </Position18>
-      <Position19>
+      </Position8>
+      <Position9>
         <Filename Value="..\..\sharedunits\general\basetypes.pas"/>
         <Caret Line="1051" Column="14" TopLine="1025"/>
-      </Position19>
-      <Position20>
+      </Position9>
+      <Position10>
         <Filename Value="..\..\sharedunits\general\basetypes.pas"/>
         <Caret Line="915" Column="13" TopLine="899"/>
-      </Position20>
-      <Position21>
+      </Position10>
+      <Position11>
         <Filename Value="..\..\sharedunits\general\basetypes.pas"/>
         <Caret Line="923" Column="38" TopLine="909"/>
-      </Position21>
-      <Position22>
+      </Position11>
+      <Position12>
         <Filename Value="..\..\sharedunits\utils\quicksort.pas"/>
         <Caret Line="70" Column="20" TopLine="60"/>
-      </Position22>
-      <Position23>
+      </Position12>
+      <Position13>
         <Filename Value="..\..\sharedunits\utils\quicksort.pas"/>
         <Caret Line="100" Column="44" TopLine="89"/>
-      </Position23>
-      <Position24>
+      </Position13>
+      <Position14>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
         <Caret Line="625" Column="21" TopLine="610"/>
-      </Position24>
-      <Position25>
+      </Position14>
+      <Position15>
         <Filename Value="..\docking\linegrids.pas"/>
         <Caret Line="33" Column="3" TopLine="17"/>
-      </Position25>
-      <Position26>
+      </Position15>
+      <Position16>
         <Filename Value="..\docking\linegrids.pas"/>
         <Caret Line="28" Column="32" TopLine="17"/>
-      </Position26>
-      <Position27>
+      </Position16>
+      <Position17>
         <Filename Value="..\..\sharedunits\utils\stringutils.pas"/>
         <Caret Line="98" Column="41" TopLine="91"/>
-      </Position27>
-      <Position28>
+      </Position17>
+      <Position18>
         <Filename Value="..\..\sharedunits\utils\stringutils.pas"/>
         <Caret Line="99" Column="70" TopLine="91"/>
-      </Position28>
-      <Position29>
+      </Position18>
+      <Position19>
         <Filename Value="..\..\sharedunits\utils\stringutils.pas"/>
         <Caret Line="987" Column="21" TopLine="976"/>
+      </Position19>
+      <Position20>
+        <Filename Value="..\base\oclconfiguration.pas"/>
+        <Caret Line="105" Column="24" TopLine="91"/>
+      </Position20>
+      <Position21>
+        <Filename Value="..\base\oclconfiguration.pas"/>
+        <Caret Line="111" Column="40" TopLine="91"/>
+      </Position21>
+      <Position22>
+        <Filename Value="..\base\oclconfiguration.pas"/>
+        <Caret Line="113" Column="45" TopLine="91"/>
+      </Position22>
+      <Position23>
+        <Filename Value="..\base\oclconfiguration.pas"/>
+        <Caret Line="95" Column="5" TopLine="90"/>
+      </Position23>
+      <Position24>
+        <Filename Value="..\base\oclconfiguration.pas"/>
+        <Caret Line="101" Column="3" TopLine="90"/>
+      </Position24>
+      <Position25>
+        <Filename Value="..\base\oclconfiguration.pas"/>
+        <Caret Line="105" Column="12" TopLine="90"/>
+      </Position25>
+      <Position26>
+        <Filename Value="..\base\oclconfiguration.pas"/>
+        <Caret Line="106" Column="45" TopLine="90"/>
+      </Position26>
+      <Position27>
+        <Filename Value="..\base\oclconfiguration.pas"/>
+        <Caret Line="113" Column="38" TopLine="90"/>
+      </Position27>
+      <Position28>
+        <Filename Value="..\base\oclconfiguration.pas"/>
+        <Caret Line="148" Column="21" TopLine="135"/>
+      </Position28>
+      <Position29>
+        <Filename Value="..\..\sharedunits\general\basetypes.pas"/>
+        <Caret Line="139" Column="12" TopLine="128"/>
       </Position29>
       <Position30>
-        <Filename Value="..\..\sharedunits\utils\stringutils.pas"/>
-        <Caret Line="189" Column="10" TopLine="175"/>
+        <Filename Value="chemeramain.pas"/>
+        <Caret Line="84" Column="20" TopLine="71"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
@@ -458,6 +452,15 @@
     </Other>
   </CompilerOptions>
   <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="chemeramain.pas"/>
+        <Line Value="147"/>
+      </Item1>
+    </BreakPoints>
     <Exceptions Count="4">
       <Item1>
         <Name Value="EAbort"/>
