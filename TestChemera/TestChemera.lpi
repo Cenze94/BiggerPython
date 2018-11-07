@@ -32,7 +32,7 @@
         <PackageName Value="LazUtils"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="2">
+    <Units Count="3">
       <Unit0>
         <Filename Value="TestChemera.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -41,6 +41,10 @@
         <Filename Value="basetypestests.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="quicksorttests.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit2>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

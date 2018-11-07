@@ -25,7 +25,7 @@ def Quick(ini, fim, Values, Result):
     vpiv = Values[Result[ini]]
     le = ini
     ri = fim
-    while ri < le:
+    while True:
         while Values[Result[le]] < vpiv:
             le = le + 1
         while Values[Result[ri]] > vpiv:
@@ -36,6 +36,8 @@ def Quick(ini, fim, Values, Result):
             Result[le] = t
             le = le + 1
             ri = ri - 1
+        if ri < le:
+            break
     if ri > ini:
         Quick(ini, ri, Values, Result)
     if fim > le:
@@ -46,9 +48,9 @@ def Quick(ini, fim, Values, Result):
 def QSAscendingIndex(Values):
     Result = []
     for t in range(len(Values)):
-        Result[t] = t
-    if len(Values) > 0:
-        Quick(0, len(Values), Result)
+        Result.append(t)
+    if len(Result) > 0:
+        Quick(0, len(Result) - 1, Values, Result)
     # Return TIntegers
     return Result
 

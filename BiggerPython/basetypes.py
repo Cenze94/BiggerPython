@@ -65,11 +65,11 @@ def RemoveFromArray(Ixs, A):
             if IsInArray(f, Ixs):
                 top = top - 1
                 A[f] = A[top]
+                A.pop()
             f = f + 1
-        for f in range(top, len(A)):
-            del A[f]
     else:
-        A.pop(Ixs)
+        A[Ixs] = A[len(A) - 1]
+        A.pop()
 
 
 # a1, a2 = TCoords OR TSimpleStrings
@@ -83,15 +83,16 @@ def Concatenate(a1, a2):
     return Result
 
 
-# Ints = const TIntegers OR const TFloats, Ix1, Ix2 = Integer; Ints = const TCoords, Ix1 = TIntegers
+# Ints = const TIntegers OR const TFloats, Ix1, Ix2 = Integer
+# Ints = const TCoords, Ix1 = TIntegers
 def Slice(Ints, Ix1, Ix2=None):
     Result = []
     if Ix2 is None:
         for f in range(len(Ix1)):
-            Result[f] = Ints(Ix1[f])
+            Result.append(Ints[Ix1[f]])
     else:
-        for f in range(Ix1, Ix2):
-            Result[f - Ix1] = Ints[Ix1]
+        for f in range(Ix1, Ix2+1):
+            Result.append(Ints[f])
     # Return TIntegers OR TFloats OR TCoords
     return Result
 
