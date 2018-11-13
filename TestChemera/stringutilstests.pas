@@ -58,10 +58,10 @@ implementation
 
 procedure StartStringutilsTest();
 begin
-  CopyWordTest();
+  // CopyWordTest();
   // GrabWordTest();
   // GrabBetweenTest();
-  // SplitStringTest();
+  SplitStringTest();
   // SplitOnAllTest();
   // SplitLinesTest();
   // SplitCharsTest();
@@ -106,23 +106,61 @@ begin
 end;
 
 procedure CopyWordTest();
-begin
+var s,sf:string;
 
+begin
+  s:='Il gatto è sopra il tavolo.';
+  sf:=CopyWord(s, ' ');
+  WriteLn(s + 'f');
+  WriteLn(sf + 'f');
 end;
 
 procedure GrabWordTest();
-begin
+var s,sf:string;
 
+begin
+  s:='Il gatto è sopra il tavolo.';
+  sf:=GrabWord(s, ' ');
+  WriteLn(s + 'f');
+  WriteLn(sf + 'f');
 end;
 
 procedure GrabBetweenTest();
-begin
+var s, sf:string;
 
+begin
+  s:='Il gatto è sopra il| tavolo.';
+  sf:=GrabBetween(s, ' ', '|');
+  WriteLn(s + 'f');
+  WriteLn(sf + 'f');
 end;
 
 procedure SplitStringTest();
-begin
+var s:string; x:integer; ss:TSimpleStrings; ts:TStringList;
 
+begin
+  s:='Il gatto è sopra il tavolo';
+  ss:=SplitString(s, ' ');
+  for x:=0 to High(ss) do
+  begin
+    WriteLn(ss[x]);
+  end;
+  WriteLn('');
+
+  s:='Il gatto è sopra il tavolo';
+  ts:=TStringList.Create;
+  SplitString(s, ts, ' ');
+  for x:=0 to ts.Count-1 do  begin
+    WriteLn(ts[x]);
+  end;
+  WriteLn('');
+
+  s:='Il gatto è sopra il tavolo';
+  ss:=SplitString(s);
+  for x:=0 to High(ss) do
+  begin
+    WriteLn(ss[x]);
+  end;
 end;
 
 procedure SplitOnAllTest();
@@ -156,8 +194,34 @@ begin
 end;
 
 procedure LastIndexOfTest();
-begin
+var subs,s1:string; ts:TSimpleStrings; ti:TIntegers;
 
+begin
+  AddToArray(3, ti);
+  AddToArray(2, ti);
+  AddToArray(5, ti);
+  AddToArray(2, ti);
+  AddToArray(4, ti);
+  WriteLn(LastIndexOf(2, ti));
+  AddToArray('banana', ts);
+  AddToArray('mela', ts);
+  AddToArray('pera', ts);
+  AddToArray('mela', ts);
+  AddToArray('fico', ts);
+  WriteLn(LastIndexOf('mela', ts));
+  // Secondo me questa funzione restituisce il risultato sbagliato, perché la
+  // lunghezza della stringa di esempio è 27 e la posizione restituita è 23,
+  // quando tra la g di gatto e la fine della stringa ci sono altri 5 caratteri
+  s1:='Il gatto è sopra il gatto.';
+  subs:='gatto';
+  WriteLn(IntToStr(LastIndexOf(subs, s1)) + ' total length: ' + IntToStr(s1.Length));
+  // Qui succedono due errori: innanzitutto la parola viene individuata
+  // anche se non c'è dentro a s1, soltanto perché l'iniziale è identica. Inoltre
+  // l'indice è diminuito di 1 rispetto a prima, perché viene considerata la
+  // lunghezza della parola di subs, che sarebbe corretto se il controllo
+  // funzionasse correttamente
+  subs:='garage';
+  WriteLn(LastIndexOf(subs, s1));
 end;
 
 procedure FirstIndexOfTest();

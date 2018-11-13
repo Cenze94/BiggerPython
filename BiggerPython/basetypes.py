@@ -33,6 +33,23 @@ class TCoord:
         self.coord[key] = value
 
 
+class TCuboid:
+    def __init__(self, coord1=None, coord2=None):
+        self.coords = []
+        if coord1 is None or not isinstance(coord1, TCoord):
+            coord1 = TCoord(0, 0, 0)
+        if coord2 is None or not isinstance(coord2, TCoord):
+            coord2 = TCoord(0, 0, 0)
+        self.coords.append(coord1)
+        self.coords.append(coord2)
+
+    def __getitem__(self, item):
+        return self.coords[item]
+
+    def __setitem__(self, key, value):
+        self.coords[key] = value
+
+
 # This method could be inline, it's defined only to help the transposition of Pascal code to Python one
 # s = string OR TCoord OR TInteger OR TFloat OR Cardinal OR Boolean,
 # a = TSimpleStrings OR TCoords OR TIntegers OR TFloats OT TCardinals OR TBooleans

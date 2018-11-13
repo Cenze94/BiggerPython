@@ -25,7 +25,7 @@ def GrabWord(Text, Sep=' '):
         return Text, ''
     else:
         # Return string (and string in Python)
-        return Text[:p], Text[len(Sep) + 1:]
+        return Text[:p], Text[p + 1:]
 
 
 # Returns substring between separators deleting that from Text
@@ -35,7 +35,7 @@ def GrabBetween(Text, Sep1, Sep2):
     p2 = Text.find(Sep2)
     if p1 < p2:
         # Return string (and string in Python)
-        return Text[p1 + len(Sep1):p2], (Text[:p1 - 1] + Text[p2 + len(Sep2):])
+        return Text[p1 + len(Sep1):p2], (Text[:p1] + Text[p2 + len(Sep2):])
 
 
 # First method: Text = string, Sep = const string; Splits using grabword (i.e. skipping repeated separators)
@@ -198,18 +198,24 @@ def GetString(AString, Start, Finish):
 # s = string OR Integer OR const string, a = TSimpleStrings OR TIntegers OR const string
 def LastIndexOf(s, a):
     if isinstance(a, list):
-        Result = len(a)
+        Result = len(a) - 1
         while (Result >= 0) and (a[Result] is not s):
             Result = Result - 1
+        # Return Integer
         return Result
     else:
+        # The original version of this function is wrong, because it checks only the first character of s instead of
+        # the whole word, so a word with the same initial character of one of the words of a will return a positive
+        # result. This version is not corrected to avoid different behaviours from the original program, besides
+        # probably it'isnt an important function, otherwise it should be correct
         # s = substring, a = string
         leng = len(s)
         for f in range(len(a) - len(s), -1, -1):
             g = 0
             while (g <= leng) and (s[g] is a[f + g]):
-                g = g +1
+                g = g + 1
             if g < leng:
+                # Return Integer
                 return f + 1
     # Return Integer
     return -1
