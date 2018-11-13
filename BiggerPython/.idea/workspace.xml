@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3a5d4cd-4e09-4507-9323-95c42a60ef12" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/geomutils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestStringutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestStringutils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basetypes.py" beforeDir="false" afterPath="$PROJECT_DIR$/basetypes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stringutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/stringutils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestChemera/TestChemera.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChemera/TestChemera.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestChemera/TestChemera.lpi" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChemera/TestChemera.lpi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestChemera/stringutilstests.pas" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChemera/stringutilstests.pas" afterDir="false" />
-    </list>
+    <list default="true" id="e3a5d4cd-4e09-4507-9323-95c42a60ef12" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

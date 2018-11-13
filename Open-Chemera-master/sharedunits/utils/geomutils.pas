@@ -538,6 +538,7 @@ begin
   Py:=num/den;
 end;
 
+// Norm non viene usato
 function DistanceToLine2D(LineX1, LineY1, LineX2, LineY2, PointX, PointY,
   Norm: TFloat): TFloat;
 // from https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line
