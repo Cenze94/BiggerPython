@@ -351,7 +351,7 @@ var
   target,probe:TMolecule;
   MaxIters:Integer;
 
-begin   {
+begin
   //target:=FMolecules.LoadLayer('C:\My Documents\programs\fpc\oclibrary\testfiles\DX-A.pdb');
   //probe:=FMolecules.LoadLayer('C:\My Documents\programs\fpc\oclibrary\testfiles\DX-B.pdb');
   target:=FMolecules.LoadLayer('C:\My Documents\programs\fpc\oclibrary\testfiles\1JMJ-A.pdb');
@@ -368,7 +368,8 @@ begin   {
   probecoords:=ListCoords(probe);
 
 
-  models:=TModelManager.Create(100,300);
+  // TODO: Trovare una soluzione migliore per il nil (che è un TDockModels)
+  models:=TModelManager.Create(100,300, nil);
   models.GridScale:=1;
   Writeln('Workin...');
   targetgrid:=TDockingGrid.Create(1);
@@ -390,7 +391,7 @@ begin   {
     domain.RemoveCores:=True;
     domain.BuildInitialDomain;
     domain.Score;
-      writeLn(models.Models[0].Score,' (',models.Models[0].TransVec[0],',',
+      writeLn(models.Models[0].OverlapScore,' (',models.Models[0].TransVec[0],',',
               models.Models[0].TransVec[1],',',models.Models[0].TransVec[2],')');
     if f<MaxIters then
       begin
@@ -413,7 +414,7 @@ begin   {
   FDispMan.Attach(target);
   FDispMan.Attach(domain.Grid,domain.TranslateToTarget,targetgrid.Resolution,RGBAColor(0.7,0,0,0.5));
   FDispMan.Render;
-  FDisplay.Refresh; }
+  FDisplay.Refresh;
 end;
 
 procedure TCmMainForm.TestRotationSampling;
@@ -895,6 +896,7 @@ procedure TCmMainForm.LoadFile(FileName: string);
 var mol:TMolecule;
 
 begin
+    // FMolecules è TPdbModelMan dentro al file pdbmolecules
     mol:=FMolecules.LoadLayer(FileName);
     FMolecules.LayerByIx(0).DeleteWater;
     mol.Transform(Simmetric(FindCenter(mol)));

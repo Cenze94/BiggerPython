@@ -8,7 +8,7 @@ object CmMainForm: TCmMainForm
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnDropFiles = FormDropFiles
-  LCLVersion = '1.2.6.0'
+  LCLVersion = '1.8.4.0'
   object MainMenu: TMainMenu
     left = 40
     object FileMn: TMenuItem
