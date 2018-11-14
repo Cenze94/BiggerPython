@@ -354,8 +354,10 @@ var
 begin
   //target:=FMolecules.LoadLayer('C:\My Documents\programs\fpc\oclibrary\testfiles\DX-A.pdb');
   //probe:=FMolecules.LoadLayer('C:\My Documents\programs\fpc\oclibrary\testfiles\DX-B.pdb');
-  target:=FMolecules.LoadLayer('C:\My Documents\programs\fpc\oclibrary\testfiles\1JMJ-A.pdb');
-  probe:=FMolecules.LoadLayer('C:\My Documents\programs\fpc\oclibrary\testfiles\2CN0_HL.pdb');
+  //target:=FMolecules.LoadLayer('C:\My Documents\programs\fpc\oclibrary\testfiles\1JMJ-A.pdb');
+  //probe:=FMolecules.LoadLayer('C:\My Documents\programs\fpc\oclibrary\testfiles\2CN0_HL.pdb');
+  target:=FMolecules.LoadLayer('..\..\..\PDB\1jmj.pdb');
+  probe:=FMolecules.LoadLayer('..\..\..\PDB\2cn0.pdb');
 
 
   target.Transform(Simmetric(FindCenter(target)));

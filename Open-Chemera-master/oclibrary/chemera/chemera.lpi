@@ -45,8 +45,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="345"/>
-        <CursorPos X="34" Y="363"/>
+        <TopLine Value="337"/>
+        <CursorPos X="56" Y="360"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -305,91 +305,71 @@
         <EditorIndex Value="19"/>
         <TopLine Value="40"/>
         <CursorPos X="29" Y="54"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
       </Unit33>
     </Units>
-    <JumpHistory Count="20" HistoryIndex="19">
+    <JumpHistory Count="15" HistoryIndex="14">
       <Position1>
         <Filename Value="chemeramain.pas"/>
-        <Caret Line="277" TopLine="264"/>
+        <Caret Line="276" TopLine="250"/>
       </Position1>
       <Position2>
         <Filename Value="chemeramain.pas"/>
-        <Caret Line="276" TopLine="255"/>
+        <Caret Line="180" Column="10" TopLine="166"/>
       </Position2>
       <Position3>
         <Filename Value="chemeramain.pas"/>
-        <Caret Line="899" Column="25" TopLine="884"/>
+        <Caret Line="74" Column="15" TopLine="61"/>
       </Position3>
       <Position4>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="46" Column="40" TopLine="22"/>
+        <Filename Value="chemeramain.pas"/>
+        <Caret Line="354" Column="9" TopLine="329"/>
       </Position4>
       <Position5>
-        <Filename Value="..\molecule\molecules.pas"/>
-        <Caret Line="27" Column="40"/>
+        <Filename Value="chemeramain.pas"/>
+        <Caret Line="347" Column="17" TopLine="334"/>
       </Position5>
       <Position6>
-        <Filename Value="..\..\sharedunits\utils\geomutils.pas"/>
-        <Caret Line="325" Column="10" TopLine="313"/>
+        <Filename Value="chemeramain.pas"/>
+        <Caret Line="349" Column="16" TopLine="334"/>
       </Position6>
       <Position7>
-        <Filename Value="..\..\sharedunits\utils\geomutils.pas"/>
-        <Caret Line="411" Column="19" TopLine="397"/>
+        <Filename Value="chemeramain.pas"/>
+        <Caret Line="394" Column="41" TopLine="380"/>
       </Position7>
       <Position8>
-        <Filename Value="..\..\sharedunits\utils\geomutils.pas"/>
-        <Caret Line="623" Column="13" TopLine="612"/>
+        <Filename Value="chemeramain.pas"/>
+        <Caret Line="521" Column="6" TopLine="502"/>
       </Position8>
       <Position9>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="46" Column="47" TopLine="25"/>
+        <Filename Value="chemeramain.pas"/>
+        <Caret Line="371" Column="17" TopLine="349"/>
       </Position9>
       <Position10>
-        <Filename Value="..\molecule\pdbparser.pas"/>
-        <Caret Line="89" Column="15" TopLine="76"/>
+        <Filename Value="chemeramain.pas"/>
+        <Caret Line="361" Column="19" TopLine="346"/>
       </Position10>
       <Position11>
         <Filename Value="chemeramain.pas"/>
-        <Caret Line="276" TopLine="250"/>
+        <Caret Line="363" Column="34" TopLine="345"/>
       </Position11>
       <Position12>
         <Filename Value="chemeramain.pas"/>
-        <Caret Line="180" Column="10" TopLine="166"/>
+        <Caret Line="205" TopLine="186"/>
       </Position12>
       <Position13>
         <Filename Value="chemeramain.pas"/>
-        <Caret Line="74" Column="15" TopLine="61"/>
+        <Caret Line="358" Column="5" TopLine="344"/>
       </Position13>
       <Position14>
         <Filename Value="chemeramain.pas"/>
-        <Caret Line="354" Column="9" TopLine="329"/>
+        <Caret Line="357" Column="22" TopLine="346"/>
       </Position14>
       <Position15>
         <Filename Value="chemeramain.pas"/>
-        <Caret Line="347" Column="17" TopLine="334"/>
+        <Caret Line="359" Column="61" TopLine="337"/>
       </Position15>
-      <Position16>
-        <Filename Value="chemeramain.pas"/>
-        <Caret Line="349" Column="16" TopLine="334"/>
-      </Position16>
-      <Position17>
-        <Filename Value="chemeramain.pas"/>
-        <Caret Line="394" Column="41" TopLine="380"/>
-      </Position17>
-      <Position18>
-        <Filename Value="chemeramain.pas"/>
-        <Caret Line="521" Column="6" TopLine="502"/>
-      </Position18>
-      <Position19>
-        <Filename Value="chemeramain.pas"/>
-        <Caret Line="371" Column="17" TopLine="349"/>
-      </Position19>
-      <Position20>
-        <Filename Value="chemeramain.pas"/>
-        <Caret Line="361" Column="19" TopLine="346"/>
-      </Position20>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
@@ -428,7 +408,7 @@
     </Other>
   </CompilerOptions>
   <Debugging>
-    <BreakPoints Count="15">
+    <BreakPoints Count="4">
       <Item1>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
@@ -441,99 +421,22 @@
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="chemeramain.pas"/>
-        <Line Value="157"/>
+        <Line Value="218"/>
       </Item2>
       <Item3>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="chemeramain.pas"/>
-        <Line Value="165"/>
+        <Line Value="238"/>
       </Item3>
       <Item4>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="chemeramain.pas"/>
-        <Line Value="170"/>
+        <Line Value="359"/>
       </Item4>
-      <Item5>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="chemeramain.pas"/>
-        <Line Value="175"/>
-      </Item5>
-      <Item6>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="chemeramain.pas"/>
-        <Line Value="180"/>
-      </Item6>
-      <Item7>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="chemeramain.pas"/>
-        <Line Value="185"/>
-      </Item7>
-      <Item8>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="chemeramain.pas"/>
-        <Line Value="190"/>
-      </Item8>
-      <Item9>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="chemeramain.pas"/>
-        <Line Value="195"/>
-      </Item9>
-      <Item10>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="chemeramain.pas"/>
-        <Line Value="200"/>
-      </Item10>
-      <Item11>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="chemeramain.pas"/>
-        <Line Value="205"/>
-      </Item11>
-      <Item12>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="chemeramain.pas"/>
-        <Line Value="218"/>
-      </Item12>
-      <Item13>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="chemeramain.pas"/>
-        <Line Value="238"/>
-      </Item13>
-      <Item14>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="chemeramain.pas"/>
-        <Line Value="276"/>
-      </Item14>
-      <Item15>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="chemeramain.pas"/>
-        <Line Value="357"/>
-      </Item15>
     </BreakPoints>
     <Exceptions Count="4">
       <Item1>

@@ -354,7 +354,9 @@ var
 begin
   //target:=FMolecules.LoadLayer('C:\My Documents\programs\fpc\oclibrary\testfiles\DX-A.pdb');
   //probe:=FMolecules.LoadLayer('C:\My Documents\programs\fpc\oclibrary\testfiles\DX-B.pdb');
-  target:=FMolecules.LoadLayer('C:\My Documents\programs\fpc\oclibrary\testfiles\1JMJ-A.pdb');
+  //target:=FMolecules.LoadLayer('C:\My Documents\programs\fpc\oclibrary\testfiles\1JMJ-A.pdb');
+  //probe:=FMolecules.LoadLayer('C:\My Documents\programs\fpc\oclibrary\testfiles\2CN0_HL.pdb');
+  target:=FMolecules.LoadLayer('..\..\..\PDB\1jmj.pdb');
   probe:=FMolecules.LoadLayer('C:\My Documents\programs\fpc\oclibrary\testfiles\2CN0_HL.pdb');
 
 
@@ -391,6 +393,7 @@ begin
     domain.RemoveCores:=True;
     domain.BuildInitialDomain;
     domain.Score;
+    // TODO: Verificare che OverlapScore sia corretto, prima c'era "Score"
       writeLn(models.Models[0].OverlapScore,' (',models.Models[0].TransVec[0],',',
               models.Models[0].TransVec[1],',',models.Models[0].TransVec[2],')');
     if f<MaxIters then
