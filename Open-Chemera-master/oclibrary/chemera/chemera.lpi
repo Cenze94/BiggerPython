@@ -45,8 +45,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="337"/>
-        <CursorPos X="56" Y="360"/>
+        <TopLine Value="400"/>
+        <CursorPos X="13" Y="416"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -435,7 +435,7 @@
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="chemeramain.pas"/>
-        <Line Value="359"/>
+        <Line Value="374"/>
       </Item4>
     </BreakPoints>
     <Exceptions Count="4">

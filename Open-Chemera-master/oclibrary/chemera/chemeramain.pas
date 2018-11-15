@@ -356,8 +356,8 @@ begin
   //probe:=FMolecules.LoadLayer('C:\My Documents\programs\fpc\oclibrary\testfiles\DX-B.pdb');
   //target:=FMolecules.LoadLayer('C:\My Documents\programs\fpc\oclibrary\testfiles\1JMJ-A.pdb');
   //probe:=FMolecules.LoadLayer('C:\My Documents\programs\fpc\oclibrary\testfiles\2CN0_HL.pdb');
-  target:=FMolecules.LoadLayer('..\..\..\PDB\1jmj.pdb');
-  probe:=FMolecules.LoadLayer('..\..\..\PDB\2cn0.pdb');
+  target:=FMolecules.LoadLayer('..\..\..\PDB\3f6u.pdb');
+  probe:=FMolecules.LoadLayer('..\..\..\PDB\4a0q.pdb');
 
 
   target.Transform(Simmetric(FindCenter(target)));
@@ -409,10 +409,10 @@ begin
   WriteLn(FloatToStrF((tick2-tick1)/1000,ffFixed,4,3));
   WriteLn(domain.Size,' cells');
   DebugLn(IntToStr(Length(targetcoords)),' atoms');
-  {for f:=0 to High(models.Models) do
+  for f:=0 to High(models.Models) do
     with models.Models[f] do
-      writeLn(Score,' (',TransVec[0],',',TransVec[1],',',TransVec[2],')');
-  }
+      writeLn(OverlapScore,' (',TransVec[0],',',TransVec[1],',',TransVec[2],')');
+
 
   FDispMan.Attach(target);
   FDispMan.Attach(domain.Grid,domain.TranslateToTarget,targetgrid.Resolution,RGBAColor(0.7,0,0,0.5));
