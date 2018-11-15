@@ -157,6 +157,7 @@ begin
     FChainIDs[FAtoms[f].ChainNum]:=FAtoms[f].ChainID;
 end;
 
+// Io non prevederei il file gz, usiamo solo pdb non compressi
 procedure TPDBReader.Load(FromFile: string);
 // if file extension is .gz assumes a gzip file
 
@@ -319,4 +320,4 @@ begin
 end;
 
 end.
-
+

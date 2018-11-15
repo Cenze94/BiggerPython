@@ -29,7 +29,7 @@ class TPDBAtom:
 class TPDBConnection:
     # AtomID = Integer, Connects = TIntegers
     def __init__(self, AtomID, Connects):
-        self. AtomID = AtomID
+        self.AtomID = AtomID
         self.Connects = Connects
 
 
@@ -52,18 +52,144 @@ class TPDBInfo:
 class TPDBReader:
     # FromFile = string
     def __init__(self, FromFile = ''):
+        self.FAtoms = None
+        self.FConnections = None
+        self.FAtomCount = 0
+        self.FModelCount = 0
+        self.FChainCount = 0
         if FromFile is not '':
             self.Load(FromFile)
 
     def IndexChains(self):  # Creates FChainIDs
+        for f in range(self.FAtoms):
+            self.FChainIDs[self.FAtoms[f].ChainNum].append(self.FAtoms[f].ChainID)
 
+    # Only PDB files are expected
     # FromFile = string
     def Load(self, FromFile):
+        buf = []
+        with(open(FromFile)) as f:
+            for line in f:
+                buf.append(line)
+        self.ReadFromList(buf)
+
+    # s, OldChain = string
+    def GetPdbAtom(self, s, OldChain):
+        ChainID = stringutils.GetString(s, 22, 22)
+        if ChainID is not OldChain:
+            self.FChainCount = self.FChainCount + 1
+            OldChain = ChainID
+        Coords = basetypes.TCoord(stringutils.GetFloat(s, 31, 38), stringutils.GetFloat(s, 39, 46),
+                                  stringutils.GetFloat(s, 47, 54))
+        Element = stringutils.GetString(s, 77, 78)
+        # Sometimes charge comes right after the element name
+        if (len(Element) > 1) and not (Element[2].isalpha()):
+            Element = Element[1]
+        # Return TPDBAtom
+        return TPDBAtom(False,  # IsHet
+                        stringutils.GetInteger(s, 7, 11),  # Serial
+                        stringutils.Deblank(stringutils.GetString(s, 13, 16)),  # AtomName
+                        stringutils.GetString(s, 17, 17),  # AltLoc
+                        stringutils.GetString(s, 18, 20),  # ResName
+                        ChainID,  # ChainID
+                        stringutils.GetInteger(s, 23, 26),  # ResSeq
+                        stringutils.GetString(s, 27, 27),  # ICode
+                        Coords,  # Coords
+                        stringutils.GetFloat(s, 55, 60),  # Occupancy
+                        stringutils.GetFloat(s, 55, 66),  # OccTemp
+                        stringutils.GetFloat(s, 61, 66),  # Temp
+                        Element,  # Element
+                        stringutils.GetString(s, 77, 78),  # Charge
+                        self.FModelCount,  # ModelNum
+                        self.FChainCount)  # ChainNum
+
+    # s = string
+    def GetPdbConnect(self, s):
+        '''
+        1 - 6 Record name "CONNECT"
+        7 - 11 Integer serial Atom serial number
+        12 - 16 Integer serial Serial number of bonded atom
+        17 - 21 Integer serial Serial number of bonded atom
+        22 - 26 Integer serial Serial number of bonded atom
+        27 - 31 Integer serial Serial number of bonded atom
+        '''
+
+        Result = TPDBConnection(stringutils.GetInteger(s, 7, 11), [])
+        b, i = stringutils.GetInteger(s, 12, 16, i)
+        if b:
+            Result.Connects.append(i)
+        b, i = stringutils.GetInteger(s, 17, 21, i)
+        if b:
+            Result.Connects.append(i)
+        b, i = stringutils.GetInteger(s, 22, 26, i)
+        if b:
+            Result.Connects.append(i)
+        b, i = stringutils.GetInteger(s, 27, 31, i)
+        if b:
+            Result.Connects.append(i)
+        # Return TPDBConnection
+        return Result
+
+    # Buf = TStringList
+    def ReadLines(self, Buf):
+        self.FChainCount = -1
+        oldchain = '***'
+        # FChainCount is increased by GetPDBAtom whenever the chain changes
+        for f in range(len(Buf)):
+            s = Buf[f]
+            if (s.find('ATOM ') is 0) or (s.find('HETATM') is 0):
+                self.FAtoms.append(self.GetPdbAtom(s, oldchain))
+                self.FAtoms[self.FAtomCount].IsHet = (s.find('HETATM') is 1)
+                self.FAtomCount = self.FAtomCount + 1
+            elif s.find('CONNECT') is 1:
+                self.FConnections.append(self.GetPdbConnect(s))
+            elif s.find('TER') is 1:
+                oldchain = '***'
+                # This forces an FChainCount increase, even if the chain ID remains the same
+            elif s.find('MODEL') is 1:
+                oldchain = '***'
+                self.FModelCount = int(stringutils.Deblank(s[8:]))
+            elif s.find('ENDMDL') is 1:
+                self.FModelCount = self.FModelCount + 1
 
     # Buf = TStringList
     def ReadFromList(self, Buf):
+        '''
+        1 - 6          Record name     "ATOM"
+        7 - 11         Integer         serial        Atom serial number
+        13 - 16        Atom            name          Atom name
+        17             Character       altLoc        Alternate location indicator
+        18 - 20        Residue name    resName       Residue name
+        22             Character       chainID       Chain identifier
+        23 - 26        Integer         resSeq        Residue sequence number
+        27             Character       iCode         Code for insertion of residues
+        31 - 38        Real(8.3)       x             Orthogonal coordinates for X
+        39 - 46        Real(8.3)       y             Orthogonal coordinates for Y
+        47 - 54        Real(8.3)       z             Orthogonal coordinates for Z
+        55 - 60        Real(6.2)       occupancy     Occupancy
+        61 - 66        Real(6.2)       tempFactor    Temperature factor
+        68 - 70        Integer         ftNote        Footnote number, being deprecated
+        73 - 76        LString(4)      segID         Segment identifier, left-justified
+        77 - 78        LString(2)      element       Element symbol, right-justified
+        79 - 80        LString(2)      charge        Charge on the atom, IUPAC form
+        '''
+
+        self.Clear()
+        self.ReadLines(Buf)
+        if self.FAtomCount > 0:
+            # In case one TER was missing
+            self.FChainCount = self.FAtoms[len(self.FAtoms) - 1].ChainNum + 1
+            # 0 if no models. This may be redundant, but with PDB files one never knows...
+            self.FModelCount = self.FAtoms[len(self.FAtoms) - 1].ModelNum
+            self.IndexChains()
 
     def Clear(self):
+        self.FAtoms = None
+        self.FConnections = None
+        self.FAtomCount = 0
+        self.FModelCount = 0
+        self.FChainCount = 0
+
 '''
 1 - 6          Record name     "ATOM"
 7 - 11         Integer         serial        Atom serial number
