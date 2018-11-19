@@ -49,20 +49,25 @@ class TPDBInfo:
         self.UserComments = UserComments
 
 
+# Class of the PDB loader
 class TPDBReader:
     # FromFile = string
     def __init__(self, FromFile = ''):
-        self.FAtoms = None
-        self.FConnections = None
+        self.FAtoms = []
+        self.FConnections = []
         self.FAtomCount = 0
         self.FModelCount = 0
         self.FChainCount = 0
+        self.FChainIDs = []
         if FromFile is not '':
             self.Load(FromFile)
 
     def IndexChains(self):  # Creates FChainIDs
-        for f in range(self.FAtoms):
-            self.FChainIDs[self.FAtoms[f].ChainNum].append(self.FAtoms[f].ChainID)
+        self.FChainIDs.clear()
+        for f in range(self.FChainCount):
+            self.FChainIDs.append('')
+        for f in range(len(self.FAtoms)):
+            self.FChainIDs[self.FAtoms[f].ChainNum] = self.FAtoms[f].ChainID
 
     # Only PDB files are expected
     # FromFile = string
@@ -83,9 +88,9 @@ class TPDBReader:
                                   stringutils.GetFloat(s, 47, 54))
         Element = stringutils.GetString(s, 77, 78)
         # Sometimes charge comes right after the element name
-        if (len(Element) > 1) and not (Element[2].isalpha()):
-            Element = Element[1]
-        # Return TPDBAtom
+        if (len(Element) > 1) and not (Element[1].isalpha()):
+            Element = Element[0]
+        # Return TPDBAtom (and string in Python)
         return TPDBAtom(False,  # IsHet
                         stringutils.GetInteger(s, 7, 11),  # Serial
                         stringutils.Deblank(stringutils.GetString(s, 13, 16)),  # AtomName
@@ -99,9 +104,9 @@ class TPDBReader:
                         stringutils.GetFloat(s, 55, 66),  # OccTemp
                         stringutils.GetFloat(s, 61, 66),  # Temp
                         Element,  # Element
-                        stringutils.GetString(s, 77, 78),  # Charge
+                        '',  # Charge
                         self.FModelCount,  # ModelNum
-                        self.FChainCount)  # ChainNum
+                        self.FChainCount), OldChain  # ChainNum
 
     # s = string
     def GetPdbConnect(self, s):
@@ -114,6 +119,7 @@ class TPDBReader:
         27 - 31 Integer serial Serial number of bonded atom
         '''
 
+        i = 0
         Result = TPDBConnection(stringutils.GetInteger(s, 7, 11), [])
         b, i = stringutils.GetInteger(s, 12, 16, i)
         if b:
@@ -138,7 +144,8 @@ class TPDBReader:
         for f in range(len(Buf)):
             s = Buf[f]
             if (s.find('ATOM ') is 0) or (s.find('HETATM') is 0):
-                self.FAtoms.append(self.GetPdbAtom(s, oldchain))
+                atom, oldchain = self.GetPdbAtom(s, oldchain)
+                self.FAtoms.append(atom)
                 self.FAtoms[self.FAtomCount].IsHet = (s.find('HETATM') is 1)
                 self.FAtomCount = self.FAtomCount + 1
             elif s.find('CONNECT') is 1:
@@ -184,8 +191,8 @@ class TPDBReader:
             self.IndexChains()
 
     def Clear(self):
-        self.FAtoms = None
-        self.FConnections = None
+        self.FAtoms = []
+        self.FConnections = []
         self.FAtomCount = 0
         self.FModelCount = 0
         self.FChainCount = 0

@@ -126,8 +126,10 @@ def SplitChars(Text):
 # First method: AString = string, Start, Finish = Integer, Val = Integer
 # Second method: AString = string, Start, Finish = Integer
 def GetInteger(AString, Start, Finish, Val=None):
+    # In Pascal the first char in a string is in position 0, not 1
+    Finish = Finish - 1
     s = ''
-    f = Start
+    f = Start - 1
     while (f <= len(AString)) and (f <= Finish):
         if AString[f] is not ' ':
             s = s + AString[f]
@@ -154,8 +156,10 @@ def GetInteger(AString, Start, Finish, Val=None):
 # First method: AString = string, Start, Finish = Integer, Val = Double
 # Second method: AString = string, Start, Finish = Integer
 def GetFloat(AString, Start, Finish, Val=None):
+    # In Pascal the first char in a string is in position 0, not 1
+    Finish = Finish - 1
     s = ''
-    f = Start
+    f = Start - 1
     while (f <= len(AString)) and (f <= Finish):
         if (AString[f] is ',') or (AString[f] is '.'):
             s = s + '.'
@@ -184,8 +188,10 @@ def GetFloat(AString, Start, Finish, Val=None):
 # Returns substring from Start to Finish indexes without spaces
 # AString = string, Start, Finish = Integer
 def GetString(AString, Start, Finish):
+    # In Pascal the first char in a string is in position 0, not 1
+    Finish = Finish - 1
     Result = ''
-    f = Start
+    f = Start - 1
     while (f <= len(AString)) and (f <= Finish):
         if AString[f] is not ' ':
             Result = Result + AString[f]
@@ -696,21 +702,23 @@ def RightJustify(Int, Len, Decimal=None):
         tmp = str(Int)
         dif = Len - len(tmp)
         for f in range(Len):
-            if f - dif > 0:
-                Result[f] = tmp[f - dif]
+            # In the Pascal version f starts from 1, so in Python f - dif must be >=
+            if f - dif >= 0:
+                Result.append(tmp[f - dif])
             else:
-                Result[f] = ' '
+                Result.append(' ')
         # Return string
         return ''.join(Result)
     else:
         Result = []
-        tmp = ('{:' + Decimal + 'f}').format(Int)
+        tmp = ('{0:.' + str(Decimal) + 'f}').format(Int)
         dif = Len - len(tmp)
         for f in range(Len):
-            if f - dif > 0:
-                Result[f] = tmp[f - dif]
+            # In the Pascal version f starts from 1, so in Python f - dif must be >=
+            if f - dif >= 0:
+                Result.append(tmp[f - dif])
             else:
-                Result[f] = ' '
+                Result.append(' ')
         # Return string
         return ''.join(Result)
 
@@ -719,9 +727,9 @@ def RightJustify(Int, Len, Decimal=None):
 def LeftJustify(Text, Len):
     Result = []
     for f in range(Len):
-        if f <= len(Text):
-            Result[f] = Text[f]
+        if f < len(Text):
+            Result.append(Text[f])
         else:
-            Result[f] = ' '
+            Result.append(' ')
     # Return string
     return ''.join(Result)

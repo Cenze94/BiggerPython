@@ -276,9 +276,6 @@ begin
     Result[f]:=Text[f+1];
 end;
 
-// Questa funzione e le prossime 4 potrebbero essere semplificate molto in
-// Python, comunque per poterle confrontare più facilmente con le rispettive
-// versioni in Pascal ho copiato tutte le istruzioni
 function GetInteger(AString:string;Start,Finish:Integer; out Val:Integer):Boolean;
 
 var
@@ -993,6 +990,11 @@ begin
     end;
 end;
 
+// Se Len è maggiore della lunghezza di Int allora viene restituita una
+// stringa contenente Int, anticipata da un numero di spazi pari alla
+// differenza tra la lunghezza di Int e Len. Se invece Len è minore della
+// lunghezza di Int allora vengono restituiti i Len caratteri di Int più a
+// destra.
 function RightJustify(Int, Len: Integer): string;
 
 var
@@ -1010,6 +1012,12 @@ begin
       Result[f]:=' ';
 end;
 
+// Come sopra, ma Int diventa TFloat e viene aggiunto Decimal: innanzitutto
+// viene approssimato Flt, quindi vengono eseguite le stesse operazioni della
+// funzione precedente. Se Decimal è minore del numero di cifre dopo la
+// virgola allora il numero viene approssimato alla Decimal cifra dopo la
+// virgola; se è maggiore vengono aggiunti degli zeri dopo l'ultima cifra
+// decimale.
 function RightJustify(Flt: TFloat; Len, Decimal: Integer): string;
 
 var
@@ -1028,6 +1036,10 @@ begin
       Result[f]:=' ';
 end;
 
+// Se la lunghezza di Text è maggiore di Len allora Text viene troncato al
+// carattere in posizione Len, altrimenti se la lunghezza di Text è minore
+// allora viene aggiunto alla fine un numero di spazi pari alla differenza tra
+// Len e la lunghezza di Text.
 function LeftJustify(Text: string; Len: Integer): string;
 
 var

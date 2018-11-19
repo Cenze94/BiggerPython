@@ -61,7 +61,7 @@ begin
   // CopyWordTest();
   // GrabWordTest();
   // GrabBetweenTest();
-  SplitStringTest();
+  // SplitStringTest();
   // SplitOnAllTest();
   // SplitLinesTest();
   // SplitCharsTest();
@@ -102,7 +102,7 @@ begin
   // ReadAsSimpleStringTest();
   // ReadKeysAsValuesTest();
   // RightJustifyTest();
-  // LeftJustifyTest();
+  LeftJustifyTest();
 end;
 
 procedure CopyWordTest();
@@ -179,18 +179,50 @@ begin
 end;
 
 procedure GetIntegerTest();
-begin
+var val:integer;
 
+begin
+  WriteLn(GetInteger('1  2', 1, 4, val));
+  WriteLn(val);
+  WriteLn(GetInteger('1  2', 1, 4));
+  WriteLn('');
+  WriteLn(GetInteger('12f', 1, 3, val));
+  WriteLn(val);
+  WriteLn(GetInteger('12f', 1, 3));
+  WriteLn('');
+  WriteLn(GetInteger('aaa12bbb', 4, 5, val));
+  WriteLn(val);
+  WriteLn(GetInteger('aaa12bbb', 4, 5));
 end;
 
 procedure GetFloatTest();
-begin
+var val:double;
 
+begin
+  WriteLn(GetFloat('1  2 . 7   8', 1, 12, val));
+  WriteLn(val);
+  WriteLn(GetFloat('1  2 . 7   8', 1, 12));
+  WriteLn('');
+  WriteLn(GetFloat('12.78f', 1, 6, val));
+  WriteLn(val);
+  WriteLn(GetFloat('12.78f', 1, 6));
+  WriteLn('');
+  WriteLn(GetFloat('aaa12.78bbb', 4, 8, val));
+  WriteLn(val);
+  WriteLn(GetFloat('aaa12.78bbb', 4, 8));
+  WriteLn('');
+  WriteLn(GetFloat('12', 1, 2, val));
+  WriteLn(val);
+  WriteLn(GetFloat('12', 1, 2));
+  WriteLn('');
+  WriteLn(GetFloat('12,78', 1, 5, val));
+  WriteLn(val);
+  WriteLn(GetFloat('12,78', 1, 5));
 end;
 
 procedure GetStringTest();
 begin
-
+  WriteLn(GetString('ban ana', 3, 5));
 end;
 
 procedure LastIndexOfTest();
@@ -246,7 +278,7 @@ end;
 
 procedure DeblankTest();
 begin
-
+  WriteLn(Deblank(' ban ana ') + 'f')
 end;
 
 procedure TrimmedBlanksTest();
@@ -386,12 +418,20 @@ end;
 
 procedure RightJustifyTest();
 begin
-
+  WriteLn(RightJustify(126356, 5));
+  WriteLn(RightJustify(126356, 8));
+  WriteLn(RightJustify(1263.56, 5, 1));
+  WriteLn(RightJustify(1263.56, 8, 1));
+  WriteLn(RightJustify(1263.56, 5, 3));
+  WriteLn(RightJustify(1263.56, 8, 3));
+  WriteLn(RightJustify(1263.56, 5, 5));
+  WriteLn(RightJustify(1263.56, 8, 5));
 end;
 
 procedure LeftJustifyTest();
 begin
-
+  WriteLn(LeftJustify('banana', 4)+'f');
+  WriteLn(LeftJustify('banana', 8)+'f');
 end;
 
 end.

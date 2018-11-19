@@ -6,12 +6,13 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  Classes, basetypestests, quicksorttests, stringutilstests;
+  Classes, basetypestests, quicksorttests, stringutilstests, pdbparsertests;
 
 begin
   // StartBasetypesTest();
   // StartQuicksortTest();
-  StartStringutilsTest();
+  // StartStringutilsTest();
+  StartPdbparserTest();
 
   Readln;
 end.
