@@ -197,6 +197,7 @@ class TPDBReader:
         self.FModelCount = 0
         self.FChainCount = 0
 
+
 '''
 1 - 6          Record name     "ATOM"
 7 - 11         Integer         serial        Atom serial number
@@ -216,6 +217,8 @@ class TPDBReader:
 77 - 78        LString(2)      element       Element symbol, right-justified
 79 - 80        LString(2)      charge        Charge on the atom, IUPAC form
 '''
+
+
 # AtomName, ResName, ChainName = string, AtomId, ResId = Integer, Position = TCoord, Element = string,
 # Occupancy, Temperature = TFloat
 def AtomRecord(AtomName, ResName, ChainName, AtomId, ResId, Position, Element, Occupancy = 1.0, Temperature = 1.0):

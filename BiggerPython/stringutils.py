@@ -38,14 +38,14 @@ def GrabBetween(Text, Sep1, Sep2):
         return Text[p1 + len(Sep1):p2], (Text[:p1] + Text[p2 + len(Sep2):])
 
 
-# First method: Text = string, Sep = const string; Splits using grabword (i.e. skipping repeated separators)
-# Second method: Text = string, Words = TStrings, Sep = const string;
+# First function: Text = string, Sep = const string; Splits using grabword (i.e. skipping repeated separators)
+# Second function: Text = string, Words = TStrings, Sep = const string;
 #                same as above, but adds result to the Words TStringList, which must have been created by caller
-# Third method: Text = string; splits on all whitespace (<=32)
+# Third function: Text = string; splits on all whitespace (<=32)
 def SplitString(Text, Words=None, Sep=None):
     if Words is not None:
         if Sep is None:
-            # First method
+            # First function
             Sep = Words
             Result = []
             while Text is not '':
@@ -54,12 +54,12 @@ def SplitString(Text, Words=None, Sep=None):
             # Return TSimpleStrings
             return Result
         else:
-            # Second method
+            # Second function
             while Text is not '':
                 PartialText, Text = GrabWord(Text, Sep)
                 Words.append(PartialText)
     else:
-        # Third method
+        # Third function
         s = ''
         Result = []
         for f in range(len(Text)):
@@ -123,8 +123,8 @@ def SplitChars(Text):
     return Result
 
 
-# First method: AString = string, Start, Finish = Integer, Val = Integer
-# Second method: AString = string, Start, Finish = Integer
+# First function: AString = string, Start, Finish = Integer, Val = Integer
+# Second function: AString = string, Start, Finish = Integer
 def GetInteger(AString, Start, Finish, Val=None):
     # In Pascal the first char in a string is in position 0, not 1
     Finish = Finish - 1
@@ -137,24 +137,24 @@ def GetInteger(AString, Start, Finish, Val=None):
     try:
         Value = int(s)
         if Val is None:
-            # Second method
+            # Second function
             # Return Integer
             return Value
-        # First method
+        # First function
         # Return Boolean (and integer in Python)
         return True, Value
     except ValueError:
         if Val is None:
-            # Second method
+            # Second function
             # Return Integer
             return -1
-        # First method
+        # First function
         # Return Boolean (and integer in Python)
         return False, 0
 
 
-# First method: AString = string, Start, Finish = Integer, Val = Double
-# Second method: AString = string, Start, Finish = Integer
+# First function: AString = string, Start, Finish = Integer, Val = Double
+# Second function: AString = string, Start, Finish = Integer
 def GetFloat(AString, Start, Finish, Val=None):
     # In Pascal the first char in a string is in position 0, not 1
     Finish = Finish - 1
@@ -169,18 +169,18 @@ def GetFloat(AString, Start, Finish, Val=None):
     try:
         Value = float(s)
         if Val is None:
-            # Second method
+            # Second function
             # Return Double
             return Value
-        # First method
+        # First function
         # Return Boolean (and float in Python)
         return True, Value
     except ValueError:
         if Val is None:
-            # Second method
+            # Second function
             # Return Double
             return -1
-        # First method
+        # First function
         # Return Boolean (and float in Python)
         return False, 0
 
@@ -373,18 +373,18 @@ def CountInString(S, C):
     return Result
 
 
-# First method: returns S minus all instances of C
-# Second method: returns all characters >= space
+# First function: returns S minus all instances of C
+# Second function: returns all characters >= space
 # S = const string, C = const Char
 def CleanString(S, C=None):
     Result = ''
     if C is not None:
-        # First method
+        # First function
         for f in range(len(S)):
             if S[f] is not C:
                 Result = Result + S[f]
     else:
-        # Second method
+        # Second function
         for f in range(len(S)):
             if S[f] >= ' ':
                 Result = Result + S[f]
@@ -433,14 +433,14 @@ def UncasedCompare(S1, S2):
 # S1 = const TStrings, FirstIx, LastIx = Integer
 def AsSimpleStrings(S1, FirstIx=None, LastIx=None):
     if FirstIx is None:
-        # First method
-        # Originally this method was used to convert a TStrings type to a TSimpleStrings one, in Python they are the
+        # First function
+        # Originally this function was used to convert a TStrings type to a TSimpleStrings one, in Python they are the
         # same
         # Return TSimpleStrings
         return S1
     else:
-        # Second method
-        # This method is the same of the previous case but for strings with an index that is between FirstIx and
+        # Second function
+        # This function is the same of the previous case but for strings with an index that is between FirstIx and
         # LastIx
         # Return TSimpleStrings
         return S1[FirstIx:LastIx]
@@ -694,8 +694,8 @@ def ReadKeysAsValues(Raw, Keys, Values):
                 Values.append('')
 
 
-# First method: Int, Len = Integer
-# Second method: Int = TFloat, Len, Decimal = Integer
+# First function: Int, Len = Integer
+# Second function: Int = TFloat, Len, Decimal = Integer
 def RightJustify(Int, Len, Decimal=None):
     if Decimal is None:
         Result = []
