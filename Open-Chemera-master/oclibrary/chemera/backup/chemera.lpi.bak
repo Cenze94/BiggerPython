@@ -44,9 +44,8 @@
         <ComponentName Value="CmMainForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="400"/>
-        <CursorPos X="13" Y="416"/>
+        <TopLine Value="408"/>
+        <CursorPos Y="218"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -159,8 +158,8 @@
       <Unit15>
         <Filename Value="..\..\sharedunits\utils\stringutils.pas"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="996"/>
-        <CursorPos X="46" Y="988"/>
+        <TopLine Value="42"/>
+        <CursorPos X="10" Y="55"/>
         <UsageCount Value="168"/>
         <Loaded Value="True"/>
       </Unit15>
@@ -294,9 +293,10 @@
       </Unit31>
       <Unit32>
         <Filename Value="..\molecule\pdbparser.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="146"/>
-        <CursorPos X="39" Y="147"/>
+        <TopLine Value="33"/>
+        <CursorPos X="35" Y="226"/>
         <UsageCount Value="129"/>
         <Loaded Value="True"/>
       </Unit32>
@@ -305,11 +305,11 @@
         <EditorIndex Value="19"/>
         <TopLine Value="40"/>
         <CursorPos X="29" Y="54"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit33>
     </Units>
-    <JumpHistory Count="15" HistoryIndex="14">
+    <JumpHistory Count="19" HistoryIndex="16">
       <Position1>
         <Filename Value="chemeramain.pas"/>
         <Caret Line="276" TopLine="250"/>
@@ -370,6 +370,22 @@
         <Filename Value="chemeramain.pas"/>
         <Caret Line="359" Column="61" TopLine="337"/>
       </Position15>
+      <Position16>
+        <Filename Value="chemeramain.pas"/>
+        <Caret Line="416" Column="13" TopLine="400"/>
+      </Position16>
+      <Position17>
+        <Filename Value="..\molecule\pdbparser.pas"/>
+        <Caret Line="303" Column="9" TopLine="287"/>
+      </Position17>
+      <Position18>
+        <Filename Value="..\molecule\pdbparser.pas"/>
+        <Caret Line="223" Column="23" TopLine="215"/>
+      </Position18>
+      <Position19>
+        <Filename Value="..\..\sharedunits\utils\stringutils.pas"/>
+        <Caret Line="55" Column="10" TopLine="42"/>
+      </Position19>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
@@ -408,7 +424,7 @@
     </Other>
   </CompilerOptions>
   <Debugging>
-    <BreakPoints Count="4">
+    <BreakPoints Count="2">
       <Item1>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
@@ -421,22 +437,8 @@
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="chemeramain.pas"/>
-        <Line Value="218"/>
-      </Item2>
-      <Item3>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="chemeramain.pas"/>
-        <Line Value="238"/>
-      </Item3>
-      <Item4>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="chemeramain.pas"/>
         <Line Value="374"/>
-      </Item4>
+      </Item2>
     </BreakPoints>
     <Exceptions Count="4">
       <Item1>
