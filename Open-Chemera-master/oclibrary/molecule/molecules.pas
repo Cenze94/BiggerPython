@@ -374,6 +374,7 @@ begin
       FGroups[f].RemoveTaggedAtomBonds(Tag);
 end;
 
+// Metodo inutilizzato
 procedure TMolecule.RemoveTaggedBonds(Tag: Integer;
     OnDelete: TOnDeleteCallback);
 
