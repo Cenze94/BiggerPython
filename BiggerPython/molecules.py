@@ -415,14 +415,14 @@ class TMolecule:
     def CreateEmptyGroups(self, Count):
         # Sets molecule with an array of empty groups, clears all existing groups first.
         self.ClearGroups()
-        for f in range(len(self.FGroups)):
+        for f in range(Count):
             self.FGroups[f] = TMolecule('', f, self)
 
     # Count = Integer
     def CreateEmptyAtoms(self, Count):
         # Sets molecule with an array of empty atoms, clears all existing atoms first.
         self.ClearAtoms()
-        for f in range(len(self.FAtoms)):
+        for f in range(Count):
             self.FAtoms[f] = TAtom('', f, self)
 
     # OnDelete = TOnDeleteCallback

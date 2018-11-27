@@ -10,7 +10,6 @@ class TRotMatrix:
         if isinstance(value11, list) and isinstance(value12, list) and isinstance(value13, list):
             self.matrix = np.array([value11, value12, value13])
         else:
-            self.matrix = np.array([[], [], []])
             if value11 is None:
                 value11 = 0
             if value12 is None:
@@ -38,21 +37,16 @@ class TRotMatrix:
             value31 = float(value31)
             value32 = float(value32)
             value33 = float(value33)
-            self.matrix[0][0] = value11
-            self.matrix[0][1] = value12
-            self.matrix[0][2] = value13
-            self.matrix[1][0] = value21
-            self.matrix[1][1] = value22
-            self.matrix[1][2] = value23
-            self.matrix[2][0] = value31
-            self.matrix[2][1] = value32
-            self.matrix[2][2] = value33
+            self.matrix = np.array([[value11, value12, value13], [value21, value22, value23], [value31, value32,
+                                                                                               value33]])
 
-    def __getitem__(self, row, column):
-        return self.matrix[row][column]
+    def __getitem__(self, pos):
+        row, column = pos
+        return self.matrix[row, column]
 
-    def __setitem__(self, row, column, value):
-        self.matrix[row][column] = value
+    def __setitem__(self, pos, value):
+        row, column = pos
+        self.matrix[row, column] = value
 
 
 class TQuaternion:
@@ -151,7 +145,7 @@ def Subtract(v1, v2):
     else:
         # Third function
         Result = []
-        for f in range(len(v2)):
+        for f in range(len(v1)):
             Result.append(Subtract(v1[f], v2))
         # Return TCoords
         return Result
@@ -177,9 +171,9 @@ def Multiply(v1, v2):
     elif isinstance(v1, TRotMatrix):
         # Fifth function
         Result = TRotMatrix()
-        for f in range(2):
-            for g in range(2):
-                Result[f][g] = v1[f][0] * v2[0][g] + v1[f][1] * v2[1][g] + v1[f][2] * v2[2][g]
+        for f in range(3):
+            for g in range(3):
+                Result[f, g] = v1[f, 0] * v2[0, g] + v1[f, 1] * v2[1, g] + v1[f, 2] * v2[2, g]
         # Return TRotMatrix
         return Result
     elif isinstance(v1[0], basetypes.TCoord):
@@ -303,9 +297,9 @@ def Rotate(v1, v2):
         if isinstance(v2, TRotMatrix):
             # First function
             # Return TCoord
-            return basetypes.TCoord(v2[0][0] * v1[0] + v2[0][1] * v1[1] + v2[0][2] * v1[2],
-                                    v2[1][0] * v1[0] + v2[1][1] * v1[1] + v2[1][2] * v1[2],
-                                    v2[2][0] * v1[0] + v2[2][1] * v1[1] + v2[2][2] * v1[2])
+            return basetypes.TCoord(v2[0, 0] * v1[0] + v2[0, 1] * v1[1] + v2[0, 2] * v1[2],
+                                    v2[1, 0] * v1[0] + v2[1, 1] * v1[1] + v2[1, 2] * v1[2],
+                                    v2[2, 0] * v1[0] + v2[2, 1] * v1[1] + v2[2, 2] * v1[2])
         else:
             # Third function
             conjugate = Conjugated(v2)
@@ -400,7 +394,7 @@ def DistanceToSegment2D(x1, y1, x2, y2, Px, Py):
         # Return TFloat
         return math.sqrt((Px - x1) ** 2 + (Py - y1) ** 2)
     else:
-        t = ((px - x1) * (x2 - x1) + (py - y1) * (y2 - y1)) / dsquare
+        t = ((Px - x1) * (x2 - x1) + (Py - y1) * (y2 - y1)) / dsquare
         if t < 0: # Outside point 1
             # Return TFloat
             return math.sqrt((Px - x1) ** 2 + (Py - y1) ** 2)
