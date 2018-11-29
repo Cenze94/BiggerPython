@@ -54,10 +54,10 @@ begin
   // NormalizeTest();
   // ScaledTest();
   // SimmetricTest();
-  // DistanceTest();
+  DistanceTest();
   // DistanceSquaredTest();
   // MidPointTest();
-  RotateTest();
+  // RotateTest();
   // RotationQuaternionTest();
   // RotationToTest();
   // StaticRMSDTest();
@@ -329,13 +329,74 @@ begin
 end;
 
 procedure SimmetricTest();
-begin
+var c:TCoord;
 
+begin
+  c[0]:=3;
+  c[1]:=8;
+  c[2]:=1;
+  c:=Simmetric(c);
+  WriteLn(FloatToStr(c[0]) + ' ' + FloatToStr(c[1]) + ' ' + FloatToStr(c[2]));
 end;
 
 procedure DistanceTest();
-begin
+var c,c1:TCoord; ca,ca1:TCoords; q1,q2:TQuaternion; d:TFLoat; da:TFloats;
+  f:Integer;
 
+begin
+  c[0]:=3;
+  c[1]:=8;
+  c[2]:=1;
+  c1[0]:=4;
+  c1[1]:=5;
+  c1[2]:=2;
+  d:=Distance(c, c1);
+  WriteLn(d);
+
+  WriteLn('');
+  SetLength(ca, 3);
+  SetLength(ca1, 3);
+  c[0]:=5;
+  c[1]:=1;
+  c[2]:=1;
+  ca[0]:=c;
+  c[0]:=4;
+  c[1]:=6;
+  c[2]:=8;
+  ca[1]:=c;
+  c[0]:=1;
+  c[1]:=2;
+  c[2]:=1;
+  ca[2]:=c;
+  c[0]:=4;
+  c[1]:=3;
+  c[2]:=5;
+  ca1[0]:=c;
+  c[0]:=2;
+  c[1]:=0;
+  c[2]:=6;
+  ca1[1]:=c;
+  c[0]:=7;
+  c[1]:=3;
+  c[2]:=6;
+  ca1[2]:=c;
+  da:=Distance(ca, ca1);
+  for f:=0 to High(da) do
+  begin
+    WriteLn(da[f]);
+  end;
+
+  WriteLn('');
+  q1[0]:=4;
+  q1[1]:=2;
+  q1[2]:=1;
+  q1[3]:=3;
+  q2[0]:=2;
+  q2[1]:=2;
+  q2[2]:=3;
+  q2[3]:=1;
+  d:=Distance(q1, q2);
+  WriteLn(d);
 end;
 
 procedure DistanceSquaredTest();

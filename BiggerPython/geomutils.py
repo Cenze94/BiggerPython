@@ -6,7 +6,7 @@ import math
 class TRotMatrix:
     def __init__(self, value11=None, value12=None, value13=None, value21=None, value22=None, value23=None,
                  value31=None, value32=None, value33=None):
-        # TRotMAtrix can ve initialized with 3 lists of elements or 9 values
+        # TRotMatrix can ve initialized with 3 lists of elements or 9 values
         if isinstance(value11, list) and isinstance(value12, list) and isinstance(value13, list):
             self.matrix = np.array([value11, value12, value13])
         else:

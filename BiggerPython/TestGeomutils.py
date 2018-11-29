@@ -116,6 +116,44 @@ def ConjugatedTest():
     print(str(q[0]) + ' ' + str(q[1]) + ' ' + str(q[2]) + ' ' + str(q[3]))
 
 
+def SimmetricTest():
+    c = basetypes.TCoord(3, 8, 1)
+    c = geomutils.Simmetric(c)
+    print(str(c[0]) + ' ' + str(c[1]) + ' ' + str(c[2]))
+
+
+def DistanceTest():
+    c = basetypes.TCoord(3, 8, 1)
+    c1 = basetypes.TCoord(4, 5, 2)
+    d = geomutils.Distance(c, c1)
+    print(d)
+
+    print('')
+    ca = []
+    ca1 = []
+    c = basetypes.TCoord(5, 1, 1)
+    ca.append(c)
+    c = basetypes.TCoord(4, 6, 8)
+    ca.append(c)
+    c = basetypes.TCoord(1, 2, 1)
+    ca.append(c)
+    c = basetypes.TCoord(4, 3, 5)
+    ca1.append(c)
+    c = basetypes.TCoord(2, 0, 6)
+    ca1.append(c)
+    c = basetypes.TCoord(7, 3, 6)
+    ca1.append(c)
+    da = geomutils.Distance(ca, ca1)
+    for f in range(len(da)):
+        print(da[f])
+
+    print('')
+    q1 = geomutils.TQuaternion(4, 2, 1, 3)
+    q2 = geomutils.TQuaternion(2, 2, 3, 1)
+    d = geomutils.Distance(q1, q2)
+    print(d)
+
+
 def RotateTest():
     c = basetypes.TCoord(1, 2, 3)
     r = geomutils.TRotMatrix(4, 3, 1, 5, 2, 3, 5, 3, 1)
@@ -164,10 +202,10 @@ def RotateTest():
 # NormalizeTest()
 # ScaledTest()
 # SimmetricTest()
-# DistanceTest()
+DistanceTest()
 # DistanceSquaredTest()
 # MidPointTest()
-RotateTest()
+# RotateTest()
 # RotationQuaternionTest()
 # RotationToTest()
 # StaticRMSDTest()

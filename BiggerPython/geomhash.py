@@ -1,7 +1,6 @@
-import basetypes
 import geomutils
 import math
-import copy
+import numpy as np
 
 
 class TGeomHasher:
@@ -20,21 +19,26 @@ class TGeomHasher:
         self.FShiftToGrid = None
         self.FPoints = None
         self.FRads = None
+        self.FHashGrid = None
         self.FHighX = 0
         self.FHighY = 0
         self.FHighZ = 0
         self.FInvGridStep = 1 / GridStep
         self.Setup(Points, GridStep, Rads)
+        hashMatrix = []
         for x in range(self.FHighX + 1):
+            hashMatrix.append([])
             for y in range(self.FHighY + 1):
+                hashMatrix[x].append([])
                 for z in range(self.FHighZ + 1):
-                    self.FHashGrid[x, y, z] = None
+                    hashMatrix[x][y].append(None)
+        self.FHashGrid = np.array(hashMatrix)
         for f in range(len(Points)):
             c = geomutils.Add(Points[f], self.FShiftToGrid)
             x = math.trunc(c[0] * self.FInvGridStep)
             y = math.trunc(c[1] * self.FInvGridStep)
             z = math.trunc(c[2] * self.FInvGridStep)
-            basetypes.AddToArray(f, self.FHashGrid)
+            np.append(self.FHashGrid[x, y, z], f)
 
     def Setup(self, Points, GridStep, Rads):
         maxc = max(Points)
@@ -55,8 +59,8 @@ class TGeomHasher:
             self.FRads = Rads.copy()
 
     # Computes bounds of neighboring cells in one dimension, with max of Hi
-    # B1, B2 = Integer, Val = const TFloat, Hi = const Integer
-    def GridBounds(self, B1, B2, Val, Hi):
+    # (B1, B2 = Integer), Val = const TFloat, Hi = const Integer
+    def GridBounds(self, Val, Hi):
         B1 = math.trunc(Val) - 1
         B2 = math.trunc(Val) + 1
         if B1 > Hi:
@@ -73,7 +77,40 @@ class TGeomHasher:
     # Returns all indexes in the 27 grid cells belonging to the neighbourhood of the cell corresponding to C
     # C = TCoord
     def ListNeighbours(self, C):
+        C = geomutils.Multiply(geomutils.Add(C, self.FShiftToGrid), self.FInvGridStep)
+        Result = []
+        x1, x2 = self.GridBounds(C[0], self.FHighX)
+        y1, y2 = self.GridBounds(C[1], self.FHighY)
+        z1, z2 = self.GridBounds(C[2], self.FHighZ)
+        for x in range(x1, x2 + 1):
+            for y in range(y1, y2 + 1):
+                for z in range(z1, z2 + 1):
+                    for f in range(len(self.FHashGrid[x, y, z])):
+                        Result.append(self.FHashGrid[x, y, z, f])
+        # Return TIntegers
+        return Result
 
     # Use only if Rads supplied in create; otherwise points are not kept
     # C = TCoord
     def IsInnerPoint(self, C):
+        C = geomutils.Multiply(geomutils.Add(C, self.FShiftToGrid), self.FInvGridStep)
+        Result = False
+        x1, x2 = self.GridBounds(C[0], self.FHighX)
+        y1, y2 = self.GridBounds(C[1], self.FHighY)
+        z1, z2 = self.GridBounds(C[2], self.FHighZ)
+        for x in range(x1, x2 + 1):
+            for y in range(y1, y2 + 1):
+                for z in range(z1, z2 + 1):
+                    for f in range(len(self.FHashGrid[x, y, z])):
+                        ix = self.FHashGrid[x, y, z, f]
+                        if geomutils.Distance(C, self.FPoints[ix]) < self.FRads[ix]:
+                            Result = True
+                            break
+                    if Result:
+                        break
+                if Result:
+                    break
+            if Result:
+                break
+        # Return Boolean
+        return Result
