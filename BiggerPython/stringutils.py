@@ -118,7 +118,7 @@ def SplitLines(Text):
 def SplitChars(Text):
     Result = []
     for f in range(len(Text)):
-        Result[f] = Text[f+1]
+        Result.append(Text[f])
     # Return TSimpleStrings
     return Result
 
@@ -467,11 +467,11 @@ def CleanFileName(FileName):
     c = 0
     for f in range(len(FileName)):
         if (FileName[f] >= ' ') and (FileName[f] is not '/') and (FileName[f] is not '?') \
-            and (FileName[f] is not '<') and (FileName[f] is not '>') and (FileName[f] is not '\\') \
-            and (FileName[f] is not ':') and (FileName[f] is not '*') and (FileName[f] is not '|') \
-            and (FileName[f] is not '"') and (FileName[f] is not '^') and (FileName[f] is not "'"):
+                and (FileName[f] is not '<') and (FileName[f] is not '>') and (FileName[f] is not '\\') \
+                and (FileName[f] is not ':') and (FileName[f] is not '*') and (FileName[f] is not '|') \
+                and (FileName[f] is not '"') and (FileName[f] is not '^') and (FileName[f] is not "'"):
             c = c + 1
-            Result[c] = FileName[f]
+            Result.append(FileName[f])
     # Return string
     return ''.join(Result)
 
@@ -568,6 +568,8 @@ def GetTaggedFields(Tag, Text, ForceEnd=False):
 def DecodeQP(Text):
     totlen = len(Text)
     Result = []
+    for f in range(totlen + 1):
+        Result.append('')
     current = 0
     f = 0
     while f < totlen:
@@ -620,6 +622,8 @@ def ConvertHtml(s):
 def HtmltoAscii(Text):
     totlen = len(Text)
     Result = []
+    for f in range(totlen + 1):
+        Result.append('')
     current = 0
     f = 1
     while f < totlen - 1:
@@ -663,8 +667,10 @@ def BasicASCII(Text):
     c = 0
     Result = []
     for f in range(len(Text)):
+        Result.append('')
+    for f in range(len(Text)):
         if int(Text[f]) <= 127:
-            c = c - 1
+            c = c + 1
             Result[c] = Text[f]
     # Return string
     return ''.join(Result)

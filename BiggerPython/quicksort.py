@@ -15,7 +15,7 @@ def QSIndexAsRanking(Ix):
 def QSIntsAsVals(Ints):
     Result = []
     for f in range(len(Ints)):
-        Result[f] = Ints[f]
+        Result.append(Ints[f])
     # Return TFloats
     return Result
 
@@ -59,7 +59,7 @@ def QSAscendingIndex(Values):
 def QSZeroBasedIndex(Count):
     Result = []
     for f in range(len(Count)):
-        Result[f] = f
+        Result.append(f)
     # Return TIntegers
     return Result
 
@@ -69,6 +69,6 @@ def QSSorted(Values):
     ixs = QSAscendingIndex(Values)
     Result = []
     for f in range(len(ixs)):
-        Result[f] = Values[ixs[f]]
+        Result.append(Values[ixs[f]])
     # Return TIntegers OR TFloats
     return Result

@@ -276,7 +276,7 @@ def Sum(vals, vals2=None):
             Result = []
             length = min(len(vals), len(vals2))
             for f in range(length):
-                Result[f] = vals[f] + vals2[f]
+                Result.append(vals[f] + vals2[f])
         else:
             if isinstance(vals[0], TCoord):
                 Result = TCoord()
@@ -335,7 +335,7 @@ def Coord(X, Y, Z):
 def StringsToFloats(SS):
     Result = []
     for f in range(len(SS)):
-        Result[f] = StringToFloat(SS[f])
+        Result.append(StringToFloat(SS[f]))
     # Return TFloats
     return Result
 
@@ -344,7 +344,7 @@ def StringsToFloats(SS):
 def FilledInts(Len, Val):
     Result = []
     for f in range(Len):
-        Result[f] = Val
+        Result.append(Val)
     # Return TIntegers
     return Result
 

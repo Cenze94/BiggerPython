@@ -85,9 +85,9 @@ def LoadAtomData():
         RemoveComments(s1)
         for f in range(len(s1)):
             tmp = stringutils.SplitString(s1[f], chr(9))
-            AtomData[f] = TOCLAtomData(tmp[0][0], tmp[4][0], float(tmp[1][0]), float(tmp[2][0]), float(tmp[3][0]),
-                                       basetypes.Coord(int(tmp[5][0]) / 255, int(tmp[6][0]) / 255, int(tmp[7][0])
-                                                       / 255))
+            AtomData.append(TOCLAtomData(tmp[0][0], tmp[4][0], float(tmp[1][0]), float(tmp[2][0]), float(tmp[3][0]),
+                                         basetypes.Coord(int(tmp[5][0]) / 255, int(tmp[6][0]) / 255, int(tmp[7][0])
+                                                         / 255)))
     except:
         raise Exception('Error loading ' + Config.OCLPath + AtomDataFile)
 
@@ -104,7 +104,7 @@ def LoadAAData():
         RemoveComments(s1)
         for f in range(len(s1)):
             tmp = stringutils.SplitString(s1[f], chr(9))
-            AAData[f] = TOCLAAData(tmp[0][0], tmp[1][0], tmp[2][1], tmp[3][1], float(tmp[4][0]))
+            AAData.append(TOCLAAData(tmp[0][0], tmp[1][0], tmp[2][1], tmp[3][1], float(tmp[4][0])))
     except:
         raise Exception('Error loading ' + Config.OCLPath + AADataFile)
 

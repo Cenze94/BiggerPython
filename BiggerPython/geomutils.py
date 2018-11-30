@@ -480,7 +480,7 @@ def InvertBase(M):
     Result = TRotMatrix()
     for f in range(2):
         for g in range(2):
-            Result[f][g] = M[g][f]
+            Result[f, g] = M[g, f]
     # Return TRotMatrix
     return Result
 
@@ -490,13 +490,13 @@ def BuildBase(Vec1, Vec2):
     Result = TRotMatrix()
     norm1 = Multiply(Vec1, 1 / Norm(Vec1))
     for f in range(2):
-        Result[f][0] = norm1[1]
+        Result[f, 0] = norm1[1]
     norm2 = Multiply(Vec2, 1 / Norm(Vec2))
     norm3 = CrossProduct(norm1, norm2)
     for f in range(2):
-        Result[f][2] = norm3[f]
+        Result[f, 2] = norm3[f]
     norm2 = CrossProduct(norm3, norm1)
     for f in range(2):
-        Result[f][1] = norm2[f]
+        Result[f, 1] = norm2[f]
     # Return TRotMatrix
     return Result

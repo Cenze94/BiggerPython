@@ -257,14 +257,13 @@ class TPDBModelMan:
         # Extract name and remove file extension
         t.Name = os.path.splitext(srec.Name)[0]
         # Fill atom data
-        for f in t.Atoms:
-            t.Atoms[f] = pdbparser.FAtoms[f].AtomName
-            t.AtomIds[f] = pdbparser.FAtoms[f].Serial
-            t.Coords[f] = pdbparser.FAtoms[f].Coords
-            t.AtomicNumbers[f] = oclconfiguration.AtomicNumber(pdbparser.FAtoms[f].Element)
+        for f in range(len(t.Atoms)):
+            t.Atoms.append(pdbparser.FAtoms[f].AtomName)
+            t.AtomIds.append(pdbparser.FAtoms[f].Serial)
+            t.Coords.append(pdbparser.FAtoms[f].Coords)
+            t.AtomicNumbers.append(oclconfiguration.AtomicNumber(pdbparser.FAtoms[f].Element))
             # Empty connections
-            t.Connects[f] = None
-            # stop at the highest value
+            t.Connects.append(None)
         for f in range(len(pdbparser.FConnections) - 1):
             ix = basetypes.IndexOf(pdbparser.FConnections[f].AtomID, t.AtomIDs)
             acopy = []
@@ -313,7 +312,7 @@ class TPDBModelMan:
 
     def AddNewLayer(self):
         Result = TPDBModel(self.FTemplates, len(self.FLayers))
-        self.FLayers[len(self.FLayers)] = Result
+        self.FLayers.append(Result)
         # Return TPDBModel
         return Result
 
@@ -326,7 +325,7 @@ class TPDBModelMan:
     def GetChains(self, Layer, Indexes):
         Result = []
         for f in range(len(Indexes)):
-            Result[f] = self.LayerByIx(Layer).GetChain(Indexes[f])
+            Result.append(self.LayerByIx(Layer).GetChain(Indexes[f]))
         # Return TMolecules
         return Result
 
@@ -353,7 +352,7 @@ def BackboneOnly(Atoms):
     c = 0
     for f in range(len(Atoms)):
         if AtomIsAABackbone((Atoms[f])):
-            Result[c] = Atoms[f]
+            Result.append(Atoms[f])
             c = c + 1
     # Return TAtoms
     return Result
@@ -365,7 +364,7 @@ def NoBackbone(Atoms):
     c = 0
     for f in range(len(Atoms)):
         if not AtomIsAABackbone((Atoms[f])):
-            Result[c] = Atoms[f]
+            Result.append(Atoms[f])
             c = c + 1
     # Return TAtoms
     return Result
