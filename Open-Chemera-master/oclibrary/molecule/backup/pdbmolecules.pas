@@ -251,6 +251,8 @@ begin
     sl.Add(AtomRecord(atoms[f].Name,rname,chname,atoms[f].ID,rid,atoms[f].Coords,
     Element(atoms[f].AtomicNumber)));
     end;
+  // SaveToFile elimina il contenuto precedente del file, quindi aggiunge ogni
+  // stringa seguita da un a capo
   sl.SaveToFile(FileName);
   sl.Free;
 
@@ -417,8 +419,6 @@ begin
         cc:=ChainNum;
         cr:=-1;                           //current residue number, also >=0
         end;
-      // cr e cres non sono inizializzati, io porrei cr pari a 0, mentre cres
-      // forse usa un metodo in cui non occorre l'inizializzazione dell'oggetto
       if ResSeq<>cr then                  //get new residue
         begin
         cres:=FProtein.GetGroup(cc).NewGroup(ResName,ResSeq);

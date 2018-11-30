@@ -294,15 +294,12 @@ begin
   FProtein.Cleanup;
 end;
 
-// TSimpleStrings è un array di Stringhe definito dentro al file "basetypes"
 procedure TPDBModel.CreateChains(const IDs: TSimpleStrings);
 
 var
   f:integer;
 
 begin
-  // High è un metodo che in questo caso dovrebbe restituire l'ultimo elemento
-  // (o il maggiore se ha senso, ma dipende dal contesto)
   for f := 0 to High(IDs) do
     FProtein.NewGroup(IDs[f], f + 1);
 end;
@@ -317,8 +314,6 @@ var
   function ResidueToDelete(Residue:TMolecule):Boolean;
 
   begin
-    // AAOneLetterCode è una funzione di "oclconfiguration"
-    // LastIndexOf è una funzione di "stringutils"
     Result:= ((resAA in Options) and (AAOneLetterCode(Residue.Name)<>'')) or
              ((resNonAA in Options) and (AAOneLetterCode(Residue.Name)='')) or
              (LastIndexOf(Residue.Name,ResTypes)>=0);
@@ -419,8 +414,6 @@ begin
         cc:=ChainNum;
         cr:=-1;                           //current residue number, also >=0
         end;
-      // cr e cres non sono inizializzati, io porrei cr pari a 0, mentre cres
-      // forse usa un metodo in cui non occorre l'inizializzazione dell'oggetto
       if ResSeq<>cr then                  //get new residue
         begin
         cres:=FProtein.GetGroup(cc).NewGroup(ResName,ResSeq);

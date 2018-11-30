@@ -4,6 +4,8 @@ import glob
 import basetypes
 import stringutils
 import oclconfiguration
+import pdbparser
+import molecules
 
 
 # Enumerations, I don't know what is their purpose
@@ -35,8 +37,8 @@ class TPDBModel:
     # Templates = TTemplates, AID = Integer
     def __init__(self, Templates, AID):
         self.FTemplates = Templates
-        self.FProtein = TMolecule('', AID, None)
-        self.FInfo = TPDBInfo
+        self.FProtein = molecules.TMolecule('', AID, None)
+        self.FInfo = pdbparser.TPDBInfo('', '', '', '', '', '', '', '', '', '')
         self.FFileName = ""
 
     def __del__(self):
@@ -53,10 +55,10 @@ class TPDBModel:
             self.FProtein.NewGroup(IDs[f], f+1)
 
     # First method: Options = PDBResidueTypes, ResTypes = TSimpleStrings, OnDelete = TOnDeleteCallback
-    # Second method: Options = Name = string, ResTypes = OnDelete = TOnDeleteCallback
+    # Second method: Options = string, ResTypes = TOnDeleteCallback
     def DeleteResidues(self, Options, ResTypes=None, OnDelete=None):
         if isinstance(Options, PDBResidueTypes):
-            for c in range(self.FProtein.GroupCount-1):
+            for c in range(self.FProtein.GroupCount() - 1):
                 # chain = TMolecule
                 chain = self.FProtein.GetGroup(c)
                 chain.TagAllAtoms(0)
@@ -72,9 +74,7 @@ class TPDBModel:
         else:
             Name = Options
             OnDelete = ResTypes
-            # names = TSimpleStrings
-            names = []
-            names[0] = Name
+            names = [Name]
             self.DeleteResidues(None, names, OnDelete)
 
     # ChainName = string, ChainID = integer
@@ -98,7 +98,7 @@ class TPDBModel:
     def AppendChain(self, Chain):
         self.FProtein.AddGroup(Chain)
 
-    # ChainIx = string OR ChainIx = integer, ResIx = integer OR ResIx = Integer
+    # ChainIx = string OR integer, ResIx = integer OR Integer
     def GetResidue(self, ChainIx, ResIx):
         if isinstance(ChainIx, int):
             Result = self.FProtein.GetGroup(ChainIx)
@@ -106,7 +106,7 @@ class TPDBModel:
                 # Return TMolecule
                 return Result.GetGroup(ResIx)
         else:
-            Result = self.FProtein.GetChain(ChainIx)
+            Result = self.GetChain(ChainIx)
             if Result is not None:
                 # Return TMolecule
                 return Result.GetGroupById(ResIx)
@@ -127,23 +127,21 @@ class TPDBModel:
         self.ClearChains()
         self.FFileName = PdbFileName
         # parser = TPDBReader
-        parser = TPDBReader.Create(PdbFileName)
+        parser = pdbparser.TPDBReader(PdbFileName)
         # Extract filename and remove extension, then save it as the protein name
         filename = os.path.basename(PdbFileName)
         self.FProtein.Name = os.path.splitext(filename)[0]
-        self.CreateChains(parser.ChainIDs)
+        self.CreateChains(parser.FChainIDs)
 
         # Read atoms
         # cc = integer
         cc = -1  # Current chain
-        # TODO: check parser.Atoms type, because if it is an ordinal type (e. g. a number) range must stop at the
-        # highest value
-        for f in range(parser.Atoms):
-            patom = parser.Atoms[f]
-            cr = 0  # Originally there wasn't an initialization of cr
+        for f in range(len(parser.FAtoms)):
+            patom = parser.FAtoms[f]
+            cr = 0  # This should be the standard value of uninitialized integers
+            cres = molecules.TMolecule('', -1, None)
             if cc is not patom.ChainNum():  # ChainNumber is always >= 0
                 cc = patom.ChainName()
-                # cr = integer
                 cr = -1  # Current residue number, also >= 0
             if patom.ResSeq is not cr:  # Get new residue
                 cres = self.FProtein.GetGroup(cc).NewGroup(patom.ResName, patom.ResSeq)
@@ -151,17 +149,15 @@ class TPDBModel:
             atom = cres.NewAtom(patom.AtomName, patom.Serial)
             atom.Coords = patom.Coords
             # Element may be present in the PDB file. However, this is superseded if there is monomer template data
-            # AtomicNumber is a function from "oclconfiguration"
             atom.AtomicNumber = oclconfiguration.AtomicNumber(patom.Element)
-            # VdWRadius is a function of "oclconfiguration"
             atom.Radius = oclconfiguration.VdWRadius(atom.AtomicNumber)
-            if ChargeFrom is PDBChargeOrigin.pdbOccupancy:
-                atom.Charge = TPDBAtom.Occupancy
-            elif ChargeFrom is PDBChargeOrigin.pdbOccTemp:
-                atom.Charge = TPDBAtom.OccTemp
-            elif ChargeFrom is PDBChargeOrigin.pdbCharge:
+            if patom.ChargeFrom is PDBChargeOrigin.pdbOccupancy:
+                atom.Charge = patom.Occupancy
+            elif patom.ChargeFrom is PDBChargeOrigin.pdbOccTemp:
+                atom.Charge = patom.OccTemp
+            elif patom.ChargeFrom is PDBChargeOrigin.pdbCharge:
                 if len(patom.Charge) is 2:
-                    atom.Charge = patom.Charge[1]
+                    atom.Charge = float(patom.Charge[1])
                 if patom.Charge[2] is '-':
                     atom.Charge = -atom.Charge
         # Assign element, radius, charge, et al, from the monomer templates will replace information on PDB
@@ -184,9 +180,9 @@ class TPDBModel:
     # FirstChar = Char, LastChar = Char
     def RenameChains(self, FirstChar = 'A', LastChar = 'Z'):
         name = FirstChar
-        for f in range(self.FProtein.GroupCount - 1):
+        for f in range(self.FProtein.GroupCount() - 1):
             self.FProtein.GetGroup(f).Name = name
-            name = ord(name) + 1
+            name = chr(ord(name) + 1)
             if name > LastChar:
                 name = FirstChar
 
@@ -222,10 +218,10 @@ class TPDBModel:
     def CopyChains(self, Chains):
         if Chains is None:
             return None
-        Result = TMolecule.Create(self.FProtein.Name, self.FProtein.ID, None)
+        Result = molecules.TMolecule(self.FProtein.FName, self.FProtein.FID, None)
         # TODO: check atoms type, because if it is an ordinal type (e. g. a number) range must stop at the highest value
         for f in range(Chains):
-            Result.AddGroup(TMolecule.CopyFrom(self.FProtein.GetGroup(Chains[f]), Result))
+            Result.AddGroup(Result.GetCopy(self.FProtein.GetGroup(Chains[f]), Result))
         # Result = TMolecule
         return Result
 
@@ -257,28 +253,24 @@ class TPDBModelMan:
     # srec = TSearchRec, pdbparser = TPdbReader
     # For the moment I passed only the string with file path as srec
     def SetTemplate(self, srec, pdbparser):
-        # TODO: Check if we have to take the last value of FTemplates or the last
         t = self.FTemplates[len(self.FTemplates) - 1]
         # Extract name and remove file extension
         t.Name = os.path.splitext(srec.Name)[0]
         # Fill atom data
         for f in t.Atoms:
-            t.Atoms[f] = pdbparser.Atoms[f].AtomName
-            t.AtomIds[f] = pdbparser.Atoms[f].Serial
-            t.Coords[f] = pdbparser.Atoms[f].Coords
-            # AtomicNumber is a method of "oclconfiguration"
-            t.AtomicNumbers[f] = oclconfiguration.AtomicNumber(pdbparser.Atoms[f].Element)
+            t.Atoms[f] = pdbparser.FAtoms[f].AtomName
+            t.AtomIds[f] = pdbparser.FAtoms[f].Serial
+            t.Coords[f] = pdbparser.FAtoms[f].Coords
+            t.AtomicNumbers[f] = oclconfiguration.AtomicNumber(pdbparser.FAtoms[f].Element)
             # Empty connections
             t.Connects[f] = None
-            # TODO: check pdbparser.Connections type, because if it is an ordinal type (e. g. a number) range must
             # stop at the highest value
-        for f in range(len(pdbparser.Connections) - 1):
-            # IndexOf and Copy are functions of "basetypes"
-            ix = basetypes.IndexOf(pdbparser.Connections[f].AtomID, t.AtomIDs)
-            copy = []
-            for x in range(len(pdbparser.Connections[f].Connects)):
-                copy.append(pdbparser.Connections[f].Connects[x])
-            t.Connects[ix] = copy
+        for f in range(len(pdbparser.FConnections) - 1):
+            ix = basetypes.IndexOf(pdbparser.FConnections[f].AtomID, t.AtomIDs)
+            acopy = []
+            for x in range(len(pdbparser.FConnections[f].Connects)):
+                acopy.append(pdbparser.FConnections[f].Connects[x])
+            t.Connects[ix] = acopy
 
     # Path = string
     def LoadTemplates(self, Path):
@@ -288,16 +280,16 @@ class TPDBModelMan:
         # Clear and load
         self.FTemplates = None
         # TPdbReader is a class of "pdbparser"
-        pdbparser = TPDBReader()
+        tpdbparser = pdbparser.TPDBReader()
         # srec shouldn't be needed
         # srec = TSearchRec
         fileList = glob.glob(Path + "*.pdb")
         if not fileList:
             for f in fileList:
-                pdbparser.Load(f)
-                self.SetTemplate(f, pdbparser)
+                tpdbparser.Load(f)
+                self.SetTemplate(f, tpdbparser)
         # This instruction shouldn't be necessary due to garbage collector
-        # pdbparser.Free()
+        # tpdbparser.Free()
         # Reassign templates to layers
         for f in range(len(self.FLayers)):
             self.FLayers[f].ResetTemplates(self.FTemplates)
@@ -335,7 +327,7 @@ class TPDBModelMan:
         Result = []
         for f in range(len(Indexes)):
             Result[f] = self.LayerByIx(Layer).GetChain(Indexes[f])
-        # Return TMolecules => list of TMolecule
+        # Return TMolecules
         return Result
 
     def ClearLayers(self):
@@ -381,7 +373,6 @@ def NoBackbone(Atoms):
 
 # Residue = TMolecule
 def ResidueIsAminoAcid(Residue):
-    # AAOneLetterCode is a function of "oclconfiguration"
     # Return Boolean
     return (Residue.GroupCount() is 0) and (oclconfiguration.AAOneLetterCode(Residue.Name) is not "")
 
@@ -401,7 +392,6 @@ def ChainSequence(Chain, MissingMarker = "X"):
             while previd < res.ID:
                 previd = previd + 1
                 Result = Result + MissingMarker
-            # AAOneLetterCode is a function of "oclconfiguration"
             # tmp = string
             tmp = oclconfiguration.AAOneLetterCode(res.Name)
             if tmp is "":
@@ -432,9 +422,8 @@ def SaveToPDB(Molecule, FileName):
                 if (oldchain is not None) and (oldchain is not chain):
                     s1.append('TER       ')
                 oldchain = chain
-        # AtomRecord is a function of "pdbparser", Element is a function of "oclconfiguration"
-        s1.append(AtomRecord(atoms[f].Name, rname, chname, atoms[f].ID, rid, atoms[f].Coords,
-                             oclconfiguration.Element(atoms[f].AtomicNumber)))
+        s1.append(pdbparser.AtomRecord(atoms[f].Name, rname, chname, atoms[f].ID, rid, atoms[f].Coords,
+                                       oclconfiguration.Element(atoms[f].AtomicNumber)))
     with open(FileName, 'w') as f:
         for item in s1:
             f.write(item + "\n")
