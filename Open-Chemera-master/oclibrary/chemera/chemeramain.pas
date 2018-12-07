@@ -899,7 +899,6 @@ procedure TCmMainForm.LoadFile(FileName: string);
 var mol:TMolecule;
 
 begin
-    // FMolecules è TPdbModelMan dentro al file pdbmolecules
     mol:=FMolecules.LoadLayer(FileName);
     FMolecules.LayerByIx(0).DeleteWater;
     mol.Transform(Simmetric(FindCenter(mol)));

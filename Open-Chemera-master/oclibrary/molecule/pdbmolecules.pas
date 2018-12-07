@@ -67,7 +67,6 @@ type
   TPDBModel = class
   protected
     FTemplates: TTemplates;
-    // TMolecule è un tipo definito in "molecules"
     FProtein: TMolecule;
     FFileName: string;
     FInfo: TPDBInfo;

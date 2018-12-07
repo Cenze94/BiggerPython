@@ -44,7 +44,7 @@ class TAtomBond:
         self.Atom1 = Atom1
         self.Atom2 = Atom2
         self.BondType = BondType
-        self.Tag = Tag # Tag is temporary, not suitable for persistent data
+        self.Tag = Tag  # Tag is temporary, not suitable for persistent data
 
 
 class TMolecule:
@@ -66,7 +66,7 @@ class TMolecule:
 
     # Index in FAtoms
     # AAtom = TAtom
-    def AtomInex(self, AAtom):
+    def AtomIndex(self, AAtom):
         Result = len(self.FAtoms) - 1
         while (Result >= 0) and (AAtom is not self.FAtoms[Result]):
             Result = Result - 1
@@ -141,7 +141,7 @@ class TMolecule:
 
     def AllAtoms(self):
         # Flattens hierarchy into a single array of atoms, returns a copy array but each element is the atom object
-        Result = copy.deepcopy(self.FGroups)
+        Result = copy.deepcopy(self.FAtoms)
         # Add to atoms at this level all the offspring atoms
         for f in range(len(self.FGroups)):
             tmp = self.FGroups[f].AllAtoms()
@@ -211,7 +211,7 @@ class TMolecule:
     # GroupIx = Integer OR string
     def GetGroup(self, GroupIx):
         if isinstance(GroupIx, int):
-            assert (GroupIx < len(self.FGroups)) and GroupIx > 0, 'Invalid group index'
+            assert (GroupIx < len(self.FGroups)) and (GroupIx >= 0), 'Invalid group index'
             # Return TMolecule
             return self.FGroups[GroupIx]
         else:
@@ -314,7 +314,7 @@ class TMolecule:
         self.FBondsTable = tmp
         for f in range(len(self.FGroups)):
             # No more callbacks, as one should be enough to warn about all deletions involving tagged atoms
-            self.FGroups[f].RemoveTaggedAtomBonds(Tag)
+            self.FGroups[f].RemoveTaggedAtomsBonds(Tag)
 
     # Tag = Integer, OnDelete = TOnDeleteCallback
     def RemoveTaggedBonds(self, Tag, OnDelete=None):
@@ -441,7 +441,7 @@ class TMolecule:
             OnDelete(TagToDelete)
         self.ClearAllBonds()
         # Finally, free each group (atoms are freed along with the group)
-        for f in range(len(self.FGroups)):
+        for f in range(len(self.FGroups) - 1, -1, -1):
             del self.FGroups[f]
         self.FGroups = []
 

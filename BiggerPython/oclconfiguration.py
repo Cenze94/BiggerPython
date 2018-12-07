@@ -62,13 +62,13 @@ def RemoveComments(S1):
 def DefaultConfig():
     # In Python is stored the script name, while data will be stored in the Data folder
     global Config
-    exename = os.path.basename(__file__)
+    exename = os.path.basename('chemera')
     AppPath = os.path.dirname(__file__)
     OCLPath = os.path.join(AppPath, "Data")
     OCLConfig = os.path.join(OCLPath, "oclibrary.ini")
     AppPath = os.path.join(AppPath, exename)
     AppConfig = os.path.join(AppPath, "chemera.ini")
-    MonomersPath = os.path.join(OCLPath, "monomers.txt")
+    MonomersPath = os.path.join(OCLPath, "monomers\\")
     DefaultAtomicRadius = 1.5
     Config = TOCLConfig(OCLPath, AppPath, AppConfig, OCLConfig, MonomersPath, DefaultAtomicRadius)
 

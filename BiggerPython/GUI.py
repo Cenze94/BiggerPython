@@ -4,59 +4,32 @@ from tkinter import filedialog
 import Tooltip
 import pdbmolecules
 import oclconfiguration
-import geomutils
 
 
-def loadFile():
+def loadFileCommon():
     openFile = OpenFile(app.tk)
-    pdbName = openFile.openFile()
+    return openFile.openFile()
+
+
+def loadFile1():
+    pdbName = loadFileCommon()
     if pdbName != "":
-        mol = FMolecules.LoadLayer(pdbName)
-        # FMolecules.LayerByIx(0).DeleteWater()
-        # mol.Transform(geomutils.Simmetric(FindCenter(mol)))
-        print('ChainIDs:')
-        print(len(mol.FChainIDs))
-        for f in range(len(mol.FChainIDs)):
-            print(mol.FChainIDs[f])
+        mol1 = FMolecules.LoadLayer(pdbName)
 
-        print('')
-        print('Atoms:')
-        print(len(mol.FAtoms))
-        if len(mol.FAtoms) > 0:
-            atom = mol.FAtoms[0]
-            print('First Atom:')
-            print('IsHet = ' + str(atom.IsHet))
-            print('Serial = ' + str(atom.Serial))
-            print('AtomName = ' + atom.AtomName)
-            print('AltLoc = ' + atom.AltLoc)
-            print('ResName = ' + atom.ResName)
-            print('ChainID = ' + atom.ChainID)
-            print('ResSeq = ' + str(atom.ResSeq))
-            print('ICode = ' + atom.ICode)
-            print('Coords = ' + str(atom.Coords[0]) + ' ' + str(atom.Coords[1]) + ' ' + str(atom.Coords[2]))
-            print('Occupancy = ' + str(atom.Occupancy))
-            print('OccTemp = ' + str(atom.OccTemp))
-            print('Temp = ' + str(atom.Temp))
-            print('Element = ' + atom.Element)
-            print('Charge = ' + atom.Charge)
-            print('ModelNum = ' + str(atom.ModelNum))
-            print('ChainNum = ' + str(atom.ChainNum))
 
-        print('')
-        print('Models:')
-        print(len(mol.FConnections))
-        if len(mol.FConnections) > 0:
-            conn = mol.FConnections[0]
-            print('First Connection:')
-            print('AtomID: ' + str(conn.AtomID))
-            print('Connects:')
-            for f in range(len(conn.Connects)):
-                print(conn.Connects[f])
+def loadFile2():
+    pdbName = loadFileCommon()
+    if pdbName != "":
+        mol2 = FMolecules.LoadLayer(pdbName)
 
-        print('')
-        print('AtomCount: ' + str(mol.FAtomCount))
-        print('ChainCount: ' + str(mol.FChainCount))
-        print('ModelCount: ' + str(mol.FModelCount))
+
+def Bigger():
+    if mol1 is None:
+        print('First molecule not loaded.')
+    elif mol2 is None:
+        print('Second molecule not loaded')
+    else:
+        print('Bigger')
 
 
 class OpenFile(Frame):
@@ -83,11 +56,14 @@ class OpenFile(Frame):
         return text
 
 
+mol1 = None
+mol2 = None
 app = App(title="BiggerPython")
 app.tk.iconbitmap('chemera.ico')
 
-loadFileButton = PushButton(app, command=loadFile, text="Load PDB file")
-loadFileButton_ttp = Tooltip.Tooltip(loadFileButton.tk, text="Load a PDB file from PDBeChem.")
+loadFileButton1 = PushButton(app, command=loadFile1, text="Load the first PDB file")
+loadFileButton_ttp = Tooltip.Tooltip(loadFileButton1.tk, text="Load the first PDB file")
+loadFileButton2 = PushButton(app, command=loadFile2, text="Load the second PDB file")
 
 # Load atom and config data
 oclconfiguration.DefaultConfig()

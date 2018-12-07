@@ -50,8 +50,7 @@ class TPDBModel:
 
     # IDs = TSimpleStrings
     def CreateChains(self, IDs):
-        # TODO: check IDs type, because if it is an ordinal type (e. g. a number) range must stop at the highest value
-        for f in range(IDs):
+        for f in range(len(IDs)):
             self.FProtein.NewGroup(IDs[f], f+1)
 
     # First method: Options = PDBResidueTypes, ResTypes = TSimpleStrings, OnDelete = TOnDeleteCallback
@@ -130,18 +129,19 @@ class TPDBModel:
         parser = pdbparser.TPDBReader(PdbFileName)
         # Extract filename and remove extension, then save it as the protein name
         filename = os.path.basename(PdbFileName)
-        self.FProtein.Name = os.path.splitext(filename)[0]
+        endSplit = filename.rfind('.')
+        self.FProtein.FName = filename[:endSplit]
         self.CreateChains(parser.FChainIDs)
 
         # Read atoms
         # cc = integer
         cc = -1  # Current chain
+        cr = 0  # This should be the standard value of uninitialized integers
         for f in range(len(parser.FAtoms)):
             patom = parser.FAtoms[f]
-            cr = 0  # This should be the standard value of uninitialized integers
             cres = molecules.TMolecule('', -1, None)
-            if cc is not patom.ChainNum():  # ChainNumber is always >= 0
-                cc = patom.ChainName()
+            if cc is not patom.ChainNum:  # ChainNumber is always >= 0
+                cc = patom.ChainNum
                 cr = -1  # Current residue number, also >= 0
             if patom.ResSeq is not cr:  # Get new residue
                 cres = self.FProtein.GetGroup(cc).NewGroup(patom.ResName, patom.ResSeq)
@@ -151,11 +151,11 @@ class TPDBModel:
             # Element may be present in the PDB file. However, this is superseded if there is monomer template data
             atom.AtomicNumber = oclconfiguration.AtomicNumber(patom.Element)
             atom.Radius = oclconfiguration.VdWRadius(atom.AtomicNumber)
-            if patom.ChargeFrom is PDBChargeOrigin.pdbOccupancy:
+            if ChargeFrom is PDBChargeOrigin.pdbOccupancy:
                 atom.Charge = patom.Occupancy
-            elif patom.ChargeFrom is PDBChargeOrigin.pdbOccTemp:
+            elif ChargeFrom is PDBChargeOrigin.pdbOccTemp:
                 atom.Charge = patom.OccTemp
-            elif patom.ChargeFrom is PDBChargeOrigin.pdbCharge:
+            elif ChargeFrom is PDBChargeOrigin.pdbCharge:
                 if len(patom.Charge) is 2:
                     atom.Charge = float(patom.Charge[1])
                 if patom.Charge[2] is '-':
@@ -193,23 +193,21 @@ class TPDBModel:
     def AssignAtomicData(self):
         # atoms = TAtoms
         atoms = self.FProtein.AllAtoms()
-        # TODO: check atoms type, because if it is an ordinal type (e. g. a number) range must stop at the
-        # highest value
-        for f in range(atoms):
+        for f in range(len(atoms)):
             # tempix = Integer
-            tempix = self.TemplateIx(atoms[f].Parent.Name)
+            tempix = self.TemplateIx(atoms[f].FParent.FName)
             if tempix >= 0:
                 # atomix = Integer
-                atomix = stringutils.LastIndexOf(atoms[f].Name, self.FTemplates[tempix].Atoms)
+                atomix = stringutils.LastIndexOf(atoms[f].FName, self.FTemplates[tempix].Atoms)
                 if atomix >= 0:
-                    atoms[f].AtomicNumber = self.FTemplates[tempix].AtomicNumbers[atomix]
-                    if atoms[f].Atomicumber > 0:
-                        atoms[f].Radius = oclconfiguration.AtomData[atoms[f].AtomicNumber - 1].VdWradius
+                    atoms[f].FAtomicNumber = self.FTemplates[tempix].AtomicNumbers[atomix]
+                    if atoms[f].FAtomicumber > 0:
+                        atoms[f].FRadius = oclconfiguration.AtomData[atoms[f].FAtomicNumber - 1].VdWradius
 
     # Name = string
     def TemplateIx(self, Name):
-        Result = len(self.FTemplates)
-        while Result > 0 and Name is not self.FTemplates[Result].Name:
+        Result = len(self.FTemplates) - 1
+        while Result >= 0 and Name is not self.FTemplates[Result].Name:
             Result = Result - 1
         # Result = Integer
         return Result
@@ -255,7 +253,9 @@ class TPDBModelMan:
     def SetTemplate(self, srec, pdbparser):
         t = self.FTemplates[len(self.FTemplates) - 1]
         # Extract name and remove file extension
-        t.Name = os.path.splitext(srec.Name)[0]
+        startSplit = srec.rfind('\\')
+        endSplit = srec.rfind('.')
+        t.Name = srec[startSplit + 1:endSplit]
         # Fill atom data
         for f in range(len(t.Atoms)):
             t.Atoms.append(pdbparser.FAtoms[f].AtomName)
@@ -277,18 +277,16 @@ class TPDBModelMan:
         for f in range(len(self.FLayers) - 1):
             self.FLayers[f].ResetTemplates(self.FTemplates)
         # Clear and load
-        self.FTemplates = None
-        # TPdbReader is a class of "pdbparser"
+        self.FTemplates = []
         tpdbparser = pdbparser.TPDBReader()
         # srec shouldn't be needed
         # srec = TSearchRec
         fileList = glob.glob(Path + "*.pdb")
-        if not fileList:
+        if fileList:
             for f in fileList:
+                self.FTemplates.append(TTemplate('', [], [], [], [], []))
                 tpdbparser.Load(f)
                 self.SetTemplate(f, tpdbparser)
-        # This instruction shouldn't be necessary due to garbage collector
-        # tpdbparser.Free()
         # Reassign templates to layers
         for f in range(len(self.FLayers)):
             self.FLayers[f].ResetTemplates(self.FTemplates)

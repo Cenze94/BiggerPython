@@ -5,17 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3a5d4cd-4e09-4507-9323-95c42a60ef12" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/GUITests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/aminoaciddata.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/aminoaciddata.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/atomdata.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/atomdata.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestPdbparser.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestPdbparser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basetypes.py" beforeDir="false" afterPath="$PROJECT_DIR$/basetypes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geomutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/geomutils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/molecules.py" beforeDir="false" afterPath="$PROJECT_DIR$/molecules.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oclconfiguration.py" beforeDir="false" afterPath="$PROJECT_DIR$/oclconfiguration.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pdbmolecules.py" beforeDir="false" afterPath="$PROJECT_DIR$/pdbmolecules.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quicksort.py" beforeDir="false" afterPath="$PROJECT_DIR$/quicksort.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stringutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/stringutils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/base/backup/oclconfiguration.pas" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/base/backup/oclconfiguration.pas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/backup/chemera.lpi.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/backup/chemera.lpi.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/backup/chemeramain.pas" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/backup/chemeramain.pas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/chemera.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/chemera.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/chemera.lpi" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/chemera.lpi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/chemeramain.pas" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/chemeramain.pas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/chemeramain.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/chemeramain.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/chemeramain.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/chemeramain.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/geomhash.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/geomhash.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/geomutils.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/geomutils.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/molecules.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/molecules.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/molecules.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/molecules.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/oclconfiguration.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/oclconfiguration.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/oclconfiguration.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/oclconfiguration.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/pdbmolecules.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/pdbmolecules.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/pdbmolecules.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/pdbmolecules.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/pdbparser.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/pdbparser.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/pdbparser.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/pdbparser.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/stringutils.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/stringutils.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/stringutils.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/stringutils.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/molecule/backup/pdbmolecules.pas" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/molecule/backup/pdbmolecules.pas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/molecule/pdbmolecules.pas" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/molecule/pdbmolecules.pas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestChemera/TestChemera.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChemera/TestChemera.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestChemera/TestChemera.lpi" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChemera/TestChemera.lpi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestChemera/TestChemera.lpr" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChemera/TestChemera.lpr" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,26 +63,26 @@
         <counts>
           <entry key="GUI" value="1" />
           <entry key="Pipfile" value="1" />
-          <entry key="py" value="29" />
+          <entry key="py" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="30" />
+          <entry key="Python" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="GUI" value="225" />
           <entry key="dummy" value="15" />
-          <entry key="py" value="81560" />
+          <entry key="py" value="84520" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="81785" />
+          <entry key="Python" value="84745" />
         </counts>
       </usages-collector>
     </session>
@@ -72,21 +92,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="264" column="31" lean-forward="true" selection-start-line="264" selection-start-column="31" selection-end-line="264" selection-end-column="31" />
+            <state relative-caret-position="206">
+              <caret line="160" column="42" lean-forward="true" selection-start-line="160" selection-start-column="42" selection-end-line="160" selection-end-column="42" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <marker date="1543599259270" expanded="true" signature="8749:8755" ph="..." />
+                <marker date="1544206934491" expanded="true" signature="8524:8530" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+            <state relative-caret-position="187">
+              <caret line="65" column="51" selection-start-line="65" selection-start-column="51" selection-end-line="65" selection-end-column="51" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -95,10 +115,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GUITests.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oclconfiguration.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="70" column="54" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stringutils.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="178">
-              <caret line="572" column="15" lean-forward="true" selection-start-line="572" selection-start-column="15" selection-end-line="572" selection-end-column="15" />
+              <caret line="572" column="15" selection-start-line="572" selection-start-column="15" selection-end-line="572" selection-end-column="15" />
               <folding>
                 <marker date="1543599473671" expanded="true" signature="256:258" ph="..." />
                 <marker date="1543599473671" expanded="true" signature="256:259" ph="..." />
@@ -113,11 +154,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/molecules.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5472">
-              <caret line="408" column="45" selection-start-line="408" selection-start-column="36" selection-end-line="408" selection-end-column="45" />
+            <state relative-caret-position="2057">
+              <caret line="136" column="40" lean-forward="true" selection-start-line="136" selection-start-column="40" selection-end-line="136" selection-end-column="40" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -161,22 +202,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pdbparser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="78" column="30" lean-forward="true" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
+            <state relative-caret-position="17">
+              <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <marker date="1542830099818" expanded="true" signature="366:371" ph="..." />
-                <marker date="1542830099818" expanded="true" signature="1422:1427" ph="..." />
+                <marker date="1544202822284" expanded="true" signature="366:371" ph="..." />
+                <marker date="1544202822284" expanded="true" signature="1422:1427" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TestPdbparser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -185,7 +217,7 @@
         <entry file="file://$PROJECT_DIR$/TestGeomutils.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="209">
-              <caret line="151" column="42" lean-forward="true" selection-start-line="151" selection-start-column="42" selection-end-line="151" selection-end-column="42" />
+              <caret line="151" column="42" selection-start-line="151" selection-start-column="42" selection-end-line="151" selection-end-column="42" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -204,15 +236,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>PDBResidueTypes</find>
-      <find>Ix</find>
-      <find>Ix[</find>
-      <find>Return string</find>
-      <find>Result = []</find>
-      <find>AsSim</find>
-      <find>AddToArray</find>
-      <find>with</find>
-      <find>SplitString</find>
       <find>Coord</find>
       <find>StringsT</find>
       <find>Load</find>
@@ -234,6 +257,15 @@
       <find>Array</find>
       <find>FInfo</find>
       <find>] =</find>
+      <find>Allatoms</find>
+      <find>AtomIndex</find>
+      <find>AddGr</find>
+      <find>FGroups</find>
+      <find>FGroups.a</find>
+      <find>FTemplates</find>
+      <find>Create</find>
+      <find>ReadLines</find>
+      <find>print</find>
     </findStrings>
     <replaceStrings>
       <replace>print</replace>
@@ -255,19 +287,20 @@
         <option value="$PROJECT_DIR$/TestBasetypes.py" />
         <option value="$PROJECT_DIR$/TestQuicksort.py" />
         <option value="$PROJECT_DIR$/TestStringutils.py" />
-        <option value="$PROJECT_DIR$/pdbparser.py" />
-        <option value="$PROJECT_DIR$/molecules.py" />
         <option value="$PROJECT_DIR$/geomhash.py" />
         <option value="$PROJECT_DIR$/TestGeomutils.py" />
         <option value="$PROJECT_DIR$/molutils.py" />
         <option value="$PROJECT_DIR$/TestPdbparser.py" />
-        <option value="$PROJECT_DIR$/GUI.py" />
-        <option value="$PROJECT_DIR$/pdbmolecules.py" />
         <option value="$PROJECT_DIR$/stringutils.py" />
         <option value="$PROJECT_DIR$/basetypes.py" />
-        <option value="$PROJECT_DIR$/oclconfiguration.py" />
         <option value="$PROJECT_DIR$/quicksort.py" />
         <option value="$PROJECT_DIR$/geomutils.py" />
+        <option value="$PROJECT_DIR$/oclconfiguration.py" />
+        <option value="$PROJECT_DIR$/molecules.py" />
+        <option value="$PROJECT_DIR$/pdbparser.py" />
+        <option value="$PROJECT_DIR$/GUITests.py" />
+        <option value="$PROJECT_DIR$/pdbmolecules.py" />
+        <option value="$PROJECT_DIR$/GUI.py" />
       </list>
     </option>
   </component>
@@ -361,6 +394,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="GUITests" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="BiggerPython" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUITests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestGeomutils" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="BiggerPython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -403,27 +457,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="TestQuicksort" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="BiggerPython" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TestQuicksort.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="TestStringutils" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="BiggerPython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -446,19 +479,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.TestQuicksort" />
       <item itemvalue="Python.TestStringutils" />
       <item itemvalue="Python.TestPdbparser" />
       <item itemvalue="Python.TestGeomutils" />
       <item itemvalue="Python.GUI" />
+      <item itemvalue="Python.GUITests" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.GUI" />
-        <item itemvalue="Python.TestGeomutils" />
+        <item itemvalue="Python.GUITests" />
         <item itemvalue="Python.TestPdbparser" />
+        <item itemvalue="Python.TestGeomutils" />
         <item itemvalue="Python.TestStringutils" />
-        <item itemvalue="Python.TestQuicksort" />
       </list>
     </recent_temporary>
   </component>
@@ -479,12 +512,12 @@
     <frame x="-48" y="54" width="1264" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24877651" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24877651" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32786885" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32786885" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -524,19 +557,17 @@
           <line>135</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pdbmolecules.py</url>
+          <line>194</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Pipfile">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Openfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="30" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tooltip.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -582,7 +613,7 @@
     <entry file="file://$PROJECT_DIR$/TestGeomutils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
-          <caret line="151" column="42" lean-forward="true" selection-start-line="151" selection-start-column="42" selection-end-line="151" selection-end-column="42" />
+          <caret line="151" column="42" selection-start-line="151" selection-start-column="42" selection-end-line="151" selection-end-column="42" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
@@ -596,53 +627,6 @@
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestPdbparser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pdbparser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="78" column="30" lean-forward="true" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <marker date="1542830099818" expanded="true" signature="366:371" ph="..." />
-            <marker date="1542830099818" expanded="true" signature="1422:1427" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="264" column="31" lean-forward="true" selection-start-line="264" selection-start-column="31" selection-end-line="264" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <marker date="1543599259270" expanded="true" signature="8749:8755" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oclconfiguration.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-692">
-          <caret line="108" column="71" lean-forward="true" selection-start-line="108" selection-start-column="71" selection-end-line="108" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -675,7 +659,7 @@
     <entry file="file://$PROJECT_DIR$/stringutils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
-          <caret line="572" column="15" lean-forward="true" selection-start-line="572" selection-start-column="15" selection-end-line="572" selection-end-column="15" />
+          <caret line="572" column="15" selection-start-line="572" selection-start-column="15" selection-end-line="572" selection-end-column="15" />
           <folding>
             <marker date="1543599473671" expanded="true" signature="256:258" ph="..." />
             <marker date="1543599473671" expanded="true" signature="256:259" ph="..." />
@@ -720,12 +704,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Openfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="4" selection-start-line="4" selection-end-line="25" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestPdbparser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="47" lean-forward="true" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pdbparser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1544202822284" expanded="true" signature="366:371" ph="..." />
+            <marker date="1544202822284" expanded="true" signature="1422:1427" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/molecules.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5472">
-          <caret line="408" column="45" selection-start-line="408" selection-start-column="36" selection-end-line="408" selection-end-column="45" />
+        <state relative-caret-position="2057">
+          <caret line="136" column="40" lean-forward="true" selection-start-line="136" selection-start-column="40" selection-end-line="136" selection-end-column="40" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oclconfiguration.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="70" column="54" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUITests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="160" column="42" lean-forward="true" selection-start-line="160" selection-start-column="42" selection-end-line="160" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <marker date="1544206934491" expanded="true" signature="8524:8530" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="65" column="51" selection-start-line="65" selection-start-column="51" selection-end-line="65" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>

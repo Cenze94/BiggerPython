@@ -67,7 +67,6 @@ type
   TPDBModel = class
   protected
     FTemplates: TTemplates;
-    // TMolecule è un tipo definito in "molecules"
     FProtein: TMolecule;
     FFileName: string;
     FInfo: TPDBInfo;
@@ -294,15 +293,12 @@ begin
   FProtein.Cleanup;
 end;
 
-// TSimpleStrings è un array di Stringhe definito dentro al file "basetypes"
 procedure TPDBModel.CreateChains(const IDs: TSimpleStrings);
 
 var
   f:integer;
 
 begin
-  // High è un metodo che in questo caso dovrebbe restituire l'ultimo elemento
-  // (o il maggiore se ha senso, ma dipende dal contesto)
   for f := 0 to High(IDs) do
     FProtein.NewGroup(IDs[f], f + 1);
 end;
@@ -317,8 +313,6 @@ var
   function ResidueToDelete(Residue:TMolecule):Boolean;
 
   begin
-    // AAOneLetterCode è una funzione di "oclconfiguration"
-    // LastIndexOf è una funzione di "stringutils"
     Result:= ((resAA in Options) and (AAOneLetterCode(Residue.Name)<>'')) or
              ((resNonAA in Options) and (AAOneLetterCode(Residue.Name)='')) or
              (LastIndexOf(Residue.Name,ResTypes)>=0);
@@ -638,6 +632,7 @@ begin
   pdbparser:=TPdbReader.Create;
   if FindFirst(Path+'*.pdb',faAnyFile,srec)=0 then
     repeat
+    //WriteLn(Path);
     SetLength(FTemplates,Length(FTemplates)+1);
     pdbparser.Load(Path+srec.Name);
     SetTemplate;

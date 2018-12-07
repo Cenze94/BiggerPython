@@ -7,14 +7,15 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Classes, basetypestests, quicksorttests, stringutilstests, pdbparsertests,
-  geomutilstests;
+  geomutilstests, guitests, lazopenglcontext;
 
 begin
   // StartBasetypesTest();
   // StartQuicksortTest();
   // StartStringutilsTest();
   // StartPdbparserTest();
-  StartGeomutilsTest();
+  // StartGeomutilsTest();
+  StartGUITest();
 
   Readln;
 end.

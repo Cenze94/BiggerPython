@@ -106,9 +106,12 @@ begin
       Delete(OCLPath,Length(OCLPath)-Length(exename),Length(exename)+1);
 
     OCLPath:=AppendPathDelim(OCLPath+'oclibrary');
+    // Nei file non esiste alcun "oclibrary.ini", probabilmente è un file che
+    // alla fine non è stato aggiunto
     OCLConfig:=OCLPath+'oclibrary.ini';
 
     AppPath:=AppendPathDelim(OCLPath+exename);
+    // Anche qui non esiste il file chemera.ini
     AppConfig := AppPath+ChangeFileExt(exename,'.ini');
     MonomersPath:=AppendPathDelim(OCLPath+'monomers');
 

@@ -411,7 +411,7 @@ begin
   DebugLn(IntToStr(Length(targetcoords)),' atoms');
   for f:=0 to High(models.Models) do
     with models.Models[f] do
-      writeLn(Score,' (',TransVec[0],',',TransVec[1],',',TransVec[2],')');
+      writeLn(OverlapScore,' (',TransVec[0],',',TransVec[1],',',TransVec[2],')');
 
 
   FDispMan.Attach(target);
@@ -899,7 +899,6 @@ procedure TCmMainForm.LoadFile(FileName: string);
 var mol:TMolecule;
 
 begin
-    // FMolecules è TPdbModelMan dentro al file pdbmolecules
     mol:=FMolecules.LoadLayer(FileName);
     FMolecules.LayerByIx(0).DeleteWater;
     mol.Transform(Simmetric(FindCenter(mol)));
