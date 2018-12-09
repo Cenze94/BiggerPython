@@ -137,13 +137,13 @@ class TPDBModel:
         # cc = integer
         cc = -1  # Current chain
         cr = 0  # This should be the standard value of uninitialized integers
+        cres = molecules.TMolecule('', -1, None)
         for f in range(len(parser.FAtoms)):
             patom = parser.FAtoms[f]
-            cres = molecules.TMolecule('', -1, None)
-            if cc is not patom.ChainNum:  # ChainNumber is always >= 0
+            if cc != patom.ChainNum:  # ChainNumber is always >= 0
                 cc = patom.ChainNum
                 cr = -1  # Current residue number, also >= 0
-            if patom.ResSeq is not cr:  # Get new residue
+            if patom.ResSeq != cr:  # Get new residue
                 cres = self.FProtein.GetGroup(cc).NewGroup(patom.ResName, patom.ResSeq)
                 cr = patom.ResSeq
             atom = cres.NewAtom(patom.AtomName, patom.Serial)

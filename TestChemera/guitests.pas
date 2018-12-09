@@ -33,7 +33,7 @@ procedure LoadTest();
 var mol:TMolecule; atom:TAtom; bond:TAtomBond; f:integer;
 
 begin
-  mol:=FMolecules.LoadLayer('../PDB/3f6u.pdb');
+  mol:=FMolecules.LoadLayer('../PDB/4a0q.pdb');
   WriteLn('FName: ' + mol.Name);
   WriteLn('FID: ' + IntToStr(mol.ID));
   if mol.Parent <> Nil then

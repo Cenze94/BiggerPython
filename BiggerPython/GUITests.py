@@ -5,7 +5,7 @@ import oclconfiguration
 
 
 def LoadTest():
-    mol = FMolecules.LoadLayer('../PDB/3f6u.pdb')
+    mol = FMolecules.LoadLayer('../PDB/4a0q.pdb')
     print('FName: ' + mol.FName)
     print('FID: ' + str(mol.FID))
     if mol.FParent is not None:

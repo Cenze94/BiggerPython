@@ -1,5 +1,4 @@
 import geomutils
-import copy
 
 
 # Bond types
@@ -34,7 +33,7 @@ class TAtom:
     # AAtom = TAtom, NewParent = TMolecule
     def GetCopy(self, AAtom, NewParent):
         # (return TAtom in Python)
-        return TAtom(AAtom.FName, NewParent, AAtom.FID, AAtom.FAtomicNumber, AAtom.FCoord, AAtom.FRadius,
+        return TAtom(AAtom.FName, AAtom.FID, NewParent, AAtom.FAtomicNumber, AAtom.FCoord, AAtom.FRadius,
                      AAtom.FCharge, AAtom.FMass)
 
 
@@ -141,7 +140,9 @@ class TMolecule:
 
     def AllAtoms(self):
         # Flattens hierarchy into a single array of atoms, returns a copy array but each element is the atom object
-        Result = copy.deepcopy(self.FAtoms)
+        Result = []
+        for f in range(len(self.FAtoms)):
+            Result.append(self.FAtoms[f].GetCopy(self.FAtoms[f], self.FAtoms[f].FParent))
         # Add to atoms at this level all the offspring atoms
         for f in range(len(self.FGroups)):
             tmp = self.FGroups[f].AllAtoms()
