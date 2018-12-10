@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/molecules.py" line="498" />
+    <bookmark url="file://$PROJECT_DIR$/molecules.py" line="497" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3a5d4cd-4e09-4507-9323-95c42a60ef12" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUITests.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUITests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/molecules.py" beforeDir="false" afterPath="$PROJECT_DIR$/molecules.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdbmolecules.py" beforeDir="false" afterPath="$PROJECT_DIR$/pdbmolecules.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/molecule/molecules.pas" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/molecule/molecules.pas" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestChemera/TestChemera.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChemera/TestChemera.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestChemera/guitests.pas" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChemera/guitests.pas" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +53,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="85606" />
+          <entry key="Python" value="85629" />
         </counts>
       </usages-collector>
     </session>
@@ -70,11 +63,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="197" column="30" lean-forward="true" selection-start-line="197" selection-start-column="30" selection-end-line="197" selection-end-column="30" />
+            <state relative-caret-position="225">
+              <caret line="195" column="35" lean-forward="true" selection-start-line="195" selection-start-column="35" selection-end-line="195" selection-end-column="35" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <marker date="1544384063565" expanded="true" signature="8540:8546" ph="..." />
+                <marker date="1544385644426" expanded="true" signature="8512:8518" ph="..." />
               </folding>
             </state>
           </provider>
@@ -135,8 +128,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/molecules.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+            <state relative-caret-position="171">
+              <caret line="293" column="45" lean-forward="true" selection-start-line="293" selection-start-column="45" selection-end-line="293" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -492,8 +485,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32786885" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32786885" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -531,11 +524,6 @@
           <url>file://$PROJECT_DIR$/geomutils.py</url>
           <line>135</line>
           <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pdbmolecules.py</url>
-          <line>195</line>
-          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -713,19 +701,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="197" column="30" lean-forward="true" selection-start-line="197" selection-start-column="30" selection-end-line="197" selection-end-column="30" />
+        <state relative-caret-position="225">
+          <caret line="195" column="35" lean-forward="true" selection-start-line="195" selection-start-column="35" selection-end-line="195" selection-end-column="35" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
-            <marker date="1544384063565" expanded="true" signature="8540:8546" ph="..." />
+            <marker date="1544385644426" expanded="true" signature="8512:8518" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/molecules.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+        <state relative-caret-position="171">
+          <caret line="293" column="45" lean-forward="true" selection-start-line="293" selection-start-column="45" selection-end-line="293" selection-end-column="45" />
         </state>
       </provider>
     </entry>

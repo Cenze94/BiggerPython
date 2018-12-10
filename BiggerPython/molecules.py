@@ -289,9 +289,9 @@ class TMolecule:
         self.RemoveTaggedAtomsBonds(Tag)  # Remove bonds before deleting atoms
         tmp = []  # New atoms array
         # If atom is not to delete, copy into new array
-        for f in range(len(self.FAtoms)):
-            if self.FAtoms[f].Tag is not Tag:
-                tmp.append(self.FAtoms[f])
+        for f in range(len(self.FAtoms) - 1, -1, -1):
+            if self.FAtoms[f].Tag != Tag:
+                tmp.insert(0, self.FAtoms[f])
             else:
                 del self.FAtoms[f]
         # Store and delete atoms in offspring
