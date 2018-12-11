@@ -153,13 +153,19 @@ def AppendToArray(Suffix, Arr):
             Arr.append(Suffix[f])
 
 
-# vals = TFloats OR TMatrix OR TCoords OR TIntegers
-# vals, vals2 = TCoord OR Integer
+# First function: vals = TFloats
+# Second function: vals = TMatrix
+# Third function: vals = TCoords
+# Fourth function: vals = TIntegers
+# Fifth function: vals, vals2 = TCoord
+# Sixth function: vals, vals2 = TFloat
+# Seventh function: vals, vals2 = Integer
 def Min(vals, vals2=None):
     Result = 0
     if vals is not None:
         if vals2 is not None:
             if isinstance(vals2, TCoord):
+                # Fifth function
                 Result = TCoord()
                 if vals[0] < vals2[0]:
                     Result[0] = vals[0]
@@ -174,35 +180,50 @@ def Min(vals, vals2=None):
                 else:
                     Result[2] = vals2[2]
             else:
+                # Sixth and seventh functions
                 if vals < vals2:
                     Result = vals
                 else:
                     Result = vals2
         else:
             if isinstance(vals, np.ndarray) and (vals[0] is not None):
+                # Second function
                 Result = vals[0, 0]
                 for f in range(len(vals)):
                     for g in range(len(vals[f])):
                         if vals[f, g] < Result:
                             Result = vals[f, g]
+            elif isinstance(vals[0], TCoord):
+                # Third function
+                if len(vals) > 0:
+                    Result = vals[0]
+                    for f in range(1, len(vals)):
+                        Result = Min(Result, vals[f])
+                else:
+                    Result = TCoord(0, 0, 0)
             else:
+                # First and fourth functions
                 Result = vals[0]
                 for f in range(1, len(vals)):
                     if vals[f] < Result:
                         Result = vals[f]
     # Return TFloat OR TCoord OR Integer
-    elif isinstance(vals[0], TCoord):
-        return TCoord(0, 0, 0)
     return Result
 
 
-# vals = TFloats OR TMatrix OR TCoords OR TIntegers
-# vals, vals2 = TCoord OR Integer
+# First function: vals = TFloats
+# Second function: vals = TMatrix
+# Third function: vals = TCoords
+# Fourth function: vals = TIntegers
+# Fifth function: vals, vals2 = TCoord
+# Sixth function: vals, vals2 = TFloat
+# Seventh function: vals, vals2 = Integer
 def Max(vals, vals2=None):
     Result = 0
     if vals is not None:
         if vals2 is not None:
             if isinstance(vals2, TCoord):
+                # Fifth function
                 Result = TCoord()
                 if vals[0] > vals2[0]:
                     Result[0] = vals[0]
@@ -217,25 +238,34 @@ def Max(vals, vals2=None):
                 else:
                     Result[2] = vals2[2]
             else:
+                # Sixth and seventh functions
                 if vals > vals2:
                     Result = vals
                 else:
                     Result = vals2
         else:
             if isinstance(vals, np.ndarray) and (vals[0] is not None):
+                # Second function
                 Result = vals[0, 0]
                 for f in range(len(vals)):
                     for g in range(len(vals[f])):
                         if vals[f, g] > Result:
                             Result = vals[f, g]
+            elif isinstance(vals[0], TCoord):
+                # Third function
+                if len(vals) > 0:
+                    Result = vals[0]
+                    for f in range(1, len(vals)):
+                        Result = Max(Result, vals[f])
+                else:
+                    Result = TCoord(0, 0, 0)
             else:
+                # First and fourth functions
                 Result = vals[0]
                 for f in range(1, len(vals)):
                     if vals[f] > Result:
                         Result = vals[f]
     # Return TFloat OR TCoord OR Integer
-    elif isinstance(vals[0], TCoord):
-        return TCoord(0, 0, 0)
     return Result
 
 

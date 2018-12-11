@@ -1,9 +1,10 @@
-from guizero import App, PushButton
+from guizero import App, PushButton, Text
 from tkinter import Frame
 from tkinter import filedialog
-import Tooltip
 import pdbmolecules
 import oclconfiguration
+import geomutils
+import molutils
 
 
 def loadFileCommon():
@@ -12,30 +13,45 @@ def loadFileCommon():
 
 
 def loadFile1():
-    global mol1
+    global target
     pdbName = loadFileCommon()
     if pdbName != "":
-        print('Loading file...')
-        mol1 = FMolecules.LoadLayer(pdbName)
-        print('File loaded.')
+        textLoadButton1.text_color = 'black'
+        textLoadButton1.value = 'Loading file...'
+        target = FMolecules.LoadLayer(pdbName)
+        textLoadButton1.text_color = 'green'
+        textLoadButton1.value = 'File loaded.'
 
 
 def loadFile2():
-    global mol2
+    global probe
     pdbName = loadFileCommon()
     if pdbName != "":
-        print('Loading file...')
-        mol2 = FMolecules.LoadLayer(pdbName)
-        print('File loaded.')
+        textLoadButton2.text_color = 'black'
+        textLoadButton2.value = 'Loading file...'
+        probe = FMolecules.LoadLayer(pdbName)
+        textLoadButton2.text_color = 'green'
+        textLoadButton2.value = 'File loaded.'
 
 
 def bigger():
-    if mol1 is None:
-        print('First molecule not loaded.')
-    elif mol2 is None:
-        print('Second molecule not loaded')
+    global textBiggerButton
+    if target is None:
+        textBiggerButton.text_color = 'red'
+        textBiggerButton.value = 'First molecule not loaded.'
+    elif probe is None:
+        textBiggerButton.text_color = 'red'
+        textBiggerButton.value = 'Second molecule not loaded.'
     else:
-        print('Bigger')
+        textBiggerButton.text_color = 'black'
+        textBiggerButton.value = 'Starting Bigger...'
+
+    target.Transform(geomutils.Simmetric(molutils.FindCenter(target)))
+    probe.Transform(geomutils.Simmetric(molutils.FindCenter(probe)))
+    targetrads = geomutils.Add(molutils.ListRadii(target), 1.4)
+    targetcoords = molutils.ListCoords(target)
+    proberads = geomutils.Add(molutils.ListRadii(probe), 1.4)
+    probecoords = molutils.ListCoords(probe)
 
 
 class OpenFile(Frame):
@@ -61,15 +77,17 @@ class OpenFile(Frame):
         return f.name
 
 
-mol1 = None
-mol2 = None
+target = None
+probe = None
 app = App(title="BiggerPython")
 app.tk.iconbitmap('chemera.ico')
 
-loadFileButton1 = PushButton(app, command=loadFile1, text="Load the first PDB file")
-loadFileButton_ttp = Tooltip.Tooltip(loadFileButton1.tk, text="Load the first PDB file")
-loadFileButton2 = PushButton(app, command=loadFile2, text="Load the second PDB file")
-BiggerButton = PushButton(app, command=bigger, text='Start Bigger')
+loadFileButton1 = PushButton(app, command=loadFile1, text="Load the first PDB file", width=19)
+textLoadButton1 = Text(app, text='Missing file.', color='red', height=2)
+loadFileButton2 = PushButton(app, command=loadFile2, text="Load the second PDB file", width=19)
+textLoadButton2 = Text(app, text='Missing file.', color='red', height=2)
+biggerButton = PushButton(app, command=bigger, text='Start Bigger', width=19)
+textBiggerButton = Text(app, text='', height=2)
 
 # Load atom and config data
 oclconfiguration.DefaultConfig()
