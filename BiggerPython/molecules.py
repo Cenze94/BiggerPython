@@ -383,31 +383,31 @@ class TMolecule:
                 # Fifth method
                 ats = self.AllAtoms()
                 for f in range(len(ats)):
-                    ats[f].Coords = geomutils.Subtract(ats[f].Coords, Center)
-                    ats[f].Coords = geomutils.Rotate(ats[f].Coords, Rotation)
-                    ats[f].Coords = geomutils.Add(ats[f].Coords, Translation)
+                    ats[f].FCoord = geomutils.Subtract(ats[f].FCoord, Center)
+                    ats[f].FCoord = geomutils.Rotate(ats[f].FCoord, Rotation)
+                    ats[f].FCoord = geomutils.Add(ats[f].FCoord, Translation)
             else:
                 # Fourth method
                 ats = self.AllAtoms()
                 for f in range(len(ats)):
-                    ats[f].Coords = geomutils.Add(ats[f].Coords, Center)
-                    ats[f].Coords = geomutils.Rotate(ats[f].Coords, Rotation)
+                    ats[f].FCoord = geomutils.Add(ats[f].FCoord, Center)
+                    ats[f].FCoord = geomutils.Rotate(ats[f].FCoord, Rotation)
         else:
             if isinstance(Center, geomutils.TRotMatrix):
                 # Second method
                 ats = self.AllAtoms()
                 for f in range(len(ats)):
-                    ats[f].Coords = geomutils.Rotate(ats[f].Coords, Center)
+                    ats[f].FCoord = geomutils.Rotate(ats[f].FCoord, Center)
             elif isinstance(Center, geomutils.TQuaternion):
                 # Third method
                 ats = self.AllAtoms()
                 for f in range(len(ats)):
-                    ats[f].Coords = geomutils.Rotate(ats[f].Coords, Center)
+                    ats[f].FCoord = geomutils.Rotate(ats[f].FCoord, Center)
             else:
                 # First method
                 ats = self.AllAtoms()
                 for f in range(len(ats)):
-                    ats[f].Coords = geomutils.Add(ats[f].Coords, Center)
+                    ats[f].FCoord = geomutils.Add(ats[f].FCoord, Center)
 
     # These procedures clear all groups or atoms, respectively. They are meant to be used on empty molecules since
     # they do not callback to onDelete events

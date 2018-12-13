@@ -23,8 +23,8 @@ begin
   LoadAAData();
   FMolecules:=TPdbModelMan.Create(Config.MonomersPath);
 
-  LoadTest();
-  // BiggerTest();
+  // LoadTest();
+  BiggerTest();
 end;
 
 // Replico le istruzioni all'interno del codice eseguito dal pulsante che mi
@@ -69,19 +69,6 @@ begin
   begin
     WriteLn('   ' + mol.Groups[f].Name);
   end;
-
-  {WriteLn('');
-  WriteLn('FBondsTable');
-  WriteLn(Length(mol.BondsTable));
-  if Length(mol.BondsTable) > 0 then
-  begin
-    bond:=mol.BondsTable[0];
-    WriteLn('First Bond:');
-    WriteLn('Atom1: ' + bond.Atom1.Name);
-    WriteLn('Atom2: ' + bond.Atom2.Name);
-    WriteLn('BondType: ' + IntToStr(bond.BondType));
-    WriteLn('Tag: ' + IntToStr(bond.Tag));
-  end;}
 
   WriteLn('');
   WriteLn('FType: ' + mol.MolType);
