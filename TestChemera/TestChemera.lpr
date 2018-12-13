@@ -14,8 +14,8 @@ begin
   // StartQuicksortTest();
   // StartStringutilsTest();
   // StartPdbparserTest();
-  // StartGeomutilsTest();
-  StartGUITest();
+  StartGeomutilsTest();
+  // StartGUITest();
 
   Readln;
 end.

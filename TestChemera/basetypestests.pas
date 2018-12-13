@@ -65,8 +65,10 @@ begin
   // SumTest();
   // MinValIxTest();
   // MaxValIxTest();
-  CoordTest();
+  // CoordTest();
   // StringsToFloatsTest();
+  // FilledIntsTest();
+  // FilledFloatsTest();
   // IsEqualTest();
   // StringToFloatTest();
   // ScaleMatrixTest();
@@ -75,7 +77,7 @@ begin
   // ScaleMatrixTest();
   // AddMatricesTest();
   // StringToFloatsTest();
-  // InContactTest();
+  InContactTest();
   // AverageTest();
   // MedianTest();
   // VarianceTest();
@@ -332,13 +334,157 @@ begin
 end;
 
 procedure MinTest();
-begin
+var fa:TFloats; ia:TIntegers; ca:TCoords; c,c2:TCoord; f,i:Integer;
+  tf,tf2:TFloat; m:TMatrix;
 
+begin
+  SetLength(fa, 3);
+  fa[0]:=4.3;
+  fa[1]:=9.1;
+  fa[2]:=5;
+  tf:=Min(fa);
+  WriteLn(FloatToStr(tf));
+
+  WriteLn('');
+  SetLength(ia, 3);
+  ia[0]:=4;
+  ia[1]:=9;
+  ia[2]:=5;
+  f:=Min(ia);
+  WriteLn(IntToStr(f));
+
+  WriteLn('');
+  SetLength(ca, 3);
+  c[0]:=3;
+  c[1]:=7;
+  c[2]:=4;
+  ca[0]:=c;
+  c[0]:=5;
+  c[1]:=1;
+  c[2]:=6;
+  ca[1]:=c;
+  c[0]:=2;
+  c[1]:=2;
+  c[2]:=9;
+  ca[2]:=c;
+  c:=Min(ca);
+  WriteLn(FloatToStr(c[0]) + ' ' + FloatToStr(c[1]) + ' ' + FloatToStr(c[2]));
+
+  WriteLn('');
+  SetLength(m, 3);
+  SetLength(m[0], 3);
+  SetLength(m[1], 3);
+  SetLength(m[2], 3);
+  m[0,0]:=5;
+  m[0,1]:=2;
+  m[0,2]:=7;
+  m[1,0]:=4;
+  m[1,1]:=1;
+  m[1,2]:=9;
+  m[2,0]:=3;
+  m[2,1]:=7;
+  m[2,2]:=3;
+  tf:=Min(m);
+  WriteLn(FloatToStr(tf));
+
+  WriteLn('');
+  f:=4;
+  i:=5;
+  f:=Min(f, i);
+  WriteLn(IntToStr(f));
+
+  WriteLn('');
+  tf:=4.5;
+  tf2:=5.1;
+  tf:=Min(tf, tf2);
+  WriteLn(FloatToStr(tf));
+
+  WriteLn('');
+  c[0]:=4;
+  c[1]:=5;
+  c[2]:=9;
+  c2[0]:=5;
+  c2[1]:=7;
+  c2[2]:=6;
+  c:=Min(c, c2);
+  WriteLn(FloatToStr(c[0]) + ' ' + FloatToStr(c[1]) + ' ' + FloatToStr(c[2]));
 end;
 
 procedure MaxTest();
-begin
+var fa:TFloats; ia:TIntegers; ca:TCoords; c,c2:TCoord; f,i:Integer;
+  tf,tf2:TFloat; m:TMatrix;
 
+begin
+  SetLength(fa, 3);
+  fa[0]:=4.3;
+  fa[1]:=9.1;
+  fa[2]:=5;
+  tf:=Max(fa);
+  WriteLn(FloatToStr(tf));
+
+  WriteLn('');
+  SetLength(ia, 3);
+  ia[0]:=4;
+  ia[1]:=9;
+  ia[2]:=5;
+  f:=Max(ia);
+  WriteLn(IntToStr(f));
+
+  WriteLn('');
+  SetLength(ca, 3);
+  c[0]:=3;
+  c[1]:=7;
+  c[2]:=4;
+  ca[0]:=c;
+  c[0]:=5;
+  c[1]:=1;
+  c[2]:=6;
+  ca[1]:=c;
+  c[0]:=2;
+  c[1]:=2;
+  c[2]:=9;
+  ca[2]:=c;
+  c:=Max(ca);
+  WriteLn(FloatToStr(c[0]) + ' ' + FloatToStr(c[1]) + ' ' + FloatToStr(c[2]));
+
+  WriteLn('');
+  SetLength(m, 3);
+  SetLength(m[0], 3);
+  SetLength(m[1], 3);
+  SetLength(m[2], 3);
+  m[0,0]:=5;
+  m[0,1]:=2;
+  m[0,2]:=7;
+  m[1,0]:=4;
+  m[1,1]:=1;
+  m[1,2]:=9;
+  m[2,0]:=3;
+  m[2,1]:=7;
+  m[2,2]:=3;
+  tf:=Max(m);
+  WriteLn(FloatToStr(tf));
+
+  WriteLn('');
+  f:=4;
+  i:=5;
+  f:=Max(f, i);
+  WriteLn(IntToStr(f));
+
+  WriteLn('');
+  tf:=4.5;
+  tf2:=5.1;
+  tf:=Max(tf, tf2);
+  WriteLn(FloatToStr(tf));
+
+  WriteLn('');
+  c[0]:=4;
+  c[1]:=5;
+  c[2]:=9;
+  c2[0]:=5;
+  c2[1]:=7;
+  c2[2]:=6;
+  c:=Max(c, c2);
+  WriteLn(FloatToStr(c[0]) + ' ' + FloatToStr(c[1]) + ' ' + FloatToStr(c[2]));
 end;
 
 procedure MinIxTest();
@@ -352,8 +498,52 @@ begin
 end;
 
 procedure SumTest();
-begin
+var fa1,fa2:TFloats; ia:TIntegers; ca:TCoords; c:TCoord; f:Integer; tf:TFloat;
 
+begin
+  SetLength(fa1, 3);
+  SetLength(fa2, 4);
+  fa1[0]:=4.3;
+  fa1[1]:=9.1;
+  fa1[2]:=5;
+  fa2[0]:=7.4;
+  fa2[1]:=8.9;
+  fa2[2]:=9;
+  fa2[3]:=1.2;
+  fa1:=Sum(fa1, fa2);
+  for f:=0 to High(fa1) do
+  begin
+    WriteLn(FloatToStr(fa1[f]));
+  end;
+
+  WriteLn('');
+  tf:=Sum(fa2);
+  WriteLn(FloatToStr(tf));
+
+  WriteLn('');
+  SetLength(ia, 3);
+  ia[0]:=4;
+  ia[1]:=9;
+  ia[2]:=5;
+  f:=Sum(ia);
+  WriteLn(IntToStr(f));
+
+  WriteLn('');
+  SetLength(ca, 3);
+  c[0]:=3;
+  c[1]:=7;
+  c[2]:=4;
+  ca[0]:=c;
+  c[0]:=5;
+  c[1]:=1;
+  c[2]:=6;
+  ca[1]:=c;
+  c[0]:=2;
+  c[1]:=2;
+  c[2]:=1;
+  ca[2]:=c;
+  c:=Sum(ca);
+  WriteLn(FloatToStr(c[0]) + ' ' + FloatToStr(c[1]) + ' ' + FloatToStr(c[2]));
 end;
 
 procedure MinValIxTest();
@@ -381,13 +571,25 @@ begin
 end;
 
 procedure FilledIntsTest();
-begin
+var ia:TIntegers; f:Integer;
 
+begin
+  ia:=FilledInts(5, 2);
+  for f:=0 to High(ia) do
+  begin
+    WriteLn(IntToStr(ia[f]));
+  end;
 end;
 
 procedure FilledFloatsTest();
-begin
+var fa:TFloats; f:Integer;
 
+begin
+  fa:=FilledFloats(5, 3.7);
+  for f:=0 to High(fa) do
+  begin
+    WriteLn(FloatToStr(fa[f]));
+  end;
 end;
 
 procedure IsEqualTest();
@@ -416,8 +618,32 @@ begin
 end;
 
 procedure InContactTest();
-begin
+var c:TCoord; c1,c2:TCuboid;
 
+begin
+  c[0]:=3;
+  c[1]:=6;
+  c[2]:=9;
+  c1[0]:=c;
+  c[0]:=1;
+  c[1]:=5;
+  c[2]:=7;
+  c1[1]:=c;
+  c[0]:=6;
+  c[1]:=7;
+  c[2]:=3;
+  c2[0]:=c;
+  c[0]:=7;
+  c[1]:=3;
+  c[2]:=2;
+  c2[1]:=c;
+  WriteLn(BoolToStr(InContact(c1, c2))); // 0 è False, -1 è True
+  c[0]:=9;
+  c[1]:=9;
+  c[2]:=9;
+  c2[1]:=c;
+  c1[1]:=c;
+  WriteLn(BoolToStr(InContact(c1, c2)));
 end;
 
 procedure AverageTest();

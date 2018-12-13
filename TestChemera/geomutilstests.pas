@@ -54,9 +54,9 @@ begin
   // NormalizeTest();
   // ScaledTest();
   // SimmetricTest();
-  DistanceTest();
+  // DistanceTest();
   // DistanceSquaredTest();
-  // MidPointTest();
+  MidPointTest();
   // RotateTest();
   // RotationQuaternionTest();
   // RotationToTest();
@@ -405,8 +405,24 @@ begin
 end;
 
 procedure MidPointTest();
-begin
+var ca:TCoords; c:TCoord;
 
+begin
+  SetLength(ca, 3);
+  c[0]:=4;
+  c[1]:=6;
+  c[2]:=9;
+  ca[0]:=c;
+  c[0]:=1;
+  c[1]:=4;
+  c[2]:=1;
+  ca[1]:=c;
+  c[0]:=3;
+  c[1]:=8;
+  c[2]:=4;
+  ca[2]:=c;
+  c:=MidPoint(ca);
+  WriteLn(FloatToStr(c[0]) + ' ' + FloatToStr(c[1]) + ' ' + FloatToStr(c[2]));
 end;
 
 procedure RotateTest();

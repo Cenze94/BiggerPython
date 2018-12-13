@@ -730,6 +730,7 @@ begin
     Result:=Result+vals[f];
 end;
 
+// Questa funzione è sbagliata (ha senso sommare un array solo se esso è vuoto?)
 function Sum(vals: TCoords): TCoord;
 
 var f:Integer;

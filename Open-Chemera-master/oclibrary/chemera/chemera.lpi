@@ -45,9 +45,8 @@
         <ComponentName Value="CmMainForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="873"/>
-        <CursorPos X="48" Y="904"/>
+        <TopLine Value="356"/>
+        <CursorPos X="37" Y="412"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -62,9 +61,9 @@
       <Unit3>
         <Filename Value="..\molecule\molecules.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="15"/>
-        <TopLine Value="435"/>
-        <CursorPos X="5" Y="464"/>
+        <EditorIndex Value="14"/>
+        <TopLine Value="148"/>
+        <CursorPos X="15" Y="158"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
       </Unit3>
@@ -87,10 +86,9 @@
       <Unit6>
         <Filename Value="..\molecule\selections.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="14"/>
-        <CursorPos X="3" Y="30"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="157"/>
         <UsageCount Value="206"/>
-        <Loaded Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="..\display\base3ddisplay.pas"/>
@@ -200,7 +198,7 @@
       <Unit20>
         <Filename Value="..\..\sharedunits\utils\geomutils.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="16"/>
+        <EditorIndex Value="15"/>
         <TopLine Value="690"/>
         <CursorPos X="46" Y="708"/>
         <UsageCount Value="200"/>
@@ -209,8 +207,10 @@
       <Unit21>
         <Filename Value="..\molecule\molutils.pas"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="9"/>
-        <CursorPos X="60" Y="22"/>
+        <TopLine Value="263"/>
+        <CursorPos X="46" Y="277"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit21>
@@ -233,7 +233,7 @@
       <Unit24>
         <Filename Value="..\docking\dockdomains.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="17"/>
+        <EditorIndex Value="16"/>
         <TopLine Value="34"/>
         <CursorPos X="3" Y="27"/>
         <UsageCount Value="202"/>
@@ -242,7 +242,7 @@
       <Unit25>
         <Filename Value="..\docking\dockconstraints.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="18"/>
+        <EditorIndex Value="17"/>
         <TopLine Value="360"/>
         <CursorPos X="23" Y="378"/>
         <UsageCount Value="204"/>
@@ -250,7 +250,7 @@
       </Unit25>
       <Unit26>
         <Filename Value="..\docking\bogie.pas"/>
-        <EditorIndex Value="19"/>
+        <EditorIndex Value="18"/>
         <TopLine Value="18"/>
         <CursorPos X="19" Y="28"/>
         <UsageCount Value="103"/>
@@ -259,7 +259,7 @@
       <Unit27>
         <Filename Value="..\molecule\surface.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="21"/>
+        <EditorIndex Value="20"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit27>
@@ -302,7 +302,7 @@
       </Unit32>
       <Unit33>
         <Filename Value="..\docking\docktasks.pas"/>
-        <EditorIndex Value="20"/>
+        <EditorIndex Value="19"/>
         <TopLine Value="40"/>
         <CursorPos X="29" Y="54"/>
         <UsageCount Value="209"/>
@@ -317,127 +317,123 @@
         <Loaded Value="True"/>
       </Unit34>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="29" HistoryIndex="26">
       <Position1>
-        <Filename Value="..\base\oclconfiguration.pas"/>
-        <Caret Line="53" Column="30" TopLine="39"/>
+        <Filename Value="..\molecule\pdbmolecules.pas"/>
+        <Caret Line="645" Column="5" TopLine="624"/>
       </Position1>
       <Position2>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="77" Column="21" TopLine="70"/>
+        <Filename Value="chemeramain.pas"/>
+        <Caret Line="902" Column="28" TopLine="883"/>
       </Position2>
       <Position3>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="123" Column="19" TopLine="115"/>
+        <Caret Line="119" Column="20" TopLine="110"/>
       </Position3>
       <Position4>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="645" Column="41" TopLine="624"/>
+        <Filename Value="chemeramain.pas"/>
+        <Caret Line="902" Column="10" TopLine="883"/>
       </Position4>
       <Position5>
-        <Filename Value="..\molecule\pdbparser.pas"/>
-        <Caret Line="226" Column="35" TopLine="31"/>
+        <Filename Value="chemeramain.pas"/>
+        <Caret Line="901" Column="21" TopLine="883"/>
       </Position5>
       <Position6>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="645" Column="5" TopLine="624"/>
+        <Filename Value="chemeramain.pas"/>
+        <Caret Line="4" Column="26"/>
       </Position6>
       <Position7>
         <Filename Value="chemeramain.pas"/>
-        <Caret Line="902" Column="28" TopLine="883"/>
+        <Caret Line="70" Column="30" TopLine="56"/>
       </Position7>
       <Position8>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="119" Column="20" TopLine="110"/>
+        <Filename Value="chemeramain.pas"/>
+        <Caret Line="251" Column="20" TopLine="243"/>
       </Position8>
       <Position9>
         <Filename Value="chemeramain.pas"/>
-        <Caret Line="902" Column="10" TopLine="883"/>
+        <Caret Line="294" Column="12" TopLine="279"/>
       </Position9>
       <Position10>
         <Filename Value="chemeramain.pas"/>
-        <Caret Line="901" Column="21" TopLine="883"/>
+        <Caret Line="295" Column="10" TopLine="273"/>
       </Position10>
       <Position11>
         <Filename Value="chemeramain.pas"/>
-        <Caret Line="4" Column="26"/>
+        <Caret Line="359" Column="39" TopLine="346"/>
       </Position11>
       <Position12>
-        <Filename Value="chemeramain.pas"/>
-        <Caret Line="70" Column="30" TopLine="56"/>
+        <Filename Value="..\molecule\pdbmolecules.pas"/>
+        <Caret Line="636" Column="21" TopLine="617"/>
       </Position12>
       <Position13>
-        <Filename Value="chemeramain.pas"/>
-        <Caret Line="251" Column="20" TopLine="243"/>
+        <Filename Value="..\molecule\pdbmolecules.pas"/>
+        <Caret Line="599" Column="17" TopLine="585"/>
       </Position13>
       <Position14>
-        <Filename Value="chemeramain.pas"/>
-        <Caret Line="294" Column="12" TopLine="279"/>
+        <Filename Value="..\molecule\pdbmolecules.pas"/>
+        <Caret Line="608" Column="23" TopLine="595"/>
       </Position14>
       <Position15>
-        <Filename Value="chemeramain.pas"/>
-        <Caret Line="295" Column="10" TopLine="273"/>
+        <Filename Value="..\molecule\pdbparser.pas"/>
+        <Caret Line="276" Column="54" TopLine="259"/>
       </Position15>
       <Position16>
-        <Filename Value="chemeramain.pas"/>
-        <Caret Line="359" Column="39" TopLine="346"/>
+        <Filename Value="..\molecule\pdbparser.pas"/>
+        <Caret Line="250" Column="17" TopLine="231"/>
       </Position16>
       <Position17>
         <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="636" Column="21" TopLine="617"/>
+        <Caret Line="636" Column="14" TopLine="613"/>
       </Position17>
       <Position18>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="599" Column="17" TopLine="585"/>
-      </Position18>
-      <Position19>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="608" Column="23" TopLine="595"/>
-      </Position19>
-      <Position20>
-        <Filename Value="..\molecule\pdbparser.pas"/>
-        <Caret Line="276" Column="54" TopLine="259"/>
-      </Position20>
-      <Position21>
-        <Filename Value="..\molecule\pdbparser.pas"/>
-        <Caret Line="250" Column="17" TopLine="231"/>
-      </Position21>
-      <Position22>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="636" Column="14" TopLine="613"/>
-      </Position22>
-      <Position23>
         <Filename Value="..\molecule\pdbparser.pas"/>
         <Caret Line="250" Column="7" TopLine="229"/>
+      </Position18>
+      <Position19>
+        <Filename Value="chemeramain.pas"/>
+        <Caret Line="949" Column="24" TopLine="937"/>
+      </Position19>
+      <Position20>
+        <Filename Value="..\docking\rotations.pas"/>
+        <Caret Line="279" Column="5" TopLine="264"/>
+      </Position20>
+      <Position21>
+        <Filename Value="..\molecule\pdbmolecules.pas"/>
+        <Caret Line="607" Column="45" TopLine="596"/>
+      </Position21>
+      <Position22>
+        <Filename Value="..\molecule\pdbparser.pas"/>
+        <Caret Line="295" Column="36" TopLine="279"/>
+      </Position22>
+      <Position23>
+        <Filename Value="chemeramain.pas"/>
+        <Caret Line="56" Column="18" TopLine="47"/>
       </Position23>
       <Position24>
         <Filename Value="chemeramain.pas"/>
-        <Caret Line="949" Column="24" TopLine="937"/>
+        <Caret Line="64" Column="20" TopLine="47"/>
       </Position24>
       <Position25>
-        <Filename Value="..\docking\rotations.pas"/>
-        <Caret Line="279" Column="5" TopLine="264"/>
-      </Position25>
-      <Position26>
-        <Filename Value="..\molecule\pdbmolecules.pas"/>
-        <Caret Line="607" Column="45" TopLine="596"/>
-      </Position26>
-      <Position27>
-        <Filename Value="..\molecule\pdbparser.pas"/>
-        <Caret Line="295" Column="36" TopLine="279"/>
-      </Position27>
-      <Position28>
-        <Filename Value="chemeramain.pas"/>
-        <Caret Line="56" Column="18" TopLine="47"/>
-      </Position28>
-      <Position29>
-        <Filename Value="chemeramain.pas"/>
-        <Caret Line="64" Column="20" TopLine="47"/>
-      </Position29>
-      <Position30>
         <Filename Value="chemeramain.pas"/>
         <Caret Line="83" Column="15" TopLine="70"/>
-      </Position30>
+      </Position25>
+      <Position26>
+        <Filename Value="..\molecule\molutils.pas"/>
+        <Caret Line="20" Column="61"/>
+      </Position26>
+      <Position27>
+        <Filename Value="..\molecule\molutils.pas"/>
+        <Caret Line="64" Column="16" TopLine="52"/>
+      </Position27>
+      <Position28>
+        <Filename Value="..\..\sharedunits\general\basetypes.pas"/>
+        <Caret Line="113" Column="13" TopLine="106"/>
+      </Position28>
+      <Position29>
+        <Filename Value="..\..\sharedunits\general\basetypes.pas"/>
+        <Caret Line="592" Column="40" TopLine="512"/>
+      </Position29>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

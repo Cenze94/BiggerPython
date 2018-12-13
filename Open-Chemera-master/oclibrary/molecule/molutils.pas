@@ -208,6 +208,8 @@ begin
   Result[1]:=c2;
 end;
 
+// Le due prossime funzioni mi sembrano identiche, semplicemente sono scritte
+// in modo diverso
 procedure GroupsInContact(const Groups1, Groups2: TMolecules; const Dist: TFloat;
           out Interface1,Interface2:TIntegers);
 

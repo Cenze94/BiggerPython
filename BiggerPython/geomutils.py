@@ -281,7 +281,7 @@ def DistanceSquared(Vec1, Vec2):
 # Coords = TCoords
 def MidPoint(Coords):
     Result = basetypes.TCoord()
-    for f in range(Coords):
+    for f in range(len(Coords)):
         Result = Add(Result, Coords[f])
     Result = Multiply(Result, 1 / len(Coords))
     # Return TCoord

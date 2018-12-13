@@ -186,13 +186,13 @@ def Min(vals, vals2=None):
                 else:
                     Result = vals2
         else:
-            if isinstance(vals, np.ndarray) and (vals[0] is not None):
+            if isinstance(vals[0], list) and vals[0] is not None:
                 # Second function
-                Result = vals[0, 0]
+                Result = vals[0][0]
                 for f in range(len(vals)):
                     for g in range(len(vals[f])):
-                        if vals[f, g] < Result:
-                            Result = vals[f, g]
+                        if vals[f][g] < Result:
+                            Result = vals[f][g]
             elif isinstance(vals[0], TCoord):
                 # Third function
                 if len(vals) > 0:
@@ -244,13 +244,13 @@ def Max(vals, vals2=None):
                 else:
                     Result = vals2
         else:
-            if isinstance(vals, np.ndarray) and (vals[0] is not None):
+            if isinstance(vals[0], list) and vals[0] is not None:
                 # Second function
-                Result = vals[0, 0]
+                Result = vals[0][0]
                 for f in range(len(vals)):
                     for g in range(len(vals[f])):
-                        if vals[f, g] > Result:
-                            Result = vals[f, g]
+                        if vals[f][g] > Result:
+                            Result = vals[f][g]
             elif isinstance(vals[0], TCoord):
                 # Third function
                 if len(vals) > 0:
@@ -446,8 +446,8 @@ def StringToFloats(S):
 # Cuboid1, Cuboid2 = TCuboid
 def InContact(Cuboid1, Cuboid2):
     # c1, c2 = TCoord
-    c1 = max(Cuboid1[0], Cuboid2[0])
-    c2 = min(Cuboid1[1], Cuboid2[1])
+    c1 = Max(Cuboid1[0], Cuboid2[0])
+    c2 = Min(Cuboid1[1], Cuboid2[1])
     # Return Boolean
     return (c1[0] <= c2[0]) and (c1[1] <= c2[1]) and (c1[2] <= c2[2])
 

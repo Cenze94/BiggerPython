@@ -1,11 +1,11 @@
 import basetypes
 import geomutils
 import geomhash
-import molecules
 
 
 '''In the Pascal version there is also TSelection, which is an object that belongs to the graphical window. Since there
 isn't a graphical window in Python, this object is not implemented.'''
+
 
 # Molecule = TMolecule
 def CenterMolecule(Molecule):
@@ -107,16 +107,56 @@ def CalcCenterHull(Atoms, Dist):
 
 # Returns indexes of groups of each Mol1 and Mol2 within distance of the other groups must be terminal (with only
 # atoms, not groups)
-# Groups1, Groups2 = const TMolecules, Dist = const TFloat, Interface1, Interface2 = TIntegers
-def GroupsInContact(Groups1, Groups2, Dist, Interface1, Interface2):
+# Groups1, Groups2 = const TMolecules, Dist = const TFloat(, Interface1, Interface2 = TIntegers)
+def GroupsInContact(Groups1, Groups2, Dist):
+    hulls1 = CalcHulls(Groups1, Dist)
+    hulls2 = CalcHulls(Groups2, Dist)
+    interfixs1 = basetypes.FilledInts(len(hulls1), 0)
+    interfixs2 = basetypes.FilledInts(len(hulls2), 0)
+    for ix1 in range(len(hulls1)):
+        for ix2 in range(len(hulls2)):
+            if (basetypes.InContact(hulls1[ix1], hulls2[ix2])) and \
+               (AtomsInContact(Groups1[ix1].GroupAtoms, Groups2[ix2].GroupAtoms, Dist)):
+                interfixs1[ix1] = 1
+                interfixs2[ix2] = 1
+    Interface1 = []
+    for f in range(len(interfixs1)):
+        if interfixs1[f] > 0:
+            Interface1.append(f)
+    Interface2 = []
+    for f in range(len(interfixs2)):
+        if interfixs2[f] > 0:
+            Interface2.append(f)
+    # In Python return TIntegers, TIntegers
+    return Interface1, Interface2
 
 
 # Returns indexes of each pairwise contact from Mol1 to Mol2 within distance groups must be terminal (with only atoms,
 # not groups)
-# Groups1, Groups2 = const TMolecules, Dist = const TFloat, Interface1, Interface2 = TIntegers
-def GroupContacts(Groups1, Groups2, Dist, Interface1, Interface2):
+# Groups1, Groups2 = const TMolecules, Dist = const TFloat(, Interface1, Interface2 = TIntegers)
+def GroupContacts(Groups1, Groups2, Dist):
+    Interface1 = []
+    Interface2 = []
+    hulls1 = CalcHulls(Groups1, Dist)
+    hulls2 = CalcHulls(Groups2, Dist)
+    for ix1 in range(len(hulls1)):
+        for ix2 in range(len(hulls2)):
+            if (basetypes.InContact(hulls1[ix1], hulls2[ix2])) and \
+               (AtomsInContact(Groups1[ix1].GroupAtoms, Groups2[ix2].GroupAtoms, Dist)):
+                Interface1.append(ix1)
+                Interface2.append(ix2)
+    # In Python return TIntegers, TIntegers
+    return Interface1, Interface2
 
 
 # Returns an array with the indexes of FromCoords that are within Dist of any ToCoords uses geomhash for efficiency
 # FromCoords, ToCoords = TCoords, Dist = TFloat
 def NeighbourIndexes(FromCoords, ToCoords, Dist):
+    Result = []
+    tmprads = basetypes.FilledFloats(len(ToCoords), Dist)
+    hasher = geomhash.TGeomHasher(ToCoords, Dist, tmprads)
+    for f in range(len(FromCoords)):
+        if hasher.IsInnerPoint(FromCoords[f]):
+            Result.append(f)
+    # Return TIntegers
+    return Result

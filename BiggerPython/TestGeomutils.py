@@ -154,6 +154,12 @@ def DistanceTest():
     print(d)
 
 
+def MidPointTest():
+    ca = [basetypes.TCoord(4, 6, 9), basetypes.TCoord(1, 4, 1), basetypes.TCoord(3, 8, 4)]
+    c = geomutils.MidPoint(ca)
+    print(str(c[0]) + ' ' + str(c[1]) + ' ' + str(c[2]))
+
+
 def RotateTest():
     c = basetypes.TCoord(1, 2, 3)
     r = geomutils.TRotMatrix(4, 3, 1, 5, 2, 3, 5, 3, 1)
@@ -202,9 +208,9 @@ def RotateTest():
 # NormalizeTest()
 # ScaledTest()
 # SimmetricTest()
-DistanceTest()
+# DistanceTest()
 # DistanceSquaredTest()
-# MidPointTest()
+MidPointTest()
 # RotateTest()
 # RotationQuaternionTest()
 # RotationToTest()

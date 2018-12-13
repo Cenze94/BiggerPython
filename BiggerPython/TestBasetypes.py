@@ -105,9 +105,152 @@ def IsInArrayTest():
     print(str(basetypes.IsInArray('pela', s)))
 
 
+def MinTest():
+    fa = [4.3, 9.1, 5]
+    tf = basetypes.Min(fa)
+    print(str(tf))
+
+    print('')
+    ia = [4, 9, 5]
+    f = basetypes.Min(ia)
+    print(str(f))
+
+    print('')
+    ca = []
+    c = basetypes.TCoord(3, 7, 4)
+    ca.append(c)
+    c = basetypes.TCoord(5, 1, 6)
+    ca.append(c)
+    c = basetypes.TCoord(2, 2, 9)
+    ca.append(c)
+    c = basetypes.Min(ca)
+    print(str(c[0]) + ' ' + str(c[1]) + ' ' + str(c[2]))
+
+    print('')
+    m = [[5, 2, 7], [4, 1, 9], [3, 7, 3]]
+    tf = basetypes.Min(m)
+    print(str(tf))
+
+    print('')
+    f = 4
+    i = 5
+    f = basetypes.Min(f, i)
+    print(str(f))
+
+    print('')
+    tf = 4.5
+    tf2 = 5.1
+    tf = basetypes.Min(tf, tf2)
+    print(str(tf))
+
+    print('')
+    c = basetypes.TCoord(4, 5, 9)
+    c2 = basetypes.TCoord(5, 7, 6)
+    c = basetypes.Min(c, c2)
+    print(str(c[0]) + ' ' + str(c[1]) + ' ' + str(c[2]))
+
+
+def MaxTest():
+    fa = [4.3, 9.1, 5]
+    tf = basetypes.Max(fa)
+    print(str(tf))
+
+    print('')
+    ia = [4, 9, 5]
+    f = basetypes.Max(ia)
+    print(str(f))
+
+    print('')
+    ca = []
+    c = basetypes.TCoord(3, 7, 4)
+    ca.append(c)
+    c = basetypes.TCoord(5, 1, 6)
+    ca.append(c)
+    c = basetypes.TCoord(2, 2, 9)
+    ca.append(c)
+    c = basetypes.Max(ca)
+    print(str(c[0]) + ' ' + str(c[1]) + ' ' + str(c[2]))
+
+    print('')
+    m = [[5, 2, 7], [4, 1, 9], [3, 7, 3]]
+    tf = basetypes.Max(m)
+    print(str(tf))
+
+    print('')
+    f = 4
+    i = 5
+    f = basetypes.Max(f, i)
+    print(str(f))
+
+    print('')
+    tf = 4.5
+    tf2 = 5.1
+    tf = basetypes.Max(tf, tf2)
+    print(str(tf))
+
+    print('')
+    c = basetypes.TCoord(4, 5, 9)
+    c2 = basetypes.TCoord(5, 7, 6)
+    c = basetypes.Max(c, c2)
+    print(str(c[0]) + ' ' + str(c[1]) + ' ' + str(c[2]))
+
+
+def SumTest():
+    fa1 = [4.3, 9.1, 5]
+    fa2 = [7.4, 8.9, 9, 1.2]
+    fa1 = basetypes.Sum(fa1, fa2)
+    for f in range(len(fa1)):
+        print(str(fa1[f]))
+
+    print('')
+    tf = basetypes.Sum(fa2)
+    print(str(tf))
+
+    print('')
+    ia = [4, 9, 5]
+    f = basetypes.Sum(ia)
+    print(str(f))
+
+    print('')
+    ca = []
+    c = basetypes.TCoord(3, 7, 4)
+    ca.append(c)
+    c = basetypes.TCoord(5, 1, 6)
+    ca.append(c)
+    c = basetypes.TCoord(2, 2, 1)
+    ca.append(c)
+    c = basetypes.Sum(ca)
+    print(str(c[0]) + ' ' + str(c[1]) + ' ' + str(c[2]))
+
+
 def CoordTest():
     c = basetypes.Coord(5, 6, 7)
     print(str(c[0]) + ' ' + str(c[1]) + ' ' + str(c[2]))
+
+
+def FilledIntsTest():
+    ia = basetypes.FilledInts(5, 2)
+    for f in range(len(ia)):
+        print(str(ia[f]))
+
+
+def FilledFloatsTest():
+    fa = basetypes.FilledFloats(5, 3.7)
+    for f in range(len(fa)):
+        print(str(fa[f]))
+
+
+def InContactTest():
+    c1 = basetypes.TCuboid(basetypes.TCoord(3, 6, 9), basetypes.TCoord(1, 5, 7))
+    c2 = basetypes.TCuboid(basetypes.TCoord(6, 7, 3), basetypes.TCoord(7, 3, 2))
+    print(basetypes.InContact(c1, c2))
+    c2[1][0] = 9
+    c2[1][1] = 9
+    c2[1][2] = 9
+    c1[1][0] = 9
+    c1[1][1] = 9
+    c1[1][2] = 9
+    print(basetypes.InContact(c1, c2))
 
 
 # AddToArrayTest()
@@ -128,8 +271,10 @@ def CoordTest():
 # SumTest()
 # MinValIxTest()
 # MaxValIxTest()
-CoordTest()
+# CoordTest()
 # StringsToFloatsTest()
+# FilledIntsTest()
+# FilledFloatsTest()
 # IsEqualTest()
 # StringToFloatTest()
 # ScaleMatrixTest()
@@ -138,7 +283,7 @@ CoordTest()
 # ScaleMatrixTest()
 # AddMatricesTest()
 # StringToFloatsTest()
-# InContactTest()
+InContactTest()
 # AverageTest()
 # MedianTest()
 # VarianceTest()
