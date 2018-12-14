@@ -155,7 +155,7 @@ class TMolecule:
         # Returns a copy of all coords in all atoms
         Result = []
         for f in range(len(self.FAtoms)):
-            Result.append(self.FAtoms[f].Coords)
+            Result.append(self.FAtoms[f].FCoord)
         # Add to this level all the offspring levels
         for f in range(len(self.FGroups)):
             tmp = self.FGroups[f].AllCoords()

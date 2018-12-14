@@ -58,8 +58,6 @@ def LoadTest():
 def BiggerTest():
     target = FMolecules.LoadLayer('../PDB/3f6u.pdb')
     probe = FMolecules.LoadLayer('../PDB/4a0q.pdb')
-    c = geomutils.Simmetric(molutils.FindCenter(target))
-    print(str(c[0]) + ' ' + str(c[1]) + ' ' + str(c[2]))
     target.Transform(geomutils.Simmetric(molutils.FindCenter(target)))
     probe.Transform(geomutils.Simmetric(molutils.FindCenter(probe)))
     targetrads = geomutils.Add(molutils.ListRadii(target), 1.4)

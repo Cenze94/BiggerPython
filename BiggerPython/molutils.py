@@ -27,11 +27,11 @@ def ListCoords(Molecule, AtomName=None):
     Result = []
     if AtomName is None:
         for f in range(len(atoms)):
-            Result.append(atoms[f].Coords)
+            Result.append(atoms[f].FCoord)
     else:
         for f in range(len(atoms)):
             if atoms[f] is AtomName:
-                Result.append(atoms[f].Coords)
+                Result.append(atoms[f].FCoord)
     # Return TCoords
     return Result
 
@@ -41,7 +41,7 @@ def ListRadii(Molecule):
     atoms = Molecule.AllAtoms()
     Result = []
     for f in range(len(atoms)):
-        Result.append(atoms[f].Radius)
+        Result.append(atoms[f].FRadius)
     # Return TFloats
     return Result
 

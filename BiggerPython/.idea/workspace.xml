@@ -8,6 +8,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUITests.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUITests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/molecules.py" beforeDir="false" afterPath="$PROJECT_DIR$/molecules.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/molutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/molutils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdbmolecules.py" beforeDir="false" afterPath="$PROJECT_DIR$/pdbmolecules.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestChemera/TestChemera.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChemera/TestChemera.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestChemera/TestChemera.lpr" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChemera/TestChemera.lpr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TestChemera/guitests.pas" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChemera/guitests.pas" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,17 +24,18 @@
     <session id="2109489389">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.42" value="1" />
+          <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.75" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -56,7 +61,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="92280" />
+          <entry key="Python" value="92303" />
         </counts>
       </usages-collector>
     </session>
@@ -66,11 +71,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="195" column="35" lean-forward="true" selection-start-line="195" selection-start-column="35" selection-end-line="195" selection-end-column="35" />
+            <state relative-caret-position="-177">
+              <caret line="132" column="49" lean-forward="true" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <marker date="1544385644426" expanded="true" signature="8512:8518" ph="..." />
+                <marker date="1544807433425" expanded="true" signature="8515:8521" ph="..." />
               </folding>
             </state>
           </provider>
@@ -79,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="53" selection-end-column="44" />
+            <state relative-caret-position="225">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -91,8 +96,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GUITests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="60" column="56" selection-start-line="60" selection-start-column="56" selection-end-line="60" selection-end-column="56" />
+            <state relative-caret-position="273">
+              <caret line="65" column="44" lean-forward="true" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -103,8 +108,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/molutils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="70" lean-forward="true" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
+            <state relative-caret-position="174">
+              <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -115,8 +120,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/basetypes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="442" column="17" lean-forward="true" selection-start-line="442" selection-start-column="17" selection-end-line="442" selection-end-column="17" />
+            <state relative-caret-position="7463">
+              <caret line="442" column="17" selection-start-line="442" selection-start-column="17" selection-end-line="442" selection-end-column="17" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <marker date="1544720260486" expanded="true" signature="244:1315" ph="..." />
@@ -131,8 +136,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stringutils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="566" column="21" lean-forward="true" selection-start-line="566" selection-start-column="21" selection-end-line="566" selection-end-column="21" />
+            <state relative-caret-position="9622">
+              <caret line="566" column="21" selection-start-line="566" selection-start-column="21" selection-end-line="566" selection-end-column="21" />
               <folding>
                 <marker date="1543599473671" expanded="true" signature="256:258" ph="..." />
                 <marker date="1543599473671" expanded="true" signature="256:259" ph="..." />
@@ -150,7 +155,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/molecules.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="579">
+            <state relative-caret-position="95">
               <caret line="409" selection-start-line="409" selection-end-line="409" />
             </state>
           </provider>
@@ -159,7 +164,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geomutils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
+            <state relative-caret-position="2091">
               <caret line="125" selection-start-line="125" selection-end-line="125" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
@@ -192,7 +197,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pdbparser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="170">
               <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -214,7 +219,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>StringsT</find>
       <find>Load</find>
       <find>quicksort</find>
       <find>bas</find>
@@ -244,6 +248,7 @@
       <find>mol2</find>
       <find>basetypes</find>
       <find>geomutils</find>
+      <find>AtomicNumber</find>
     </findStrings>
     <replaceStrings>
       <replace>print</replace>
@@ -272,15 +277,15 @@
         <option value="$PROJECT_DIR$/quicksort.py" />
         <option value="$PROJECT_DIR$/oclconfiguration.py" />
         <option value="$PROJECT_DIR$/pdbparser.py" />
-        <option value="$PROJECT_DIR$/pdbmolecules.py" />
         <option value="$PROJECT_DIR$/GUI.py" />
-        <option value="$PROJECT_DIR$/molutils.py" />
         <option value="$PROJECT_DIR$/basetypes.py" />
         <option value="$PROJECT_DIR$/TestBasetypes.py" />
         <option value="$PROJECT_DIR$/TestGeomutils.py" />
         <option value="$PROJECT_DIR$/geomutils.py" />
-        <option value="$PROJECT_DIR$/molecules.py" />
         <option value="$PROJECT_DIR$/GUITests.py" />
+        <option value="$PROJECT_DIR$/pdbmolecules.py" />
+        <option value="$PROJECT_DIR$/molecules.py" />
+        <option value="$PROJECT_DIR$/molutils.py" />
       </list>
     </option>
   </component>
@@ -313,7 +318,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -329,6 +333,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -497,8 +502,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32786885" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32786885" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -532,11 +537,6 @@
           <line>451</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/molecules.py</url>
-          <line>409</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -544,13 +544,7 @@
     <entry file="file://$PROJECT_DIR$/Pipfile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tooltip.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Tooltip.py" />
     <entry file="file://$PROJECT_DIR$/TestQuicksort.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -569,9 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1083">
           <caret line="37" column="52" lean-forward="true" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -602,31 +593,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="195" column="35" lean-forward="true" selection-start-line="195" selection-start-column="35" selection-end-line="195" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <marker date="1544385644426" expanded="true" signature="8512:8518" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestBasetypes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="254" lean-forward="true" selection-start-line="254" selection-end-line="254" />
-          <folding>
-            <marker date="1544720714927" expanded="true" signature="5086:5780" ph="..." />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestGeomutils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1938">
+          <caret line="159" column="53" selection-start-line="159" selection-start-column="53" selection-end-line="159" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/basetypes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="442" column="17" lean-forward="true" selection-start-line="442" selection-start-column="17" selection-end-line="442" selection-end-column="17" />
+        <state relative-caret-position="7463">
+          <caret line="442" column="17" selection-start-line="442" selection-start-column="17" selection-end-line="442" selection-end-column="17" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <marker date="1544720260486" expanded="true" signature="244:1315" ph="..." />
@@ -637,42 +621,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/molutils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="70" lean-forward="true" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestGeomutils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="159" column="53" selection-start-line="159" selection-start-column="53" selection-end-line="159" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pdbparser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <marker date="1544202822284" expanded="true" signature="366:371" ph="..." />
-            <marker date="1544202822284" expanded="true" signature="1422:1427" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stringutils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="566" column="21" lean-forward="true" selection-start-line="566" selection-start-column="21" selection-end-line="566" selection-end-column="21" />
+        <state relative-caret-position="9622">
+          <caret line="566" column="21" selection-start-line="566" selection-start-column="21" selection-end-line="566" selection-end-column="21" />
           <folding>
             <marker date="1543599473671" expanded="true" signature="256:258" ph="..." />
             <marker date="1543599473671" expanded="true" signature="256:259" ph="..." />
@@ -686,19 +638,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="53" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/geomutils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
+        <state relative-caret-position="2091">
           <caret line="125" selection-start-line="125" selection-end-line="125" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
@@ -727,17 +669,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pdbparser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1544202822284" expanded="true" signature="366:371" ph="..." />
+            <marker date="1544202822284" expanded="true" signature="1422:1427" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/molecules.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
+        <state relative-caret-position="95">
           <caret line="409" selection-start-line="409" selection-end-line="409" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/molutils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-177">
+          <caret line="132" column="49" lean-forward="true" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <marker date="1544807433425" expanded="true" signature="8515:8521" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GUITests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="60" column="56" selection-start-line="60" selection-start-column="56" selection-end-line="60" selection-end-column="56" />
+        <state relative-caret-position="273">
+          <caret line="65" column="44" lean-forward="true" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

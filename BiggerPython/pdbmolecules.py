@@ -147,10 +147,10 @@ class TPDBModel:
                 cres = self.FProtein.GetGroup(cc).NewGroup(patom.ResName, patom.ResSeq)
                 cr = patom.ResSeq
             atom = cres.NewAtom(patom.AtomName, patom.Serial)
-            atom.Coords = patom.Coords
+            atom.FCoord = patom.Coords
             # Element may be present in the PDB file. However, this is superseded if there is monomer template data
-            atom.AtomicNumber = oclconfiguration.AtomicNumber(patom.Element)
-            atom.Radius = oclconfiguration.VdWRadius(atom.AtomicNumber)
+            atom.FAtomicNumber = oclconfiguration.AtomicNumber(patom.Element)
+            atom.FRadius = oclconfiguration.VdWRadius(atom.FAtomicNumber)
             if ChargeFrom is PDBChargeOrigin.pdbOccupancy:
                 atom.Charge = patom.Occupancy
             elif ChargeFrom is PDBChargeOrigin.pdbOccTemp:

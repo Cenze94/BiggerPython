@@ -5,8 +5,8 @@ unit guitests;
 interface
 
 uses
-  Classes, SysUtils, oclconfiguration, chemeramain, pdbmolecules,
-  molecules;
+  Classes, SysUtils, oclconfiguration, chemeramain, pdbmolecules, molecules,
+  basetypes, geomutils, bogie, linegrids, dockdomains, molutils;
 
 procedure StartGUITest();
 procedure LoadTest();
@@ -77,10 +77,28 @@ end;
 // Provo ad eseguire direttamente il codice del pulsante, dato che altrimenti il
 // codice risulterebbe lungo da riscrivere
 procedure BiggerTest();
-var main:TCmMainForm;
+var targetrads,proberads:TFloats;
+  targetcoords,probecoords:TCoords;
+  targetgrid,probegrid:TDockingGrid;
+  domain:TDockDomain;
+  tick1,tick2:DWORD;
+  models:TModelManager;
+  f:Integer;
+  target,probe:TMolecule;
+  MaxIters:Integer;
 
 begin
-  main.MenuItem2Click(Nil);
+  target:=FMolecules.LoadLayer('..\PDB\3f6u.pdb');
+  probe:=FMolecules.LoadLayer('..\PDB\4a0q.pdb');
+
+  target.Transform(Simmetric(FindCenter(target)));
+  probe.Transform(Simmetric(FindCenter(probe)));
+
+  targetrads:=Add(ListRadii(target),1.4);
+  targetcoords:=ListCoords(target);
+
+  proberads:=Add(ListRadii(probe),1.4);
+  probecoords:=ListCoords(probe);
 end;
 
 end.
