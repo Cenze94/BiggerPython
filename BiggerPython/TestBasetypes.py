@@ -1,4 +1,5 @@
 import basetypes
+import time
 
 
 def AddToArrayTest():
@@ -253,6 +254,49 @@ def InContactTest():
     print(basetypes.InContact(c1, c2))
 
 
+def AverageTest():
+    fa = [3.2, 4.1, 6.8, 2.9, 9.4]
+    f = basetypes.Average(fa)
+    print(str(f))
+    ia = [3, 4, 6, 2, 9]
+    f = basetypes.Average(ia)
+    print(str(f))
+
+
+def MedianTest():
+    fa = [3.2, 4.1, 6.8, 2.9, 9.4]
+    f = basetypes.Median(fa)
+    print(str(f))
+    ia = [3, 4, 6, 2, 9]
+    i = basetypes.Median(ia)
+    print(str(i))
+
+
+def VarianceTest():
+    fa = [5.4, 3.8, 6.5]
+    v = basetypes.Variance(fa, 5.5)
+    print(str(v))
+
+
+def IsBetweenTest():
+    print(str(basetypes.IsBetween(6.4, 5.8, 7.1)))
+    print(str(basetypes.IsBetween(5.4, 5.8, 5.1)))
+    print(str(basetypes.IsBetween(7.2, 4.7, 6.7)))
+    print(str(basetypes.IsBetween(3.2, 4.7, 6.7)))
+
+
+def GetTickCountTest():
+    f = basetypes.GetTickCount()
+    print(str(f))
+
+
+def GetTimeIntervalTest():
+    s = basetypes.GetTickCount()
+    time.sleep(5)
+    d, s = basetypes.GetTimeInterval(s)
+    print(str(s) + ' ' + str(d))
+
+
 # AddToArrayTest()
 # ForceNotZeroTest()
 # PushIntoArrayTest()
@@ -283,8 +327,8 @@ def InContactTest():
 # ScaleMatrixTest()
 # AddMatricesTest()
 # StringToFloatsTest()
-InContactTest()
-# AverageTest()
+# InContactTest()
+AverageTest()
 # MedianTest()
 # VarianceTest()
 # IsBetweenTest()

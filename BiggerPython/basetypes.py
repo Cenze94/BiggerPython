@@ -478,7 +478,7 @@ def Median(Fs):
 def Variance(Fs, Avrg):
     Result = 0
     for f in range(len(Fs)):
-        Result = Result + math.sqrt(Fs[f] - Avrg)
+        Result = Result + (Fs[f] - Avrg) ** 2
     # Return TFloat
     return Result / len(Fs)
 
@@ -500,4 +500,4 @@ def GetTimeInterval(StartTick):
     endtick = GetTickCount()
     # endtick is returned as the new StartTick, because it can't be modifies inside the method
     # Return Integer
-    return StartTick - endtick, endtick
+    return endtick - StartTick, endtick

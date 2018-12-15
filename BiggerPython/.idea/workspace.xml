@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3a5d4cd-4e09-4507-9323-95c42a60ef12" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUITests.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUITests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/molecules.py" beforeDir="false" afterPath="$PROJECT_DIR$/molecules.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/molutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/molutils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdbmolecules.py" beforeDir="false" afterPath="$PROJECT_DIR$/pdbmolecules.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestChemera/TestChemera.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChemera/TestChemera.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestChemera/TestChemera.lpr" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChemera/TestChemera.lpr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestChemera/guitests.pas" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChemera/guitests.pas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestBasetypes.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestBasetypes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basetypes.py" beforeDir="false" afterPath="$PROJECT_DIR$/basetypes.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +42,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="37" />
+          <entry key="Python" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -61,7 +55,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="92303" />
+          <entry key="Python" value="92935" />
         </counts>
       </usages-collector>
     </session>
@@ -93,13 +87,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUITests.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
               <caret line="65" column="44" lean-forward="true" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TestBasetypes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="258" column="29" lean-forward="true" selection-start-line="258" selection-start-column="29" selection-end-line="258" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+                <marker date="1544873849912" expanded="true" signature="5098:6701" ph="..." />
               </folding>
             </state>
           </provider>
@@ -120,14 +127,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/basetypes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7463">
-              <caret line="442" column="17" selection-start-line="442" selection-start-column="17" selection-end-line="442" selection-end-column="17" />
+            <state relative-caret-position="277">
+              <caret line="483" lean-forward="true" selection-start-line="483" selection-end-line="483" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <marker date="1544720260486" expanded="true" signature="244:1315" ph="..." />
-                <marker date="1544720260486" expanded="true" signature="782:787" ph="..." />
-                <marker date="1544720260486" expanded="true" signature="831:1315" ph="..." />
-                <marker date="1544720260486" expanded="true" signature="1592:1597" ph="..." />
+                <marker date="1544813971205" expanded="true" signature="244:1315" ph="..." />
+                <marker date="1544813971205" expanded="true" signature="782:787" ph="..." />
+                <marker date="1544813971205" expanded="true" signature="831:1315" ph="..." />
+                <marker date="1544813971205" expanded="true" signature="1592:1597" ph="..." />
               </folding>
             </state>
           </provider>
@@ -278,14 +285,14 @@
         <option value="$PROJECT_DIR$/oclconfiguration.py" />
         <option value="$PROJECT_DIR$/pdbparser.py" />
         <option value="$PROJECT_DIR$/GUI.py" />
-        <option value="$PROJECT_DIR$/basetypes.py" />
-        <option value="$PROJECT_DIR$/TestBasetypes.py" />
         <option value="$PROJECT_DIR$/TestGeomutils.py" />
         <option value="$PROJECT_DIR$/geomutils.py" />
         <option value="$PROJECT_DIR$/GUITests.py" />
         <option value="$PROJECT_DIR$/pdbmolecules.py" />
         <option value="$PROJECT_DIR$/molecules.py" />
         <option value="$PROJECT_DIR$/molutils.py" />
+        <option value="$PROJECT_DIR$/basetypes.py" />
+        <option value="$PROJECT_DIR$/TestBasetypes.py" />
       </list>
     </option>
   </component>
@@ -357,7 +364,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.GUITests">
+  <component name="RunManager" selected="Python.TestBasetypes">
     <configuration name="GUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="BiggerPython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -472,10 +479,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.TestBasetypes" />
         <item itemvalue="Python.GUITests" />
         <item itemvalue="Python.GUI" />
         <item itemvalue="Python.TestGeomutils" />
-        <item itemvalue="Python.TestBasetypes" />
         <item itemvalue="Python.TestPdbparser" />
       </list>
     </recent_temporary>
@@ -502,8 +509,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32786885" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32786885" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -593,31 +600,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestBasetypes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="254" lean-forward="true" selection-start-line="254" selection-end-line="254" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestGeomutils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1938">
           <caret line="159" column="53" selection-start-line="159" selection-start-column="53" selection-end-line="159" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basetypes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7463">
-          <caret line="442" column="17" selection-start-line="442" selection-start-column="17" selection-end-line="442" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <marker date="1544720260486" expanded="true" signature="244:1315" ph="..." />
-            <marker date="1544720260486" expanded="true" signature="782:787" ph="..." />
-            <marker date="1544720260486" expanded="true" signature="831:1315" ph="..." />
-            <marker date="1544720260486" expanded="true" signature="1592:1597" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -725,6 +711,31 @@
           <caret line="65" column="44" lean-forward="true" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basetypes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="483" lean-forward="true" selection-start-line="483" selection-end-line="483" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1544813971205" expanded="true" signature="244:1315" ph="..." />
+            <marker date="1544813971205" expanded="true" signature="782:787" ph="..." />
+            <marker date="1544813971205" expanded="true" signature="831:1315" ph="..." />
+            <marker date="1544813971205" expanded="true" signature="1592:1597" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestBasetypes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="258" column="29" lean-forward="true" selection-start-line="258" selection-start-column="29" selection-end-line="258" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+            <marker date="1544873849912" expanded="true" signature="5098:6701" ph="..." />
           </folding>
         </state>
       </provider>

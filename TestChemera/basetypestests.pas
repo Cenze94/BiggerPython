@@ -5,7 +5,7 @@ unit basetypestests;
 interface
 
 uses
-  Classes, SysUtils, basetypes;
+  Classes, SysUtils, basetypes, Crt;
 
   procedure StartBasetypesTest();
   procedure AddToArrayTest();
@@ -77,8 +77,8 @@ begin
   // ScaleMatrixTest();
   // AddMatricesTest();
   // StringToFloatsTest();
-  InContactTest();
-  // AverageTest();
+  // InContactTest();
+  AverageTest();
   // MedianTest();
   // VarianceTest();
   // IsBetweenTest();
@@ -647,33 +647,85 @@ begin
 end;
 
 procedure AverageTest();
-begin
+var fa:TFloats; f:TFloat; ia:TIntegers;
 
+begin
+  SetLength(fa, 5);
+  fa[0]:=3.2;
+  fa[1]:=4.1;
+  fa[2]:=6.8;
+  fa[3]:=2.9;
+  fa[4]:=9.4;
+  f:=Average(fa);
+  WriteLn(FloatToStr(f));
+  SetLength(ia, 5);
+  ia[0]:=3;
+  ia[1]:=4;
+  ia[2]:=6;
+  ia[3]:=2;
+  ia[4]:=9;
+  f:=Average(ia);
+  WriteLn(FloatToStr(f));
 end;
 
 procedure MedianTest();
-begin
+var fa:TFloats; f:TFloat; ia:TIntegers; i:Integer;
 
+begin
+  SetLength(fa, 5);
+  fa[0]:=3.2;
+  fa[1]:=4.1;
+  fa[2]:=6.8;
+  fa[3]:=2.9;
+  fa[4]:=9.4;
+  f:=Median(fa);
+  WriteLn(FloatToStr(f));
+  SetLength(ia, 5);
+  ia[0]:=3;
+  ia[1]:=4;
+  ia[2]:=6;
+  ia[3]:=2;
+  ia[4]:=9;
+  i:=Median(ia);
+  WriteLn(IntToStr(i));
 end;
 
 procedure VarianceTest();
-begin
+var fa:TFloats; v:TFloat;
 
+begin
+  SetLength(fa, 3);
+  fa[0]:=5.4;
+  fa[1]:=3.8;
+  fa[2]:=6.5;
+  v:=Variance(fa, 5.5);
+  WriteLn(FloatToStr(v));
 end;
 
 procedure IsBetweenTest();
 begin
-
+  WriteLn(BoolToStr(IsBetween(6.4, 5.8, 7.1))); // -1 è true, 0 è false
+  WriteLn(BoolToStr(IsBetween(5.4, 5.8, 5.1)));
+  WriteLn(BoolToStr(IsBetween(7.2, 4.7, 6.7)));
+  WriteLn(BoolToStr(IsBetween(3.2, 4.7, 6.7)));
 end;
 
 procedure GetTickCountTest();
-begin
+var f:Integer;
 
+begin
+  f:=GetTickCount();
+  WriteLn(IntToStr(f));
 end;
 
 procedure GetTimeIntervalTest();
-begin
+var s,d:DWORD;
 
+begin
+  s:=GetTickCount();
+  Delay(5000);
+  d:=GetTimeInteval(s);
+  WriteLn(IntToStr(s) + ' ' + IntToStr(d));
 end;
 
 end.

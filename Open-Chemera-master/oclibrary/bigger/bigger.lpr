@@ -80,7 +80,10 @@ begin
     end;
 
   // stop program loop
-  Terminate;
+  // Originariamente la prossima istruzione era attiva, così facendo però
+  // l'applicazione termina subito. Mi sa che questo progetto era semplicemente
+  // una prova.
+  //Terminate;
 end;
 
 constructor TBigger.Create(TheOwner: TComponent);
