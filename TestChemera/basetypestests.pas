@@ -73,12 +73,9 @@ begin
   // StringToFloatTest();
   // ScaleMatrixTest();
   // AddMatricesTest();
-  // StringToFloatsTest();
-  // ScaleMatrixTest();
-  // AddMatricesTest();
-  // StringToFloatsTest();
+  StringToFloatsTest();
   // InContactTest();
-  AverageTest();
+  // AverageTest();
   // MedianTest();
   // VarianceTest();
   // IsBetweenTest();
@@ -599,7 +596,8 @@ end;
 
 procedure StringToFloatTest();
 begin
-
+  WriteLn(FloatToStr(StringToFloat('6.57')));
+  WriteLn(FloatToStr(StringToFloat('348,532')));
 end;
 
 procedure ScaleMatrixTest();
@@ -613,8 +611,14 @@ begin
 end;
 
 procedure StringToFloatsTest();
-begin
+var fa:TFloats; f:Integer;
 
+begin
+  fa:=StringToFloats('6.54 56.93              8.74 12,7645');
+  for f:=0 to High(fa) do
+  begin
+    WriteLn(FloatToStr(fa[f]));
+  end;
 end;
 
 procedure InContactTest();

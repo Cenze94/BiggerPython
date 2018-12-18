@@ -241,6 +241,17 @@ def FilledFloatsTest():
         print(str(fa[f]))
 
 
+def StringToFloatTest():
+    print(str(basetypes.StringToFloat('6.57')))
+    print(str(basetypes.StringToFloat('348,532')))
+
+
+def StringToFloatsTest():
+    fa = basetypes.StringToFloats('6.54 56.93   8.74 12,7645')
+    for f in range(len(fa)):
+        print(str(fa[f]))
+
+
 def InContactTest():
     c1 = basetypes.TCuboid(basetypes.TCoord(3, 6, 9), basetypes.TCoord(1, 5, 7))
     c2 = basetypes.TCuboid(basetypes.TCoord(6, 7, 3), basetypes.TCoord(7, 3, 2))
@@ -323,12 +334,9 @@ def GetTimeIntervalTest():
 # StringToFloatTest()
 # ScaleMatrixTest()
 # AddMatricesTest()
-# StringToFloatsTest()
-# ScaleMatrixTest()
-# AddMatricesTest()
-# StringToFloatsTest()
+StringToFloatsTest()
 # InContactTest()
-AverageTest()
+# AverageTest()
 # MedianTest()
 # VarianceTest()
 # IsBetweenTest()

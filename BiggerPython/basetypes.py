@@ -399,6 +399,9 @@ def IsEqual(A1, A2):
 # S = const String
 def StringToFloat(S):
     # Return TFloat
+    f = S.find(',')
+    if f > 0:
+        S = S[:f - 1] + '.' + S[f + 1:]
     return float(S)
 
 
