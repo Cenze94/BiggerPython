@@ -4,7 +4,8 @@ import stringutils
 import basetypes
 
 # In the original file there were also "progress" and "debugutils" as imported units, since they are used for debugging
-# they could be ignored in Python. "progress" is used in "NeedlemanWunschalign" function.
+# they could be ignored in Python. "progress" is used in "NeedlemanWunschalign" function. "debugutils" is used in
+# "AlignmentToSequence"
 
 # Default marker for sequence gaps
 DefaultGapMarker = '-'
@@ -396,20 +397,71 @@ def NextLine(scoremat, SubMat, Result):
 # Indexes alignment to sequence, starting at index 1 (not index 0), for indexing strings
 # Align, Seq = const string, GapMarker = Char
 def AlignmentToSequence(Align, Seq, GapMarker):
+    c = 0
+    tmp = ''
+    Result = []
+    for f in range(len(Align)):
+        if Align[f] is not GapMarker:
+            c = c + 1
+            Result.append(c)
+            tmp = tmp + Align[f]
+        else:
+            Result.append(-1)
+    # Return TIntegers
+    return Result
 
 
 # Seq = string, Filter = TIntegers
 def SequenceFromIndex(Seq, Filter):
+    Result = ''
+    for f in range(len(Filter)):
+        if Filter[f] > 0:
+            Result = Result + Seq[Filter[f]]
+    # Return string
+    return Result
 
 
 # FASTA only
 # FileName = string
 def ReadMSA(FileName):
+    Result = TMSA()
+    Result.GapMarker = DefaultGapMarker
+    reader = fasta.TFastaReader(FileName)
+    for f in range(len(reader.FSeqs)):
+        Result.Alignment.append(reader.FSeqs[f].Sequence)
+        Result.SequenceIDs.append(reader.FSeqs[f].ID)
+    # Return TMSA
+    return Result
 
 
 # Seq, MSASeq = string, GapMarker = char
 def MapSequenceToMSA(Seq, MSASeq, GapMarker):
+    lm = len(MSASeq)
+    ls = len(Seq)
+    s = 0
+    m = 0
+    Result = []
+    while (s < ls) and (m < lm):
+        if Seq[s] is MSASeq[m]:
+            Result.append(m)
+            s = s + 1
+            m = m + 1
+        elif MSASeq[m] is GapMarker:
+            m = m + 1
+        else:
+            # Return TIntegers
+            return None
+    # Return TIntegers
+    return Result
 
 
-# Seq = string, MSa = TMSA, MAP = TIntegers
-def FindMatch(Seq, MSA, Map):
+# Seq = string, MSa = TMSA
+def FindMatch(Seq, MSA):
+    Map = []
+    for f in range(len(MSA.Alignment)):
+        Map = MapSequenceToMSA(Seq, MSA.Alignment[f], MSA.GapMarker)
+        if Map is None:
+            # Return Integer
+            return f
+    # Return Integer (and TIntegers in Python)
+    return -1, Map
