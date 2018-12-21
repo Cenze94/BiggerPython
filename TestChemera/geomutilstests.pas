@@ -56,7 +56,7 @@ begin
   // SimmetricTest();
   // DistanceTest();
   // DistanceSquaredTest();
-  MidPointTest();
+  // MidPointTest();
   // RotateTest();
   // RotationQuaternionTest();
   // RotationToTest();
@@ -67,7 +67,7 @@ begin
   // DistanceToNormalizedAxisTest();
   // OrthogonalCoordsTest();
   // RotAndPlaceTest();
-  // BuildRotationTest();
+  BuildRotationTest();
   // XRotationTest();
   // YRotationTest();
   // ZRotationTest();
@@ -538,33 +538,133 @@ begin
 end;
 
 procedure RotAndPlaceTest();
-begin
+var m:TRotMatrix; p,v:TCoord; va:TCoords; f:Integer;
 
+begin
+  m[0, 0]:=5.6;
+  m[0, 1]:=4.0;
+  m[0, 2]:=8.2;
+  m[1, 0]:=5.8;
+  m[1, 1]:=3.3;
+  m[1, 2]:=6.2;
+  m[2, 0]:=7.4;
+  m[2, 1]:=9.1;
+  m[2, 2]:=1.3;
+  p[0]:=3.6;
+  p[1]:=6.4;
+  p[2]:=2.5;
+  v[0]:=4.7;
+  v[1]:=2.2;
+  v[2]:=0.4;
+  v:=RotAndPlace(m, p, v);
+  WriteLn(FloatToStr(v[0]) + ' ' + FloatToStr(v[1]) + ' ' + FloatToStr(v[2]));
+
+  WriteLn('');
+  SetLength(va, 3);
+  va[0][0]:=4.8;
+  va[0][1]:=4.1;
+  va[0][2]:=6.0;
+  va[1][0]:=0.6;
+  va[1][1]:=3.8;
+  va[1][2]:=7.2;
+  va[2][0]:=4.1;
+  va[2][1]:=6.6;
+  va[2][2]:=8.0;
+  RotAndPlace(m, p, va);
+  for f:=0 to High(va) do
+  begin
+    WriteLn(FloatToStr(va[f][0]) + ' ' + FloatToStr(va[f][1]) + ' ' +
+    FloatToStr(va[f][2]));
+  end;
 end;
 
 procedure BuildRotationTest();
-begin
+var c:TCoord; m:TRotMatrix; f:Integer;
 
+begin
+  c[0]:=4.8;
+  c[1]:=0.2;
+  c[2]:=7.2;
+  m:=BuildRotation(c, MCXYZRotation);
+  for f:=0 to 2 do
+  begin
+    WriteLn(FloatToStr(m[f][0]) + ' ' + FloatToStr(m[f][1]) + ' ' +
+    FloatToStr(m[f][2]));
+    WriteLn('');
+  end;
+  WriteLn('');
+  m:=BuildRotation(c, MCRotationXYAxis);
+  for f:=0 to 2 do
+  begin
+    WriteLn(FloatToStr(m[f][0]) + ' ' + FloatToStr(m[f][1]) + ' ' +
+    FloatToStr(m[f][2]));
+    WriteLn('');
+  end;
+  WriteLn('');
+  m:=BuildRotation(c, 2);
+  for f:=0 to 2 do
+  begin
+    WriteLn(FloatToStr(m[f][0]) + ' ' + FloatToStr(m[f][1]) + ' ' +
+    FloatToStr(m[f][2]));
+    WriteLn('');
+  end;
 end;
 
 procedure XRotationTest();
-begin
+var m:TRotMatrix; f:Integer;
 
+begin
+  m:=XRotation(43.59);
+  for f:=0 to 2 do
+  begin
+    WriteLn(FloatToStr(m[f][0]) + ' ' + FloatToStr(m[f][1]) + ' ' +
+    FloatToStr(m[f][2]));
+  end;
 end;
 
 procedure YRotationTest();
-begin
+var m:TRotMatrix; f:Integer;
 
+begin
+  m:=YRotation(43.59);
+  for f:=0 to 2 do
+  begin
+    WriteLn(FloatToStr(m[f][0]) + ' ' + FloatToStr(m[f][1]) + ' ' +
+    FloatToStr(m[f][2]));
+  end;
 end;
 
 procedure ZRotationTest();
-begin
+var m:TRotMatrix; f:Integer;
 
+begin
+  m:=ZRotation(43.59);
+  for f:=0 to 2 do
+  begin
+    WriteLn(FloatToStr(m[f][0]) + ' ' + FloatToStr(m[f][1]) + ' ' +
+    FloatToStr(m[f][2]));
+  end;
 end;
 
 procedure InvertBaseTest();
-begin
+var m:TRotMatrix; f:Integer;
 
+begin
+  m[0, 0]:=5.9;
+  m[0, 1]:=3.2;
+  m[0, 2]:=6.3;
+  m[1, 0]:=7.4;
+  m[1, 1]:=0.2;
+  m[1, 2]:=5.0;
+  m[2, 0]:=5.2;
+  m[2, 1]:=7.8;
+  m[2, 2]:=7.3;
+  m:=InvertBase(m);
+  for f:=0 to 2 do
+  begin
+    WriteLn(FloatToStr(m[f][0]) + ' ' + FloatToStr(m[f][1]) + ' ' +
+    FloatToStr(m[f][2]));
+  end;
 end;
 
 procedure BuildBaseTest();

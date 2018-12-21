@@ -73,6 +73,7 @@ def SubtractTest():
     for f in range(len(ca)):
         print(str(ca[f][0]) + ' ' + str(ca[f][1]) + ' ' + str(ca[f][2]))
 
+
 def MultiplyTest():
     c = basetypes.TCoord(0, 1, 2)
     c = geomutils.Multiply(c, 2)
@@ -197,6 +198,63 @@ def RotateTest():
         print(str(ca[f][0]) + ' ' + str(ca[f][1]) + ' ' + str(ca[f][2]))
 
 
+def RotAndPlaceTest():
+    m = geomutils.TRotMatrix(5.6, 4.0, 8.2, 5.8, 3.3, 6.2, 7.4, 9.1, 1.3)
+    p = basetypes.TCoord(3.6, 6.4, 2.5)
+    v = basetypes.TCoord(4.7, 2.2, 0.4)
+    v = geomutils.RotAndPlace(m, p, v)
+    print(str(v[0]) + ' ' + str(v[1]) + ' ' + str(v[2]))
+
+    print('')
+    va = [basetypes.TCoord(4.8, 4.1, 6.0), basetypes.TCoord(0.6, 3.8, 7.2), basetypes.TCoord(4.1, 6.6, 8.0)]
+    geomutils.RotAndPlace(m, p, va)
+    for f in range(len(va)):
+        print(str(va[f][0]) + ' ' + str(va[f][1]) + ' ' + str(va[f][2]))
+
+
+def BuildRotationTest():
+    c = basetypes.TCoord(4.8, 0.2, 7.2)
+    m = geomutils.BuildRotation(c, geomutils.MCXYZRotation)
+    for f in range(3):
+        print(str(m[f, 0]) + ' ' + str(m[f, 1]) + ' ' + str(m[f, 2]))
+        print('')
+    print('')
+    m = geomutils.BuildRotation(c, geomutils.MCRotationXYAxis)
+    for f in range(3):
+        print(str(m[f, 0]) + ' ' + str(m[f, 1]) + ' ' + str(m[f, 2]))
+        print('')
+    print('')
+    m = geomutils.BuildRotation(c, 2)
+    for f in range(3):
+        print(str(m[f, 0]) + ' ' + str(m[f, 1]) + ' ' + str(m[f, 2]))
+        print('')
+
+
+def XRotationTest():
+    m = geomutils.XRotation(43.59)
+    for f in range(3):
+        print(str(m[f, 0]) + ' ' + str(m[f, 1]) + ' ' + str(m[f, 2]))
+
+
+def YRotationTest():
+    m = geomutils.YRotation(43.59)
+    for f in range(3):
+        print(str(m[f, 0]) + ' ' + str(m[f, 1]) + ' ' + str(m[f, 2]))
+
+
+def ZRotationTest():
+    m = geomutils.ZRotation(43.59)
+    for f in range(3):
+        print(str(m[f, 0]) + ' ' + str(m[f, 1]) + ' ' + str(m[f, 2]))
+
+
+def InvertBaseTest():
+    m = geomutils.TRotMatrix(5.9, 3.2, 6.3, 7.4, 0.2, 5.0, 5.2, 7.8, 7.3)
+    m = geomutils.InvertBase(m)
+    for f in range(3):
+        print(str(m[f, 0]) + ' ' + str(m[f, 1]) + ' ' + str(m[f, 2]))
+
+
 # QuaternionTest()
 # AddTest()
 # SubtractTest()
@@ -210,7 +268,7 @@ def RotateTest():
 # SimmetricTest()
 # DistanceTest()
 # DistanceSquaredTest()
-MidPointTest()
+# MidPointTest()
 # RotateTest()
 # RotationQuaternionTest()
 # RotationToTest()
@@ -221,7 +279,7 @@ MidPointTest()
 # DistanceToNormalizedAxisTest()
 # OrthogonalCoordsTest()
 # RotAndPlaceTest()
-# BuildRotationTest()
+BuildRotationTest()
 # XRotationTest()
 # YRotationTest()
 # ZRotationTest()

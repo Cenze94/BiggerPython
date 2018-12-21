@@ -478,8 +478,8 @@ def ZRotation(Angle):
 # M = TRotMatrix
 def InvertBase(M):
     Result = TRotMatrix()
-    for f in range(2):
-        for g in range(2):
+    for f in range(3):
+        for g in range(3):
             Result[f, g] = M[g, f]
     # Return TRotMatrix
     return Result

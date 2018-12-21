@@ -1,5 +1,4 @@
 import basetypes
-import geomutils
 
 
 class TCGMinimiser:
@@ -167,7 +166,7 @@ class TCGMinimiser:
             fa = fb
             fb = fc
             fc = fu
-        # Return Boolean
+        # Return Boolean (and TFloat, TFloat, TFloat, TFloat, TFloat, TFloat in Python)
         return True, ax, bx, cx, fa, fb, fc
 
     # ax, bx, cx, LMin, LMax = TFloat, Point, Direction, CurrentPoint = TFloats

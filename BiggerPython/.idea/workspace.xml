@@ -5,7 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3a5d4cd-4e09-4507-9323-95c42a60ef12" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cgradient.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rmsd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestGeomutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestGeomutils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cgradient.py" beforeDir="false" afterPath="$PROJECT_DIR$/cgradient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geomutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/geomutils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/backup/chemera.lpi.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/backup/chemera.lpi.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/chemera.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/chemera.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/chemera.lpi" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/chemera.lpi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/alignment.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/alignment.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/basetypes.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/basetypes.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/basetypes.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/basetypes.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/bogie.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/bogie.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/cgradient.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/cgradient.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/chemeramain.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/chemeramain.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/chemeramain.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/chemeramain.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/dockconstraints.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/dockconstraints.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/dockdomains.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/dockdomains.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/docktasks.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/docktasks.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/docktasks.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/docktasks.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/molecules.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/molecules.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/molfit.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/molfit.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/molutils.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/molutils.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/molutils.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/molutils.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/oclconfiguration.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/oclconfiguration.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/oclconfiguration.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/oclconfiguration.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/oglform.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/oglform.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/pdbmolecules.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/pdbmolecules.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/pdbmolecules.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/pdbmolecules.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/pdbparser.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/pdbparser.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/pdbparser.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/pdbparser.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/rmsd.ppu" beforeDir="false" afterPath="$PROJECT_DIR$/../Open-Chemera-master/oclibrary/chemera/lib/i386-win32/rmsd.ppu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestChemera/TestChemera.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChemera/TestChemera.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestChemera/TestChemera.lpr" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChemera/TestChemera.lpr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestChemera/geomutilstests.pas" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChemera/geomutilstests.pas" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,10 +58,11 @@
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.51" value="1" />
+          <entry key="project.open.time.59" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.75" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -41,7 +75,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="42" />
+          <entry key="Python" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -54,7 +88,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="115443" />
+          <entry key="Python" value="120399" />
         </counts>
       </usages-collector>
     </session>
@@ -64,7 +98,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-177">
+            <state relative-caret-position="2125">
               <caret line="132" column="49" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
@@ -75,9 +109,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TestGeomutils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4760">
+              <caret line="281" selection-start-line="281" selection-end-line="281" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUITests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
+            <state relative-caret-position="1054">
               <caret line="65" column="44" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
@@ -87,40 +133,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TestBasetypes.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1103">
-              <caret line="335" column="19" selection-start-line="335" selection-start-column="19" selection-end-line="335" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
-                <marker date="1545154140049" expanded="true" signature="5098:6973" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sequence.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="77" selection-start-line="12" selection-start-column="77" selection-end-line="12" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fasta.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="124" column="8" selection-start-line="124" selection-start-column="8" selection-end-line="126" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/alignment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
+            <state relative-caret-position="7803">
               <caret line="462" column="13" selection-start-line="462" selection-start-column="13" selection-end-line="462" selection-end-column="13" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
@@ -129,23 +144,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cgradient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="266" column="17" lean-forward="true" selection-start-line="266" selection-start-column="17" selection-end-line="266" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="2856">
+              <caret line="168" column="86" selection-start-line="168" selection-start-column="86" selection-end-line="168" selection-end-column="86" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/molutils.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rmsd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+            <state relative-caret-position="306">
+              <caret line="135" column="17" selection-start-line="135" selection-start-column="17" selection-end-line="135" selection-end-column="17" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -156,7 +168,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/basetypes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
+            <state relative-caret-position="6817">
               <caret line="403" column="39" selection-start-line="403" selection-start-column="39" selection-end-line="403" selection-end-column="39" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -172,31 +184,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geomutils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
+            <state relative-caret-position="8177">
+              <caret line="483" column="23" selection-start-line="483" selection-start-column="23" selection-end-line="483" selection-end-column="23" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
-                <marker date="1544722239168" expanded="true" signature="67:1788" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="1678:1684" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="2519:2709" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="2820:3035" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="4056:4181" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="4752:4965" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="6284:6305" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="6328:6333" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="6399:6420" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="6653:6671" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="6767:6797" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="6908:6941" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="7348:7379" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="7402:7407" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="7498:7527" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="7588:7597" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="7830:7881" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="7949:7958" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="8501:8526" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="8668:8690" ph="..." />
-                <marker date="1544722239168" expanded="true" signature="8901:9098" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="67:1788" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="1678:1684" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="2519:2709" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="2820:3035" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="4056:4181" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="4752:4965" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="6284:6305" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="6328:6333" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="6399:6420" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="6653:6671" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="6767:6797" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="6908:6941" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="7348:7379" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="7402:7407" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="7498:7527" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="7588:7597" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="7830:7881" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="7949:7958" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="8501:8526" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="8668:8690" ph="..." />
+                <marker date="1545327657042" expanded="true" signature="8901:9098" ph="..." />
               </folding>
             </state>
           </provider>
@@ -272,8 +284,6 @@
         <option value="$PROJECT_DIR$/oclconfiguration.py" />
         <option value="$PROJECT_DIR$/pdbparser.py" />
         <option value="$PROJECT_DIR$/GUI.py" />
-        <option value="$PROJECT_DIR$/TestGeomutils.py" />
-        <option value="$PROJECT_DIR$/geomutils.py" />
         <option value="$PROJECT_DIR$/GUITests.py" />
         <option value="$PROJECT_DIR$/pdbmolecules.py" />
         <option value="$PROJECT_DIR$/molecules.py" />
@@ -283,7 +293,10 @@
         <option value="$PROJECT_DIR$/TestBasetypes.py" />
         <option value="$PROJECT_DIR$/basetypes.py" />
         <option value="$PROJECT_DIR$/alignment.py" />
+        <option value="$PROJECT_DIR$/geomutils.py" />
+        <option value="$PROJECT_DIR$/TestGeomutils.py" />
         <option value="$PROJECT_DIR$/cgradient.py" />
+        <option value="$PROJECT_DIR$/rmsd.py" />
       </list>
     </option>
   </component>
@@ -316,6 +329,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -331,7 +345,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -355,7 +368,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.TestBasetypes">
+  <component name="RunManager" selected="Python.TestGeomutils">
     <configuration name="GUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="BiggerPython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -470,10 +483,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.TestGeomutils" />
         <item itemvalue="Python.TestBasetypes" />
         <item itemvalue="Python.GUITests" />
         <item itemvalue="Python.GUI" />
-        <item itemvalue="Python.TestGeomutils" />
         <item itemvalue="Python.TestPdbparser" />
       </list>
     </recent_temporary>
@@ -526,11 +539,6 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/geomutils.py</url>
-          <line>135</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/basetypes.py</url>
           <line>453</line>
           <option name="timeStamp" value="34" />
@@ -561,9 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1083">
           <caret line="37" column="52" lean-forward="true" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -594,27 +599,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestGeomutils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="159" column="53" selection-start-line="159" selection-start-column="53" selection-end-line="159" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stringutils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9622">
           <caret line="566" column="21" selection-start-line="566" selection-start-column="21" selection-end-line="566" selection-end-column="21" />
-          <folding>
-            <marker date="1543599473671" expanded="true" signature="256:258" ph="..." />
-            <marker date="1543599473671" expanded="true" signature="256:259" ph="..." />
-            <marker date="1543599473671" expanded="true" signature="7138:7614" ph="..." />
-            <marker date="1543599473671" expanded="true" signature="7746:7911" ph="..." />
-            <marker date="1543599473671" expanded="true" signature="8036:8200" ph="..." />
-            <marker date="1543599473671" expanded="true" signature="8338:8532" ph="..." />
-            <marker date="1543599473671" expanded="true" signature="8607:8750" ph="..." />
-            <marker date="1543599473671" expanded="true" signature="8856:9188" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -622,9 +610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -632,11 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <marker date="1544202822284" expanded="true" signature="366:371" ph="..." />
-            <marker date="1544202822284" expanded="true" signature="1422:1427" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -651,61 +631,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
+    <entry file="file://$PROJECT_DIR$/TestBasetypes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-177">
-          <caret line="132" column="49" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <marker date="1544807433425" expanded="true" signature="8515:8521" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GUITests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="65" column="44" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/geomutils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-            <marker date="1544722239168" expanded="true" signature="67:1788" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="1678:1684" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="2519:2709" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="2820:3035" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="4056:4181" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="4752:4965" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="6284:6305" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="6328:6333" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="6399:6420" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="6653:6671" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="6767:6797" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="6908:6941" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="7348:7379" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="7402:7407" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="7498:7527" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="7588:7597" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="7830:7881" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="7949:7958" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="8501:8526" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="8668:8690" ph="..." />
-            <marker date="1544722239168" expanded="true" signature="8901:9098" ph="..." />
-          </folding>
+        <state relative-caret-position="1103">
+          <caret line="335" column="19" selection-start-line="335" selection-start-column="19" selection-end-line="335" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -723,9 +655,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2125">
+          <caret line="132" column="49" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <marker date="1544807433425" expanded="true" signature="8515:8521" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestGeomutils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4760">
+          <caret line="281" selection-start-line="281" selection-end-line="281" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUITests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="65" column="44" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alignment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7803">
+          <caret line="462" column="13" selection-start-line="462" selection-start-column="13" selection-end-line="462" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cgradient.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2856">
+          <caret line="168" column="86" selection-start-line="168" selection-start-column="86" selection-end-line="168" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/basetypes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
+        <state relative-caret-position="6817">
           <caret line="403" column="39" selection-start-line="403" selection-start-column="39" selection-end-line="403" selection-end-column="39" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -737,31 +717,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestBasetypes.py">
+    <entry file="file://$PROJECT_DIR$/geomutils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1103">
-          <caret line="335" column="19" selection-start-line="335" selection-start-column="19" selection-end-line="335" selection-end-column="19" />
+        <state relative-caret-position="8177">
+          <caret line="483" column="23" selection-start-line="483" selection-start-column="23" selection-end-line="483" selection-end-column="23" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <marker date="1545154140049" expanded="true" signature="5098:6973" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="67:1788" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="1678:1684" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="2519:2709" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="2820:3035" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="4056:4181" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="4752:4965" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="6284:6305" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="6328:6333" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="6399:6420" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="6653:6671" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="6767:6797" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="6908:6941" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="7348:7379" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="7402:7407" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="7498:7527" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="7588:7597" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="7830:7881" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="7949:7958" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="8501:8526" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="8668:8690" ph="..." />
+            <marker date="1545327657042" expanded="true" signature="8901:9098" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/alignment.py">
+    <entry file="file://$PROJECT_DIR$/rmsd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="462" column="13" selection-start-line="462" selection-start-column="13" selection-end-line="462" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cgradient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="266" column="17" lean-forward="true" selection-start-line="266" selection-start-column="17" selection-end-line="266" selection-end-column="17" />
+        <state relative-caret-position="306">
+          <caret line="135" column="17" selection-start-line="135" selection-start-column="17" selection-end-line="135" selection-end-column="17" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
