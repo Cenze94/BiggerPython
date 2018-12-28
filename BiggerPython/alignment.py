@@ -358,8 +358,10 @@ def BuildMat(scoremat, Seq1Ix, Seq2Ix, SubMat):
 
 # Seq1Ix, Seq2Ix = string, Result = TPairwiseAlignment, scoremat = TMatrix, SubMat = TSubMatrix
 def Align(Seq1Ix, Seq2Ix, Result, scoremat, SubMat):
+    NI1 = -1
+    NI2 = -1
     while True:
-        NI1, NI2 = NextLine(scoremat, SubMat, Result)
+        NI1, NI2 = NextLine(NI1, NI2, scoremat, SubMat, Result)
         if (NI1 <= len(Seq1Ix) - 1) and (NI2 <= len(Seq2Ix) - 1):
             Result.Map[NI1] = NI2
         if (NI1 >= len(Seq1Ix) - 1) or (NI2 >= len(Seq2Ix) - 1):
@@ -367,7 +369,7 @@ def Align(Seq1Ix, Seq2Ix, Result, scoremat, SubMat):
 
 
 # I1, I2 = Integer, scoremat = TMatrix, SubMat = TSubMatrix, Result = TPairwiseAlignment
-def NextLine(scoremat, SubMat, Result):
+def NextLine(I1, I2, scoremat, SubMat, Result):
     max = 0
     s1 = I1 + 1
     s2 = I2 + 1

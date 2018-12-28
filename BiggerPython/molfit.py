@@ -2,7 +2,6 @@ import basetypes
 import rmsd
 import alignment
 import pdbmolecules
-import molecules
 import geomutils
 import sys
 
@@ -180,10 +179,10 @@ def FindBestMap(Level, Result, Probe, Target, map, alignments, MinSequenceMatch,
                 if (Level == 0) or ((Level > 0) and (not basetypes.IsInArray(tix, cmap))):
                     foundone = True
                 map[Level] = tix
-                FindBestMap(Level + 1, map, alignments, MinSequenceMatch, MinAlfaCarbons)
+                FindBestMap(Level + 1, Result, Probe, Target, map, alignments, MinSequenceMatch, MinAlfaCarbons)
         if not foundone:
             map[Level] = -1
-            FindBestMap(Level + 1, map, alignments, MinSequenceMatch, MinAlfaCarbons)
+            FindBestMap(Level + 1, Result, Probe, Target, map, alignments, MinSequenceMatch, MinAlfaCarbons)
 
 
 # Fills ProbeCoords and TargetCoords with the alpha carbon coordinates of the matching residues after a MagicFit with

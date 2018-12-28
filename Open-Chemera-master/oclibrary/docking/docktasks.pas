@@ -301,6 +301,7 @@ var
 
  end;
 
+ // Questa procedura non viene utilizzata
  procedure AddContactScore(Parent:TDOMNode;Score:TContactScoreDef);
 
  var
@@ -711,6 +712,7 @@ var
       end;
   end;
 
+ // Questa procedura non viene usata
  procedure AddContactScore(JobIx:Integer; Node:TDOMNode);
 
  var
@@ -1076,6 +1078,8 @@ begin
   SetLength(ModelIxs,count);
 end;
 
+// Questa funzione viene usata solo una volta in modo inutile, quindi è come
+// se non venisse usata
 function CountModels(const DockRun:TDockRun): Integer;
 
 var
@@ -1087,6 +1091,7 @@ begin
     Result:=Result+Length(DockRun.ConstraintSets[f].DockModels);
 end;
 
+//Questa funzione non viene usata
 function ComputedScores(const ConstSet: TConstraintSet): TSimpleStrings;
 
 var

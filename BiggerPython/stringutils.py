@@ -480,7 +480,7 @@ def CleanFileName(FileName):
 def CheckHex(c):
     if (c is not '0') and (c is not '1') and (c is not '2') and (c is not '3') and (c is not '4') and (c is not '5') \
         and (c is not '6') and (c is not '7') and (c is not '8') and (c is not '9') and (c is not 'A') \
-        and (c is not 'B') and (c is not 'C') and (c is not 'D') and (c is not 'E') and (c is not 'F'):
+            and (c is not 'B') and (c is not 'C') and (c is not 'D') and (c is not 'E') and (c is not 'F'):
         return False
     return True
 

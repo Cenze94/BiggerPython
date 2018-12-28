@@ -209,6 +209,7 @@ var
     rmsdcalc.Free;
   end;
 
+  // Questa procedura non viene usata
   procedure HighestScore(out Tix,Pix:Integer; out Score:TFLoat);
 
   var f,g:Integer;
