@@ -63,8 +63,8 @@ begin
   // MinIxTest();
   // MaxIxTest();
   // SumTest();
-  // MinValIxTest();
-  // MaxValIxTest();
+  MinValIxTest();
+  MaxValIxTest();
   // CoordTest();
   // StringsToFloatsTest();
   // FilledIntsTest();
@@ -73,7 +73,7 @@ begin
   // StringToFloatTest();
   // ScaleMatrixTest();
   // AddMatricesTest();
-  StringToFloatsTest();
+  // StringToFloatsTest();
   // InContactTest();
   // AverageTest();
   // MedianTest();
@@ -544,13 +544,29 @@ begin
 end;
 
 procedure MinValIxTest();
-begin
+var tf:TFloats; f:TFloat; i:Integer;
 
+begin
+  SetLength(tf, 4);
+  tf[0]:=3.7;
+  tf[1]:=2.1;
+  tf[2]:=8.9;
+  tf[3]:=9.6;
+  MinValIx(tf, f, i);
+  WriteLn(FloatToStr(f) + ' ' + IntToStr(i));
 end;
 
 procedure MaxValIxTest();
-begin
+var tf:TFloats; f:TFloat; i:Integer;
 
+begin
+  SetLength(tf, 4);
+  tf[0]:=3.7;
+  tf[1]:=2.1;
+  tf[2]:=8.9;
+  tf[3]:=9.6;
+  MaxValIx(tf, f, i);
+  WriteLn(FloatToStr(f) + ' ' + IntToStr(i));
 end;
 
 procedure CoordTest();

@@ -331,8 +331,10 @@ def Rotate(v1, v2):
 def RotationQuaternion(Axis, Rotation):
     cost = math.cos(Rotation / 2)
     sint = math.sin(Rotation / 2)
+    Result = TQuaternion(cost, sint * Axis[0], sint * Axis[1], sint * Axis[2])
+    Normalize(Result)
     # Return TQuaternion
-    return Normalize(TQuaternion(cost, sint * Axis[0], sint * Axis(1), sint * Axis[2]))
+    return Result
 
 
 # From http://www.gamedev.net/topic/429507-finding-the-quaternion-betwee-two-vectors/?p=3856228#entry3856228
@@ -343,8 +345,10 @@ def RotationTo(VFrom, VTo):
     n1 = VFrom[0] ** 2 + VFrom[1] ** 2 + VFrom[2] ** 2
     n2 = VTo[0] ** 2 + VTo[1] ** 2 + VTo[2] ** 2
     dot = DotProduct(VFrom, VTo)
+    Result = TQuaternion(math.sqrt(n1 * n2) + dot, tmp[0], tmp[1], tmp[2])
+    Normalize(Result)
     # Return TQuaternion
-    return Normalize(Quaternion(math.sqrt(n1 * n2) + dot, tmp[0], tmp[1], tmp[2]))
+    return Result
 
 
 # Assumes same number of coords in both arrays

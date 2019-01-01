@@ -224,6 +224,18 @@ def SumTest():
     print(str(c[0]) + ' ' + str(c[1]) + ' ' + str(c[2]))
 
 
+def MinValIxTest():
+    tf = [3.7, 2.1, 8.9, 9.6]
+    f, i = basetypes.MinValIx(tf)
+    print(str(f) + ' ' + str(i))
+
+
+def MaxValIxTest():
+    tf = [3.7, 2.1, 8.9, 9.6]
+    f, i = basetypes.MaxValIx(tf)
+    print(str(f) + ' ' + str(i))
+
+
 def CoordTest():
     c = basetypes.Coord(5, 6, 7)
     print(str(c[0]) + ' ' + str(c[1]) + ' ' + str(c[2]))
@@ -324,8 +336,8 @@ def GetTimeIntervalTest():
 # MinIxTest()
 # MaxIxTest()
 # SumTest()
-# MinValIxTest()
-# MaxValIxTest()
+MinValIxTest()
+MaxValIxTest()
 # CoordTest()
 # StringsToFloatsTest()
 # FilledIntsTest()
@@ -334,7 +346,7 @@ def GetTimeIntervalTest():
 # StringToFloatTest()
 # ScaleMatrixTest()
 # AddMatricesTest()
-StringToFloatsTest()
+# StringToFloatsTest()
 # InContactTest()
 # AverageTest()
 # MedianTest()

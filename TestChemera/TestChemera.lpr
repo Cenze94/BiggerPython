@@ -10,11 +10,11 @@ uses
   geomutilstests, guitests, lazopenglcontext;
 
 begin
-  // StartBasetypesTest();
+  StartBasetypesTest();
   // StartQuicksortTest();
   // StartStringutilsTest();
   // StartPdbparserTest();
-  StartGeomutilsTest();
+  // StartGeomutilsTest();
   // StartGUITest();
 
   Readln;

@@ -177,12 +177,12 @@ class TDockStats:
 
 
 class TShapeInfo:
-    #Coords = TCoords, TRads = TFloats
+    # Coords = TCoords, TRads = TFloats
     def __init__(self, Coords = None, Rads = None):
         if Coords is None:
             Coords = []
         self.Coords = Coords
-        if Rds is None:
+        if Rads is None:
             Rads = []
         self.Rads = Rads
 

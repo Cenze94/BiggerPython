@@ -58,7 +58,7 @@ begin
   // DistanceSquaredTest();
   // MidPointTest();
   // RotateTest();
-  // RotationQuaternionTest();
+  RotationQuaternionTest();
   // RotationToTest();
   // StaticRMSDTest();
   // Intersection2DTest();
@@ -67,7 +67,7 @@ begin
   // DistanceToNormalizedAxisTest();
   // OrthogonalCoordsTest();
   // RotAndPlaceTest();
-  BuildRotationTest();
+  // BuildRotationTest();
   // XRotationTest();
   // YRotationTest();
   // ZRotationTest();
@@ -291,18 +291,42 @@ begin
 end;
 
 procedure DotProductTest();
-begin
+var c1,c2:TCoord; f:TFloat;
 
+begin
+  c1[0]:=3.2;
+  c1[1]:=8.6;
+  c1[2]:=1.4;
+  c2[0]:=4.0;
+  c2[1]:=5.2;
+  c2[2]:=2.5;
+  f:=DotProduct(c1, c2);
+  WriteLn(FloatToStr(f));
 end;
 
 procedure CrossProductTest();
-begin
+var c1,c2:TCoord;
 
+begin
+  c1[0]:=3.2;
+  c1[1]:=8.6;
+  c1[2]:=1.4;
+  c2[0]:=4.0;
+  c2[1]:=5.2;
+  c2[2]:=2.5;
+  c1:=CrossProduct(c1, c2);
+  WriteLn(FloatToStr(c1[0]) + ' ' + FloatToStr(c1[1]) + ' ' + FloatToStr(c1[2]));
 end;
 
 procedure NormTest();
-begin
+var c:TCoord; f:TFloat;
 
+begin
+  c[0]:=0.7;
+  c[1]:=2.2;
+  c[2]:=5.8;
+  f:=Norm(c);
+  WriteLn(FloatToStr(f));
 end;
 
 procedure ConjugatedTest();
@@ -319,13 +343,33 @@ begin
 end;
 
 procedure NormalizeTest();
-begin
+var c:TCoord; q:TQuaternion;
 
+begin
+  c[0]:=3.6;
+  c[1]:=6.2;
+  c[2]:=8.7;
+  Normalize(c);
+  WriteLn(FloatToStr(c[0]) + ' ' + FloatToStr(c[1]) + ' ' + FloatToStr(c[2]));
+
+  q[0]:=2.7;
+  q[1]:=7.2;
+  q[2]:=6.4;
+  q[3]:=7.0;
+  Normalize(q);
+  WriteLn(FloatToStr(q[0]) + ' ' + FloatToStr(q[1]) + ' ' + FloatToStr(q[2]) +
+  ' ' + FloatToStr(q[3]));
 end;
 
 procedure ScaledTest();
-begin
+var c:TCoord;
 
+begin
+  c[0]:=3.6;
+  c[1]:=6.2;
+  c[2]:=8.7;
+  c:=Scaled(c, 3.5);
+  WriteLn(FloatToStr(c[0]) + ' ' + FloatToStr(c[1]) + ' ' + FloatToStr(c[2]));
 end;
 
 procedure SimmetricTest();
@@ -498,8 +542,15 @@ begin
 end;
 
 procedure RotationQuaternionTest();
-begin
+var c:TCoord; q:TQuaternion;
 
+begin
+  c[0]:=4.7;
+  c[1]:=2.7;
+  c[2]:=7.3;
+  q:=RotationQuaternion(c, 3.5);
+  WriteLn(FloatToStr(q[0]) + ' ' + FloatToStr(q[1]) + ' ' + FloatToStr(q[2]) +
+  ' ' + FloatToStr(q[3]));
 end;
 
 procedure RotationToTest();
@@ -528,13 +579,31 @@ begin
 end;
 
 procedure DistanceToNormalizedAxisTest();
-begin
+var c1,c2:TCoord; f:TFloat;
 
+begin
+  c1[0]:=3.6;
+  c1[1]:=6.4;
+  c1[2]:=2.5;
+  c2[0]:=4.7;
+  c2[1]:=2.2;
+  c2[2]:=0.4;
+  f:=DistanceToNormalizedAxis(c1, c2);
+  WriteLn(FloatToStr(f));
 end;
 
 procedure OrthogonalCoordsTest();
-begin
+var c1,c2:TCoord; x,y:TFloat;
 
+begin
+  c1[0]:=3.6;
+  c1[1]:=6.4;
+  c1[2]:=2.5;
+  c2[0]:=4.7;
+  c2[1]:=2.2;
+  c2[2]:=0.4;
+  OrthogonalCoords(c1, c2, x, y);
+  WriteLn(FloatToStr(x) + ' ' + FloatToStr(y));
 end;
 
 procedure RotAndPlaceTest();

@@ -111,10 +111,46 @@ def MultiplyTest():
           + str(r1[1, 2]) + '\n' + str(r1[2, 0]) + ' ' + str(r1[2, 1]) + ' ' + str(r1[2, 2]))
 
 
+def DotProductTest():
+    c1 = basetypes.TCoord(3.2, 8.6, 1.4)
+    c2 = basetypes.TCoord(4.0, 5.2, 2.5)
+    f = geomutils.DotProduct(c1, c2)
+    print(str(f))
+
+
+def CrossProductTest():
+    c1 = basetypes.TCoord(3.2, 8.6, 1.4)
+    c2 = basetypes.TCoord(4.0, 5.2, 2.5)
+    c1 = geomutils.CrossProduct(c1, c2)
+    print(str(c1[0]) + ' ' + str(c1[1]) + ' ' + str(c1[2]))
+
+
+def NormTest():
+    c = basetypes.TCoord(0.7, 2.2, 5.8)
+    f = geomutils.Norm(c)
+    print(str(f))
+
+
 def ConjugatedTest():
     q = geomutils.TQuaternion(1, 2, 3, 4)
     q = geomutils.Conjugated(q)
     print(str(q[0]) + ' ' + str(q[1]) + ' ' + str(q[2]) + ' ' + str(q[3]))
+
+
+def NormalizeTest():
+    c = basetypes.TCoord(3.6, 6.2, 8.7)
+    geomutils.Normalize(c)
+    print(str(c[0]) + ' ' + str(c[1]) + ' ' + str(c[2]))
+
+    q = geomutils.TQuaternion(2.7, 7.2, 6.4, 7.0)
+    geomutils.Normalize(q)
+    print(str(q[0]) + ' ' + str(q[1]) + ' ' + str(q[2]) + ' ' + str(q[3]))
+
+
+def ScaledTest():
+    c = basetypes.TCoord(3.6, 6.2, 8.7)
+    c = geomutils.Scaled(c, 3.5)
+    print(str(c[0]) + ' ' + str(c[1]) + ' ' + str(c[2]))
 
 
 def SimmetricTest():
@@ -198,6 +234,26 @@ def RotateTest():
         print(str(ca[f][0]) + ' ' + str(ca[f][1]) + ' ' + str(ca[f][2]))
 
 
+def RotationQuaternionTest():
+    c = basetypes.TCoord(4.7, 2.7, 7.3)
+    q = geomutils.RotationQuaternion(c, 3.5)
+    print(str(q[0]) + ' ' + str(q[1]) + ' ' + str(q[2]) + ' ' + str(q[3]))
+
+
+def DistanceToNormalizedAxisTest():
+    c1 = basetypes.TCoord(3.6, 6.4, 2.5)
+    c2 = basetypes.TCoord(4.7, 2.2, 0.4)
+    f = geomutils.DistanceToNormalizedAxis(c1, c2)
+    print(str(f))
+
+
+def OrthogonalCoordsTest():
+    c1 = basetypes.TCoord(3.6, 6.4, 2.5)
+    c2 = basetypes.TCoord(4.7, 2.2, 0.4)
+    x, y = geomutils.OrthogonalCoords(c1, c2)
+    print(str(x) + ' ' + str(y))
+
+
 def RotAndPlaceTest():
     m = geomutils.TRotMatrix(5.6, 4.0, 8.2, 5.8, 3.3, 6.2, 7.4, 9.1, 1.3)
     p = basetypes.TCoord(3.6, 6.4, 2.5)
@@ -270,7 +326,7 @@ def InvertBaseTest():
 # DistanceSquaredTest()
 # MidPointTest()
 # RotateTest()
-# RotationQuaternionTest()
+RotationQuaternionTest()
 # RotationToTest()
 # StaticRMSDTest()
 # Intersection2DTest()
@@ -279,7 +335,7 @@ def InvertBaseTest():
 # DistanceToNormalizedAxisTest()
 # OrthogonalCoordsTest()
 # RotAndPlaceTest()
-BuildRotationTest()
+# BuildRotationTest()
 # XRotationTest()
 # YRotationTest()
 # ZRotationTest()

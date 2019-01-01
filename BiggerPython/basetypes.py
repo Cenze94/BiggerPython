@@ -327,7 +327,7 @@ def MinValIx(Vals):
     if Vals is not None:
         MinIx = 0
         MinVal = Vals[0]
-        for f in range(len(Vals)):
+        for f in range(1, len(Vals)):
             if Vals[f] < MinVal:
                 MinVal = Vals[f]
                 MinIx = f
@@ -342,7 +342,7 @@ def MaxValIx(Vals):
     if Vals is not None:
         MaxIx = 0
         MaxVal = Vals[0]
-        for f in range(len(Vals)):
+        for f in range(1, len(Vals)):
             if Vals[f] > MaxVal:
                 MaxVal = Vals[f]
                 MaxIx = f
