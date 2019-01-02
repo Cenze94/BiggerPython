@@ -38,8 +38,8 @@ class TGridShape:
 
 class TDomainBlock:
     # Values for domain cuboid hull
-    # ProbeEndX, ProbeEndY, ProbeEndZ, TargetEndX, TargetEndY, TargetEndZ, XOffset, YOffset, ZOffset, DomainSetX,
-    # DomainSetY, DomainSetZ = Integer
+    # ProbeEndX, ProbeEndY, ProbeEndZ, TargetEndX, TargetEndY, TargetEndZ, XOffset, YOffset, ZOffset, DomainEndX,
+    # DomainEndY, DomainEndZ = Integer
     def __init__(self):
         self.ProbeEndX = 0
         self.ProbeEndY = 0
@@ -50,9 +50,9 @@ class TDomainBlock:
         self.XOffset = 0
         self.YOffset = 0
         self.ZOffset = 0
-        self.DomainSetX = 0
-        self.DomainSetY = 0
-        self.DomainSetZ = 0
+        self.DomainEndX = 0
+        self.DomainEndY = 0
+        self.DomainEndZ = 0
 
 
 class TDomainGrid:
@@ -84,19 +84,19 @@ class TDockingGrid:
     # X, Y = Integer, Neighs, Surfs, Cores = TIntegers
     def SetSurfCoreLine(self, X, Y, Neighs, Surfs, Cores):
         for z in range(len(self.FBase.Grid[X][Y])):
-            for zz in range(2):
-                if Neighs[self.FBase.Grid[X][Y][z][zz]] >= 27:
-                    Cores[self.FBase.Grid[X][Y][z][zz]] = 1
+            for zz in range(self.FBase.Grid[X][Y][z][0], self.FBase.Grid[X][Y][z][1] + 1):
+                if Neighs[zz] >= 27:
+                    Cores[zz] = 1
                 else:
-                    Surfs[self.FBase.Grid[X][Y][z][zz]] = 1
+                    Surfs[zz] = 1
         self.FCore.Grid[X][Y] = IntegersToLine(Cores)
         self.FSurf.Grid[X][Y] = IntegersToLine(Surfs)
 
     # Line = TGridLine, ValArray = TIntegers, Val = Integer
     def SetLineVals(self, Line, ValArray, Val):
         for z in range(len(Line)):
-            for zz in range(2):
-                ValArray[Line[z][zz]] = Val
+            for zz in range(Line[z][0], Line[z][1] + 1):
+                ValArray[zz] = Val
 
     # Line = TGridLine, Neighs = TIntegers, Mult = Integer
     def UpdateNeighbours(self, Line, Neighs, Mult):
