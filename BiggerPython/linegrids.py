@@ -225,7 +225,7 @@ class TDockingGrid:
 
 # First function: Line1, Line2 = TGridLine
 # Second function: Line = TGridLine, NewMin, NewMax = const Integer
-def Intersect(Line, NewMin, NewMax):
+def Intersect(Line, NewMin, NewMax = None):
     if isinstance(NewMin, list):
         # First function
         Line1 = Line
