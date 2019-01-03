@@ -144,7 +144,7 @@ class TDockingGrid:
         maxrad = basetypes.Max(basetypes.Max(self.FRads), self.FResolution)
         # Translate and size guaranteeing one layer of empty grid cells
         self.FTransVec = basetypes.Min(self.FCoords)
-        self.FTransVec = geomutils.Add(geomutils.Simmetric(self.FCoords), maxrad + self.FResolution)
+        self.FTransVec = geomutils.Add(geomutils.Simmetric(self.FTransVec), maxrad + self.FResolution)
         self.FCoords = geomutils.Add(self.FTransVec, self.FCoords)
         top = geomutils.Add(basetypes.Max(self.FCoords), maxrad + 1.5 * self.FResolution)
         self.FBase.Grid = []
@@ -180,8 +180,8 @@ class TDockingGrid:
             self.FCore.Grid.append([])
             self.FSurf.Grid.append([])
             for g in range(len(self.FBase.Grid[0])):
-                self.FCore.Grid.append([])
-                self.FSurf.Grid.append([])
+                self.FCore.Grid[f].append([])
+                self.FSurf.Grid[f].append([])
         neighs = []
         surfs = []
         cores = []
@@ -208,11 +208,13 @@ class TDockingGrid:
             self.FCoords.append(Coords[f])
             self.FRads.append(Rads[f])
         self.FCoreCutCoords = []
-        for f in range(len(CoreCuts)):
-            self.FCoreCutCoords.append(CoreCuts[f])
+        if CoreCuts is not None:
+            for f in range(len(CoreCuts)):
+                self.FCoreCutCoords.append(CoreCuts[f])
         self.FCoreCutRads = []
-        for f in range(len(CoreCutRads)):
-            self.FCoreCutRads.append(CoreCutRads[f])
+        if CoreCutRads is not None:
+            for f in range(len(CoreCutRads)):
+                self.FCoreCutRads.append(CoreCutRads[f])
         self.BuildBaseGrid()
         self.BuildSurfCoreGrids()
         ComputeShapeStats(self.FSurf)
@@ -298,7 +300,7 @@ def IntegersToLine(Ints, Threshold = 0, Limit1 = -1, Limit2 = -1):
             isin = False
     if isin:
         Result[curr][1] = Limit2
-    for f in range(Limit2 - Limit1 + 1, curr, -1):
+    for f in range(len(Result) - 1, curr, -1):
         del Result[f]
     # Return TGridLine
     return Result
@@ -317,14 +319,16 @@ def ComputeShapeStats(Shape):
     Shape.TotalCount = 0
     for x in range(len(Shape.Grid)):
         tmpline = basetypes.FilledInts(len(Shape.Grid[0]), 0)
+        Shape.CellCounts.append([])
         for y in range(len(Shape.Grid[0])):
+            Shape.CellCounts[x].append([])
             if Shape.Grid[x][y] is not None and len(Shape.Grid[x][y]) != 0:
                 tmpline[y] = 1
-                if Shape.ZMax < Shape.Grid[x][y][len(Shape.Grid[x][y])][1]:
-                    Shape.ZMax = Shape.Grid[x][y][len(Shape.Grid[x][y])][1]
+                if Shape.ZMax < Shape.Grid[x][y][len(Shape.Grid[x][y]) - 1][1]:
+                    Shape.ZMax = Shape.Grid[x][y][len(Shape.Grid[x][y]) - 1][1]
                 Shape.CellCounts[x][y] = CountCells(Shape.Grid[x][y])
                 Shape.TotalCount = Shape.TotalCount + Shape.CellCounts[x][y]
-        Shape.NonEmpty[x] = IntegersToLine(tmpline, 0)
+        Shape.NonEmpty.append(IntegersToLine(tmpline, 0))
 
 
 # Grid ? TGridPlane

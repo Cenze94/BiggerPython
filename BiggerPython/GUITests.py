@@ -2,6 +2,8 @@ import pdbmolecules
 import oclconfiguration
 import geomutils
 import molutils
+import bogie
+import linegrids
 
 # Tests about loading file and Bigger execution
 
@@ -64,6 +66,11 @@ def BiggerTest():
     targetcoords = molutils.ListCoords(target)
     proberads = geomutils.Add(molutils.ListRadii(probe), 1.4)
     probecoords = molutils.ListCoords(probe)
+
+    models = bogie.TModelManager(100, 300, [])
+    models.GridScale = 1
+    targetgrid = linegrids.TDockingGrid(1)
+    targetgrid.BuildFromSpheres(targetcoords, targetrads)
 
 
 oclconfiguration.DefaultConfig()

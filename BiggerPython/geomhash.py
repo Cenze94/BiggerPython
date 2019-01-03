@@ -1,6 +1,7 @@
 import geomutils
 import math
 import numpy as np
+import basetypes
 
 
 class TGeomHasher:
@@ -16,33 +17,32 @@ class TGeomHasher:
     def __init__(self, Points, GridStep, Rads=None):
         assert Points is not None, 'Empty points array for hashing'
         assert GridStep > 1e-6, 'GridStep too small'
-        self.FShiftToGrid = None
-        self.FPoints = None
-        self.FRads = None
-        self.FHashGrid = None
+        self.FShiftToGrid = basetypes.TCoord()
+        self.FPoints = []
+        self.FRads = []
+        self.FHashGrid = []
         self.FHighX = 0
         self.FHighY = 0
         self.FHighZ = 0
         self.FInvGridStep = 1 / GridStep
         self.Setup(Points, GridStep, Rads)
-        hashMatrix = []
+        self.FHashGrid = []
         for x in range(self.FHighX + 1):
-            hashMatrix.append([])
+            self.FHashGrid.append([])
             for y in range(self.FHighY + 1):
-                hashMatrix[x].append([])
+                self.FHashGrid[x].append([])
                 for z in range(self.FHighZ + 1):
-                    hashMatrix[x][y].append(None)
-        self.FHashGrid = np.array(hashMatrix)
+                    self.FHashGrid[x][y].append([])
         for f in range(len(Points)):
             c = geomutils.Add(Points[f], self.FShiftToGrid)
             x = math.trunc(c[0] * self.FInvGridStep)
             y = math.trunc(c[1] * self.FInvGridStep)
             z = math.trunc(c[2] * self.FInvGridStep)
-            np.append(self.FHashGrid[x, y, z], f)
+            self.FHashGrid[x][y][z].append(f)
 
     def Setup(self, Points, GridStep, Rads):
-        maxc = max(Points)
-        minc = min(Points)
+        maxc = basetypes.Max(Points)
+        minc = basetypes.Min(Points)
         self.FShiftToGrid = geomutils.Simmetric(minc)
         self.FHighX = math.trunc((maxc[0] - minc[0]) / GridStep)
         self.FHighY = math.trunc((maxc[1] - minc[1]) / GridStep)
@@ -50,13 +50,16 @@ class TGeomHasher:
 
         if Rads is None:
             # Geomhasher used only for indexing regions
-            self.FPoints = None
-            self.FRads = None
+            self.FPoints = []
+            self.FRads = []
         else:
             # Used to detect collisions, inner points, etc
-            assert len(Points) is len(Rads), 'Different number of radii and points'
-            self.FPoints = Points.copy()
-            self.FRads = Rads.copy()
+            assert len(Points) == len(Rads), 'Different number of radii and points'
+            self.FPoints = []
+            self.FRads = []
+            for f in range(len(Points)):
+                self.FPoints.append(Points[f])
+                self.FRads.append(Rads[f])
 
     # Computes bounds of neighboring cells in one dimension, with max of Hi
     # (B1, B2 = Integer), Val = const TFloat, Hi = const Integer
@@ -85,24 +88,24 @@ class TGeomHasher:
         for x in range(x1, x2 + 1):
             for y in range(y1, y2 + 1):
                 for z in range(z1, z2 + 1):
-                    for f in range(len(self.FHashGrid[x, y, z])):
-                        Result.append(self.FHashGrid[x, y, z, f])
+                    for f in range(len(self.FHashGrid[x][y][z])):
+                        Result.append(self.FHashGrid[x][y][z][f])
         # Return TIntegers
         return Result
 
     # Use only if Rads supplied in create; otherwise points are not kept
     # C = TCoord
     def IsInnerPoint(self, C):
-        C = geomutils.Multiply(geomutils.Add(C, self.FShiftToGrid), self.FInvGridStep)
+        tmpc = geomutils.Multiply(geomutils.Add(C, self.FShiftToGrid), self.FInvGridStep)
         Result = False
-        x1, x2 = self.GridBounds(C[0], self.FHighX)
-        y1, y2 = self.GridBounds(C[1], self.FHighY)
-        z1, z2 = self.GridBounds(C[2], self.FHighZ)
+        x1, x2 = self.GridBounds(tmpc[0], self.FHighX)
+        y1, y2 = self.GridBounds(tmpc[1], self.FHighY)
+        z1, z2 = self.GridBounds(tmpc[2], self.FHighZ)
         for x in range(x1, x2 + 1):
             for y in range(y1, y2 + 1):
                 for z in range(z1, z2 + 1):
-                    for f in range(len(self.FHashGrid[x, y, z])):
-                        ix = self.FHashGrid[x, y, z, f]
+                    for f in range(len(self.FHashGrid[x][y][z])):
+                        ix = self.FHashGrid[x][y][z][f]
                         if geomutils.Distance(C, self.FPoints[ix]) < self.FRads[ix]:
                             Result = True
                             break

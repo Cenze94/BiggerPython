@@ -5,6 +5,8 @@ import pdbmolecules
 import oclconfiguration
 import geomutils
 import molutils
+import bogie
+import linegrids
 
 
 def loadFileCommon():
@@ -53,12 +55,14 @@ def bigger():
     proberads = geomutils.Add(molutils.ListRadii(probe), 1.4)
     probecoords = molutils.ListCoords(probe)
 
+    models = bogie.TModelManager(100, 300, [])
+    targetgrid = linegrids.TDockingGrid(1)
+    targetgrid.BuildFromSpheres(targetcoords, targetrads)
+
 
 class OpenFile(Frame):
-
     def __init__(self, parent):
         Frame.__init__(self, parent)
-
         self.parent = parent
 
     def openFile(self):
@@ -68,7 +72,6 @@ class OpenFile(Frame):
         ftypes = [('PDB files', '*.pdb'), ('All files', '*')]
         dlg = filedialog.Open(self, filetypes=ftypes)
         fl = dlg.show()
-
         if fl != '':
             return self.readFile(fl)
 
