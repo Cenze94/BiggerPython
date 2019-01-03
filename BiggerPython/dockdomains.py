@@ -11,7 +11,7 @@ class TDockDomain:
     # FCoarseProbe = TDockingGrid, FIntersect = TIntegers, FIntersectHigh = Integer, FScores, FOverlapixs = TIntegers,
     # CountXY, CountXYCore, CountX = Integer
     # ATarget, AProbe = TDockingGrid, MaxGrids = Integer
-    def __init__(self, ATarget, AProbe, MaxGrids):
+    def __init__(self, ATarget, AProbe, MaxGrids = 0):
         # Target and Probe grids are NOT managed by this class
         self.FTarget = ATarget
         self.FProbe = AProbe
