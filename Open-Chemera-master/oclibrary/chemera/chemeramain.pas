@@ -370,7 +370,6 @@ begin
   probecoords:=ListCoords(probe);
 
 
-  // TODO: Trovare una soluzione migliore per il nil (che è un TDockModels)
   models:=TModelManager.Create(100,300, nil);
   models.GridScale:=1;
   Writeln('Workin...');

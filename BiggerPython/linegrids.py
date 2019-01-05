@@ -189,7 +189,7 @@ class TDockingGrid:
             neighs.append(0)
             surfs.append(0)
             cores.append(0)
-        for x in range(len(self.FBase.Grid) - 1):
+        for x in range(1, len(self.FBase.Grid) - 1):
             y = 1
             self.ResetBaselines(x, y, neighs, surfs, cores)
             while True:
@@ -197,7 +197,7 @@ class TDockingGrid:
                 y = self.BaseLineIncY(x, y, neighs, surfs, cores)
                 if y >= len(self.FBase.Grid[x]) - 2:
                     break
-                self.SetSurfCoreLine(x, y, neighs, surfs, cores)
+            self.SetSurfCoreLine(x, y, neighs, surfs, cores)
 
     # Coords = TCoords, Rads = TFloats, CoreCuts = TCoords, CoreCutRads = TFloats
     def BuildFromSpheres(self, Coords, Rads, CoreCuts = None, CoreCutRads = None):
@@ -293,8 +293,7 @@ def IntegersToLine(Ints, Threshold = 0, Limit1 = -1, Limit2 = -1):
             if not isin:
                 isin = True
                 curr = curr + 1
-                Result.append([])
-                Result[curr] = TLineSegment(f)
+                Result.append(TLineSegment(f))
         elif isin:
             Result[curr][1] = f - 1
             isin = False

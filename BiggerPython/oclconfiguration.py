@@ -50,9 +50,9 @@ def RemoveComments(S1):
     f = 0
     while f < len(S1):
         ix = S1[f].find('#')
-        if ix < 1:
-            ix = ix + 1
-        elif ix is 1:
+        if ix < 0:
+            f = f + 1
+        elif ix is 0:
             del S1[f]
         else:
             del S1[f][ix:]
@@ -77,43 +77,39 @@ def LoadAtomData():
     global AtomData
     global Config
     global AtomDataFile
-    s1 = []
     try:
-        with open(os.path.join(Config.OCLPath, AtomDataFile), 'w') as f:
-            for item in s1:
-                f.write("%s\n" % item)
+        with open(os.path.join(Config.OCLPath, AtomDataFile), 'r') as f:
+            s1 = f.readlines()
         RemoveComments(s1)
         for f in range(len(s1)):
             tmp = stringutils.SplitString(s1[f], chr(9))
-            AtomData.append(TOCLAtomData(tmp[0][0], tmp[4][0], float(tmp[1][0]), float(tmp[2][0]), float(tmp[3][0]),
-                                         basetypes.Coord(int(tmp[5][0]) / 255, int(tmp[6][0]) / 255, int(tmp[7][0])
+            AtomData.append(TOCLAtomData(tmp[0], tmp[4], float(tmp[1]), float(tmp[2]), float(tmp[3]),
+                                         basetypes.Coord(int(tmp[5]) / 255, int(tmp[6]) / 255, int(tmp[7])
                                                          / 255)))
     except:
-        raise Exception('Error loading ' + Config.OCLPath + AtomDataFile)
+        raise Exception('Error loading ' + os.path.join(Config.OCLPath, AtomDataFile))
 
 
 def LoadAAData():
     global AADataFile
     global Config
     global AAData
-    s1 = []
     try:
-        with open(os.path.join(Config.OCLPath, AADataFile), 'w') as f:
-            for item in s1:
-                f.write("%s\n" % item)
+        with open(os.path.join(Config.OCLPath, AADataFile), 'r') as f:
+            s1 = f.readlines()
         RemoveComments(s1)
         for f in range(len(s1)):
             tmp = stringutils.SplitString(s1[f], chr(9))
-            AAData.append(TOCLAAData(tmp[0][0], tmp[1][0], tmp[2][1], tmp[3][1], float(tmp[4][0])))
+            AAData.append(TOCLAAData(tmp[0], tmp[1], tmp[2][0], tmp[3][0], float(tmp[4])))
     except:
-        raise Exception('Error loading ' + Config.OCLPath + AADataFile)
+        raise Exception('Error loading ' + os.path.join(Config.OCLPath, AADataFile))
 
 
 # Symbol = string
 def AtomicNumber(Symbol):
     global AtomData
     Result = len(AtomData) - 1
-    while (Result >= 0) and (AtomData[Result] is not Symbol):
+    while (Result >= 0) and (AtomData[Result].Symbol is not Symbol):
         Result = Result - 1
     if Result >= 0:
         # Return Integer

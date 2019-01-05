@@ -74,8 +74,6 @@ begin
   WriteLn('FType: ' + mol.MolType);
 end;
 
-// Provo ad eseguire direttamente il codice del pulsante, dato che altrimenti il
-// codice risulterebbe lungo da riscrivere
 procedure BiggerTest();
 var targetrads,proberads:TFloats;
   targetcoords,probecoords:TCoords;
@@ -99,6 +97,22 @@ begin
 
   proberads:=Add(ListRadii(probe),1.4);
   probecoords:=ListCoords(probe);
+
+  models:=TModelManager.Create(100,300, nil);
+  models.GridScale:=1;
+  Writeln('Workin...');
+  targetgrid:=TDockingGrid.Create(1);
+  targetgrid.BuildFromSpheres(targetcoords,targetrads);
+  WriteLn(IntToStr(Length(targetgrid.Surf.NonEmpty)));
+  WriteLn(IntToStr(Length(targetgrid.Surf.NonEmpty[1])));
+  WriteLn(IntToStr(Length(targetgrid.Surf.Grid)));
+  WriteLn(IntToStr(Length(targetgrid.Surf.Grid[0])));
+  WriteLn(IntToStr(Length(targetgrid.Surf.Grid[0, 0])));
+  WriteLn(IntToStr(targetgrid.Surf.Grid[1, 54, 0, 1]));
+  WriteLn(IntToStr(Length(targetgrid.Surf.CellCounts)));
+  WriteLn(IntToStr(Length(targetgrid.Surf.CellCounts[0])));
+  WriteLn(IntToStr(targetgrid.Base.TotalCount));
+  WriteLn(IntToStr(targetgrid.Surf.ZMax));
 end;
 
 end.

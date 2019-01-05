@@ -142,7 +142,7 @@ class TMolecule:
         # Flattens hierarchy into a single array of atoms, returns a copy array but each element is the atom object
         Result = []
         for f in range(len(self.FAtoms)):
-            Result.append(self.FAtoms[f].GetCopy(self.FAtoms[f], self.FAtoms[f].FParent))
+            Result.append(self.FAtoms[f])
         # Add to atoms at this level all the offspring atoms
         for f in range(len(self.FGroups)):
             tmp = self.FGroups[f].AllAtoms()

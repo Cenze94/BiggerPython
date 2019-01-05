@@ -1,6 +1,5 @@
 import geomutils
 import math
-import numpy as np
 import basetypes
 
 

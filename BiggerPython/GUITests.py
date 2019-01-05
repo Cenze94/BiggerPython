@@ -71,6 +71,7 @@ def BiggerTest():
     models.GridScale = 1
     targetgrid = linegrids.TDockingGrid(1)
     targetgrid.BuildFromSpheres(targetcoords, targetrads)
+    print('')
 
 
 oclconfiguration.DefaultConfig()
