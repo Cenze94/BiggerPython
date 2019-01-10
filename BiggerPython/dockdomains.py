@@ -19,7 +19,7 @@ class TDockDomain:
         self.MinimumOverlap = 0
         self.FConstraintManager = dockconstraints.TDockConstraintManager(self.FProbe, self.FTarget)
         self.FAddModel = None
-        self.FDomainGrid = None
+        self.FDomainGrid = linegrids.TDomainGrid()
         # X oriented array of gridlines where core contacts can occur in the domain
         self.FCoreContacts = []
         # For multigrid speedup
@@ -46,7 +46,8 @@ class TDockDomain:
             ll1 = len(Line1) + len(Line2)
             if len(self.FIntersect) < ll1:
                 for f in range(len(self.FIntersect), ll1):
-                    self.FIntersect.append(linegrids.TLineSegment())
+                    if f >= len(self.FIntersect):
+                        self.FIntersect.append(linegrids.TLineSegment())
             i1 = 0
             i2 = 0
             ll1 = len(Line1)
@@ -70,13 +71,9 @@ class TDockDomain:
                 i2 = ni2
 
     def SetDomainYLines(self):
-        for f in range(self.FDomainGrid.Block.DomainEndX):
+        for f in range(self.FDomainGrid.Block.DomainEndX + 1):
             self.FDomainGrid.Shape.NonEmpty.append([])
             self.FCoreContacts.append([])
-        for f in range(len(self.FDomainGrid.Block.DomainEndX) - 1, len(self.FDomainGrid.Shape.NonEmpty) - 1):
-            del self.FDomainGrid.Shape.NonEmpty[f]
-        for f in range(len(self.FDomainGrid.Block.DomainEndX) - 1, len(self.FCoreContacts) - 1):
-            del self.FCoreContacts[f]
         xdomain = self.FConstraintManager.FXDomain
         for xx in range(len(xdomain)):
             for x in range(xdomain[xx][0], xdomain[xx][1]):
@@ -95,20 +92,20 @@ class TDockDomain:
                     coremax = -1
                     while tix1 <= tix2:
                         # Surface overlap Y range
-                        if (self.FProbe.Surf.NonEmpty[pix1] is not None) and (len(self.FProbe.Surf.NonEmpty[pix1]) != 0) \
-                                and (self.FTarget.Surf.NonEmpty[tix1] is not None) and \
-                                (len(self.FTarget.Surf.NonEmpty[tix1]) != 0):
-                            p1, p2 = linegrids.GetLineExtremes(self.FProbe.Surf.NonEmpty[pix1])
-                            t1, t2 = linegrids.GetLineExtremes(self.FTarget.Surf.NonEmpty[tix1])
+                        if (self.FProbe.FSurf.NonEmpty[pix1] is not None) and (len(self.FProbe.FSurf.NonEmpty[pix1]) != 0) \
+                                and (self.FTarget.FSurf.NonEmpty[tix1] is not None) and \
+                                (len(self.FTarget.FSurf.NonEmpty[tix1]) != 0):
+                            p1, p2 = linegrids.GetLineExtremes(self.FProbe.FSurf.NonEmpty[pix1])
+                            t1, t2 = linegrids.GetLineExtremes(self.FTarget.FSurf.NonEmpty[tix1])
                             mi, ma = OverlapRegion(p1, p2, t1, t2, self.FDomainGrid.Block.YOffset, limit2)
                             tmpmin = basetypes.Min(mi, tmpmin)
                             tmpmax = basetypes.Max(ma, tmpmax)
                         # Core overlap Y range
-                        if (self.FProbe.Core.NonEmpty[pix1] is not None) and (len(self.FProbe.Core.NonEmpty[pix1]) != 0) \
-                                and (self.FTarget.Core.NonEmpty[tix1] is not None) and \
-                                (len(self.FTarget.Core.NonEmpty[tix1]) != 0):
-                            p1, p2 = linegrids.GetLineExtremes(self.FProbe.Core.NonEmpty[pix1])
-                            t1, t2 = linegrids.GetLineExtremes(self.FTarget.Core.NonEmpty[tix1])
+                        if (self.FProbe.FCore.NonEmpty[pix1] is not None) and (len(self.FProbe.FCore.NonEmpty[pix1]) != 0) \
+                                and (self.FTarget.FCore.NonEmpty[tix1] is not None) and \
+                                (len(self.FTarget.FCore.NonEmpty[tix1]) != 0):
+                            p1, p2 = linegrids.GetLineExtremes(self.FProbe.FCore.NonEmpty[pix1])
+                            t1, t2 = linegrids.GetLineExtremes(self.FTarget.FCore.NonEmpty[tix1])
                             mi, ma = OverlapRegion(p1, p2, t1, t2, self.FDomainGrid.Block.YOffset, limit2)
                             coremin = basetypes.Min(mi, coremin)
                             coremax = basetypes.Max(ma, coremax)
@@ -129,10 +126,8 @@ class TDockDomain:
 
     def SetDomainZLines(self):
         # Large buffer for intersections
-        for f in range(len(self.FIntersect) - 1, 100):
-            self.FIntersect.append(0)
-        for f in range(len(self.FIntersect), len(self.FIntersect) - 1, -1):
-            del self.FIntersect[f]
+        for f in range(100):
+            self.FIntersect.append(linegrids.TLineSegment())
         self.FIntersectHigh = -1
         # Clear grid and set to nil to distinguish lines where core was processed
         self.FDomainGrid.Shape.Grid = []
@@ -147,17 +142,18 @@ class TDockDomain:
         for x in range(len(self.FDomainGrid.Shape.NonEmpty)):
             for y in range(len(self.FDomainGrid.Shape.NonEmpty[x])):
                 for yy in range(self.FDomainGrid.Shape.NonEmpty[x][y][0], self.FDomainGrid.Shape.NonEmpty[x][y][1] +
-                                                                          1):
+                                1):
                     self.SetZExtremes(x, yy)
         # Set lines with core overlaps
         if self.RemoveCores:
             self.FOverlapIxs = basetypes.FilledInts(self.FDomainGrid.Block.DomainEndZ + 1, 0)
             for x in range(len(self.FCoreContacts)):
-                for y in range(len(self.FCoreContacts[x])):
-                    for yy in range(self.FCoreContacts[x][y][0], self.FCoreContacts[x][y][1]):
-                        if self.FDomainGrid.Shape.Grid[x][yy] is not None and \
-                                len(self.FDomainGrid.Shape.Grid[x][yy]) != 0:
-                            self.RemoveZCores(x, yy)
+                if self.FCoreContacts[x] is not None:
+                    for y in range(len(self.FCoreContacts[x])):
+                        for yy in range(self.FCoreContacts[x][y][0], self.FCoreContacts[x][y][1] + 1):
+                            if self.FDomainGrid.Shape.Grid[x][yy] is not None and \
+                                    len(self.FDomainGrid.Shape.Grid[x][yy]) != 0:
+                                self.RemoveZCores(x, yy)
 
     # DomainX, DomainY = Integer
     def SetZExtremes(self, DomainX, DomainY):
@@ -167,18 +163,16 @@ class TDockDomain:
         limit1, limit2 = linegrids.GetLineExtremes(self.FConstraintManager.ZDomainAtXY(DomainX, DomainY))
         pix1, pix2, tix1, tix2 = GetIndexes(self.FDomainGrid.Block.ProbeEndX, self.FDomainGrid.Block.TargetEndX,
                                             self.FDomainGrid.Block.XOffset, DomainX)
-        # tmpmin = limit2 + 1
-        # tmpmax = -1
         displace = DomainY + self.FDomainGrid.Block.YOffset
         overlap = 0
         while tix1 <= tix2:
-            self.InPlaceIntersect(self.FProbe.Surf.NonEmpty[pix1], self.FTarget.Surf.NonEmpty[tix1], displace)
+            self.InPlaceIntersect(self.FProbe.FSurf.NonEmpty[pix1], self.FTarget.FSurf.NonEmpty[tix1], displace)
             for y in range(self.FIntersectHigh + 1):
                 for yy in range(self.FIntersect[y][0], self.FIntersect[y][1] + 1):
-                    overlap = overlap + basetypes.Min(self.FProbe.Surf.CellCounts[pix1][yy - displace],
-                                                      self.FTarget.Surf.CellCounts[tix1][yy])
-                    p1, p2 = linegrids.GetLineExtremes(self.FProbe.Surf.Grid[pix1][yy - displace])
-                    t1, t2 = linegrids.GetLineExtremes(self.FTarget.Surf.Grid[tix1][yy])
+                    overlap = overlap + basetypes.Min(self.FProbe.FSurf.CellCounts[pix1][yy - displace],
+                                                      self.FTarget.FSurf.CellCounts[tix1][yy])
+                    p1, p2 = linegrids.GetLineExtremes(self.FProbe.FSurf.Grid[pix1][yy - displace])
+                    t1, t2 = linegrids.GetLineExtremes(self.FTarget.FSurf.Grid[tix1][yy])
                     p1 = p1 - self.FDomainGrid.Block.ProbeEndZ
                     p2 = p2 - self.FDomainGrid.Block.ProbeEndZ
                     st = t1 - p2
@@ -235,14 +229,14 @@ class TDockDomain:
                                             self.FDomainGrid.Block.XOffset, DomainX)
         displace = DomainY + self.FDomainGrid.Block.YOffset
         while tix1 <= tix2:
-            if (self.FProbe.Core.NonEmpty[pix1] is not None) and (len(self.FProbe.Core.NonEmpty[pix1]) != 0) and \
-                    (self.FTarget.Core.NonEmpty[tix1] is not None) and (len(self.FTarget.Core.NonEmpty[tix1]) != 0):
-                self.InPlaceIntersect(self.FProbe.Core.NonEmpty[pix1], self.FTarget.Core.NonEmpty[tix1], displace)
+            if (self.FProbe.FCore.NonEmpty[pix1] is not None) and (len(self.FProbe.FCore.NonEmpty[pix1]) != 0) and \
+                    (self.FTarget.FCore.NonEmpty[tix1] is not None) and (len(self.FTarget.FCore.NonEmpty[tix1]) != 0):
+                self.InPlaceIntersect(self.FProbe.FCore.NonEmpty[pix1], self.FTarget.FCore.NonEmpty[tix1], displace)
                 for y in range(self.FIntersectHigh + 1):
                     for yy in range(self.FIntersect[y][0], self.FIntersect[y][1] + 1):
                         corefound = True
-                        pline = self.FProbe.Core.Grid[pix1][yy - displace]
-                        tline = self.FTarget.Core.Grid[tix1][yy]
+                        pline = self.FProbe.FCore.Grid[pix1][yy - displace]
+                        tline = self.FTarget.FCore.Grid[tix1][yy]
                         for pix in range(len(pline)):
                             for tix in range(len(tline)):
                                 zmi = tline[tix][0] - (pline[pix][1] + self.FDomainGrid.Block.ZOffset)
@@ -274,7 +268,7 @@ class TDockDomain:
                                             self.FDomainGrid.Block.XOffset, DomainX)
         displace = DomainY + self.FDomainGrid.Block.YOffset
         while tix1 <= tix2:
-            self.InPlaceIntersect(self.FProbe.Surf.NonEmpty[pix1], self.FTarget.Surf.NonEmpty[tix1], displace)
+            self.InPlaceIntersect(self.FProbe.FSurf.NonEmpty[pix1], self.FTarget.FSurf.NonEmpty[tix1], displace)
             for y in range(self.FIntersectHigh + 1):
                 for yy in range(self.FIntersect[y][0], self.FIntersect[y][1] + 1):
                     self.CalcOverlaps(pix1, tix1, displace, yy, hizline, zline)
@@ -289,8 +283,8 @@ class TDockDomain:
 
     # pix1, tix1, displace, yy, hizline = Integer, zline = TGridLine
     def CalcOverlaps(self, pix1, tix1, displace, yy, hizline, zline):
-        pline = self.FProbe.Surf.Grid[pix1][yy - displace]
-        tline = self.FTarget.Surf.Grid[tix1][yy]
+        pline = self.FProbe.FSurf.Grid[pix1][yy - displace]
+        tline = self.FTarget.FSurf.Grid[tix1][yy]
         hi = len(self.FScores) - 1
         for pix in range(len(pline)):
             pz1 = pline[pix][0] + self.FDomainGrid.Block.ZOffset
@@ -322,7 +316,7 @@ class TDockDomain:
                                 elif zz <= wid2:
                                     self.FScores[zz] = self.FScores[zz] + (wid1 - st + 1)
                                 elif zz <= en:
-                                    self.FScores[zz] = self.FScores[zz] + (en - st + 1)
+                                    self.FScores[zz] = self.FScores[zz] + (en - zz + 1)
                                 else:
                                     break
 
@@ -339,7 +333,7 @@ class TDockDomain:
     def AssignModelManager(self, AddModel):
         self.FAddModel = AddModel
 
-    def BuildInitialModel(self):
+    def BuildInitialDomain(self):
         self.FDomainGrid.Block = self.FConstraintManager.FDomainBlock
         self.FDomainGrid.Shape.Grid = []
         self.FDomainGrid.Shape.NonEmpty = []
@@ -352,9 +346,9 @@ class TDockDomain:
     def Score(self):
         if self.FAddModel is not None:
             # Large buffer for intersections
-            for f in range(len(self.FIntersect) - 1, 100):
-                self.FIntersect.append(0)
-            for f in range(len(self.FIntersect), len(self.FIntersect) - 1, -1):
+            for f in range(basetypes.Max(len(self.FIntersect) - 1, 0), 100):
+                self.FIntersect.append(linegrids.TLineSegment())
+            for f in range(len(self.FIntersect) - 1, 99, -1):
                 del self.FIntersect[f]
             self.FIntersectHigh = -1
             self.FScores = basetypes.FilledInts(self.FDomainGrid.Block.DomainEndZ + 1, 0)

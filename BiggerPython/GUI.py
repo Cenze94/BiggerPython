@@ -7,6 +7,8 @@ import geomutils
 import molutils
 import bogie
 import linegrids
+import basetypes
+import dockdomains
 
 
 def loadFileCommon():
@@ -58,6 +60,32 @@ def bigger():
     models = bogie.TModelManager(100, 300, [])
     targetgrid = linegrids.TDockingGrid(1)
     targetgrid.BuildFromSpheres(targetcoords, targetrads)
+
+    domain = None
+    tick1 = 0
+    MaxIters = 1
+    for f in range(1, MaxIters + 1):
+        tick1 = basetypes.GetTickCount()
+        probegrid = linegrids.TDockingGrid(1)
+        probegrid.BuildFromSpheres(probecoords, proberads)
+
+        domain = dockdomains.TDockDomain(targetgrid, probegrid, 0)
+        domain.MinimumOverlap = models.FMinOverlap
+        domain.AssignModelManager(models.AddModel)
+        domain.RemoveCores = True
+        domain.BuildInitialDomain()
+        domain.Score()
+        print(str(models.FModels[0].OverlapScore) + ' (' + str(models.FModels[0].TransVec[0]) + ',' +
+              str(models.FModels[0].TransVec[1]) + ',' + str(models.FModels[0].TransVec[2]) + ')')
+    tick2 = basetypes.GetTickCount()
+
+    domain.CalcDomainStats()
+    print((tick2 - tick1) / 1000)
+    print(str(domain.FDomainGrid.Shape.TotalCount) + ' cells')
+    print(str(len(targetcoords)) + ' atoms')
+    for f in range(len(models.FModels)):
+        print(str(models.FModels[f].OverlapScore) + ' (' + str(models.FModels[f].TransVec[0]) + ', ' +
+              str(models.FModels[f].TransVec[1]) + ', ' + str(models.FModels[f].TransVec[2]) + ')')
 
 
 class OpenFile(Frame):

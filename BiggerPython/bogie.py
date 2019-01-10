@@ -16,7 +16,7 @@ class TModelManager:
                 self.FModels.append(DockModels[f])
             else:
                 self.FModels.append(docktasks.TDockModel(basetypes.TCoord(), geomutils.IdentityQuaternion, -1))
-        self.FLastModel = len(self.FModels) - 1
+        self.FLastModel = len(DockModels) - 1
         if self.FLastModel >= 0:
             self.FMinOverlap = basetypes.Min(self.FModels[self.FLastModel].OverlapScore, MinOverlap)
         else:
@@ -36,10 +36,12 @@ class TModelManager:
                 self.FLastModel = self.FLastModel + 1
             ix2 = self.FLastModel
             while ix2 > ix1:
-                self.FModels[ix2] = self.FModels[ix2 - 1]
+                self.FModels[ix2].OverlapScore = self.FModels[ix2 - 1].OverlapScore
+                self.FModels[ix2].TransVec = self.FModels[ix2 - 1].TransVec
+                self.FModels[ix2].Rotation = self.FModels[ix2 - 1].Rotation
                 ix2 = ix2 - 1
             self.FModels[ix1].OverlapScore = Score
-            self.FModels[ix1].TransVec = geomutils.Add(self.ProbeGridTransVec, basetypes.TCoord(X* self.GridScale,
+            self.FModels[ix1].TransVec = geomutils.Add(self.ProbeGridTransVec, basetypes.TCoord(X * self.GridScale,
                                                                                                 Y * self.GridScale,
                                                                                                 Z * self.GridScale))
             self.FModels[ix1].Rotation = self.CurrentRotation

@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, oclconfiguration, chemeramain, pdbmolecules, molecules,
-  basetypes, geomutils, bogie, linegrids, dockdomains, molutils;
+  basetypes, geomutils, bogie, linegrids, dockdomains, molutils, LCLProc;
 
 procedure StartGUITest();
 procedure LoadTest();
@@ -103,16 +103,40 @@ begin
   Writeln('Workin...');
   targetgrid:=TDockingGrid.Create(1);
   targetgrid.BuildFromSpheres(targetcoords,targetrads);
-  WriteLn(IntToStr(Length(targetgrid.Surf.NonEmpty)));
-  WriteLn(IntToStr(Length(targetgrid.Surf.NonEmpty[1])));
-  WriteLn(IntToStr(Length(targetgrid.Surf.Grid)));
-  WriteLn(IntToStr(Length(targetgrid.Surf.Grid[0])));
-  WriteLn(IntToStr(Length(targetgrid.Surf.Grid[0, 0])));
-  WriteLn(IntToStr(targetgrid.Surf.Grid[1, 54, 0, 1]));
-  WriteLn(IntToStr(Length(targetgrid.Surf.CellCounts)));
-  WriteLn(IntToStr(Length(targetgrid.Surf.CellCounts[0])));
-  WriteLn(IntToStr(targetgrid.Base.TotalCount));
-  WriteLn(IntToStr(targetgrid.Surf.ZMax));
+
+  MaxIters:=1;
+
+  for f:=1 to MaxIters do
+    begin
+    tick1:=GetTickCount;
+    probegrid:=TDockingGrid.Create(1);
+    probegrid.BuildFromSpheres(probecoords,proberads);
+
+    domain:=TDockDomain.Create(targetgrid,probegrid,0);
+    domain.MinimumOverlap:=models.MinimumOverlap;
+    domain.AssignModelManager(@models.AddModel);
+    domain.RemoveCores:=True;
+    domain.BuildInitialDomain;
+    domain.Score;
+    domain.Print;
+      writeLn(models.Models[0].OverlapScore,' (',models.Models[0].TransVec[0],',',
+              models.Models[0].TransVec[1],',',models.Models[0].TransVec[2],')');
+    if f<MaxIters then
+      begin
+      domain.free;
+      probegrid.free;
+      end;
+    end;
+  tick2:=GetTickCount;
+
+  domain.CalcDomainStats;
+
+  WriteLn(FloatToStrF((tick2-tick1)/1000,ffFixed,4,3));
+  WriteLn(domain.Size,' cells');
+  DebugLn(IntToStr(Length(targetcoords)),' atoms');
+  for f:=0 to 20 do
+    with models.Models[f] do
+      writeLn(OverlapScore,' (',TransVec[0],',',TransVec[1],',',TransVec[2],')');
 end;
 
 end.

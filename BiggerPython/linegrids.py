@@ -148,13 +148,13 @@ class TDockingGrid:
         self.FCoords = geomutils.Add(self.FTransVec, self.FCoords)
         top = geomutils.Add(basetypes.Max(self.FCoords), maxrad + 1.5 * self.FResolution)
         self.FBase.Grid = []
-        for f in range(round(top[0] / self.FResolution) + 1):
+        for f in range(round(top[0] / self.FResolution)):
             self.FBase.Grid.append([])
-            for g in range(round(top[1] / self.FResolution) + 1):
+            for g in range(round(top[1] / self.FResolution)):
                 self.FBase.Grid[f].append([])
 
         zline = []
-        for f in range(round(top[2] / self.FResolution) + 1):
+        for f in range(round(top[2] / self.FResolution)):
             zline.append(0)
         self.FBase.ZMax = len(zline) - 1
         hash = geomhash.TGeomHasher(self.FCoords, maxrad, self.FRads)
@@ -233,7 +233,6 @@ def Intersect(Line, NewMin, NewMax = None):
         Line1 = Line
         Line2 = NewMin
         Result = []
-        ix = 0
         i1 = 0
         i2 = 0
         ll1 = len(Line1)
@@ -242,14 +241,12 @@ def Intersect(Line, NewMin, NewMax = None):
             top = basetypes.Min(Line1[i1][1], Line2[i2][1])
             bot = basetypes.Max(Line1[i1][0], Line2[i2][0])
             if top >= bot:
-                Result.append([])
-                Result[ix] = TLineSegment(bot, top)
-                ix = ix + 1
+                Result.append(TLineSegment(bot, top))
             if Line1[i1][1] >= Line2[i2][1]:
                 ni2 = i2 + 1
             else:
                 ni2 = i2
-            if Line[i2][1] <= Line2[i2][1]:
+            if Line[i1][1] <= Line2[i2][1]:
                 ni1 = i1 + 1
             else:
                 ni1 = i1

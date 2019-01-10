@@ -4,6 +4,8 @@ import geomutils
 import molutils
 import bogie
 import linegrids
+import basetypes
+import dockdomains
 
 # Tests about loading file and Bigger execution
 
@@ -58,8 +60,8 @@ def LoadTest():
 
 
 def BiggerTest():
-    target = FMolecules.LoadLayer('../PDB/3f6u.pdb')
-    probe = FMolecules.LoadLayer('../PDB/4a0q.pdb')
+    target = FMolecules.LoadLayer('../PDB/2omg.pdb')
+    probe = FMolecules.LoadLayer('../PDB/1jl9.pdb')
     target.Transform(geomutils.Simmetric(molutils.FindCenter(target)))
     probe.Transform(geomutils.Simmetric(molutils.FindCenter(probe)))
     targetrads = geomutils.Add(molutils.ListRadii(target), 1.4)
@@ -71,6 +73,32 @@ def BiggerTest():
     models.GridScale = 1
     targetgrid = linegrids.TDockingGrid(1)
     targetgrid.BuildFromSpheres(targetcoords, targetrads)
+
+    domain = None
+    tick1 = 0
+    MaxIters = 1
+    for f in range(1, MaxIters + 1):
+        tick1 = basetypes.GetTickCount()
+        probegrid = linegrids.TDockingGrid(1)
+        probegrid.BuildFromSpheres(probecoords, proberads)
+
+        domain = dockdomains.TDockDomain(targetgrid, probegrid, 0)
+        domain.MinimumOverlap = models.FMinOverlap
+        domain.AssignModelManager(models.AddModel)
+        domain.RemoveCores = True
+        domain.BuildInitialDomain()
+        domain.Score()
+        print(str(models.FModels[0].OverlapScore) + ' (' + str(models.FModels[0].TransVec[0]) + ',' +
+              str(models.FModels[0].TransVec[1]) + ',' + str(models.FModels[0].TransVec[2]) + ')')
+    tick2 = basetypes.GetTickCount()
+
+    domain.CalcDomainStats()
+    print((tick2 - tick1) / 1000)
+    print(str(domain.FDomainGrid.Shape.TotalCount) + ' cells')
+    print(str(len(targetcoords)) + ' atoms')
+    for f in range(len(models.FModels)):
+        print(str(models.FModels[f].OverlapScore) + ' (' + str(models.FModels[f].TransVec[0]) + ', ' +
+              str(models.FModels[f].TransVec[1]) + ', ' + str(models.FModels[f].TransVec[2]) + ')')
     print('')
 
 

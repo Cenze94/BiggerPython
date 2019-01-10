@@ -392,7 +392,6 @@ begin
     domain.RemoveCores:=True;
     domain.BuildInitialDomain;
     domain.Score;
-    // TODO: Verificare che OverlapScore sia corretto, prima c'era "Score"
       writeLn(models.Models[0].OverlapScore,' (',models.Models[0].TransVec[0],',',
               models.Models[0].TransVec[1],',',models.Models[0].TransVec[2],')');
     if f<MaxIters then
