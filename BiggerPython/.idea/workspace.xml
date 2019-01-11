@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3a5d4cd-4e09-4507-9323-95c42a60ef12" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUITests.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUITests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdbmolecules.py" beforeDir="false" afterPath="$PROJECT_DIR$/pdbmolecules.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +56,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="200167" />
+          <entry key="Python" value="200169" />
         </counts>
       </usages-collector>
     </session>
@@ -109,24 +108,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4641">
-              <caret line="280" column="36" selection-start-line="280" selection-start-column="36" selection-end-line="280" selection-end-column="36" />
+            <state relative-caret-position="194">
+              <caret line="160" column="33" selection-start-line="160" selection-start-column="33" selection-end-line="160" selection-end-column="33" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <marker date="1547144597333" expanded="true" signature="8515:8521" ph="..." />
+                <marker date="1547228426316" expanded="true" signature="8515:8521" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pdbparser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="147" selection-start-line="147" selection-end-line="147" />
+            <state relative-caret-position="107">
+              <caret line="151" selection-start-line="151" selection-end-line="151" />
             </state>
           </provider>
         </entry>
@@ -264,9 +263,9 @@
         <option value="$PROJECT_DIR$/dockdomains.py" />
         <option value="$PROJECT_DIR$/GUI.py" />
         <option value="$PROJECT_DIR$/bogie.py" />
-        <option value="$PROJECT_DIR$/pdbmolecules.py" />
         <option value="$PROJECT_DIR$/pdbparser.py" />
         <option value="$PROJECT_DIR$/GUITests.py" />
+        <option value="$PROJECT_DIR$/pdbmolecules.py" />
       </list>
     </option>
   </component>
@@ -476,6 +475,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-56" y="85" width="1272" height="744" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2471637" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -529,8 +529,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pdbparser.py</url>
-          <line>147</line>
-          <option name="timeStamp" value="125" />
+          <line>151</line>
+          <option name="timeStamp" value="126" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -716,17 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4641">
-          <caret line="280" column="36" selection-start-line="280" selection-start-column="36" selection-end-line="280" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <marker date="1547144597333" expanded="true" signature="8515:8521" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/geomutils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4080">
@@ -776,8 +765,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pdbparser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="147" selection-start-line="147" selection-end-line="147" />
+        <state relative-caret-position="107">
+          <caret line="151" selection-start-line="151" selection-end-line="151" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pdbmolecules.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="160" column="33" selection-start-line="160" selection-start-column="33" selection-end-line="160" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <marker date="1547228426316" expanded="true" signature="8515:8521" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

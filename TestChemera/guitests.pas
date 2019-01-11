@@ -27,8 +27,6 @@ begin
   BiggerTest();
 end;
 
-// Replico le istruzioni all'interno del codice eseguito dal pulsante che mi
-// interessano
 procedure LoadTest();
 var mol:TMolecule; atom:TAtom; bond:TAtomBond; f:integer;
 

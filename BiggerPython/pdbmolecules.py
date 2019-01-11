@@ -157,8 +157,8 @@ class TPDBModel:
                 atom.Charge = patom.OccTemp
             elif ChargeFrom is PDBChargeOrigin.pdbCharge:
                 if len(patom.Charge) is 2:
-                    atom.Charge = float(patom.Charge[1])
-                if patom.Charge[2] is '-':
+                    atom.Charge = float(patom.Charge[0])
+                if patom.Charge[1] is '-':
                     atom.Charge = -atom.Charge
         # Assign element, radius, charge, et al, from the monomer templates will replace information on PDB
         self.AssignAtomicData()
