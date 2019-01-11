@@ -279,8 +279,6 @@ class TPDBModelMan:
         # Clear and load
         self.FTemplates = []
         tpdbparser = pdbparser.TPDBReader()
-        # srec shouldn't be needed
-        # srec = TSearchRec
         fileList = glob.glob(Path + "*.pdb")
         if fileList:
             for f in fileList:

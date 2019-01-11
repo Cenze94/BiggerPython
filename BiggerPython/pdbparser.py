@@ -148,15 +148,15 @@ class TPDBReader:
                 self.FAtoms.append(atom)
                 self.FAtoms[self.FAtomCount].IsHet = (s.find('HETATM') is 1)
                 self.FAtomCount = self.FAtomCount + 1
-            elif s.find('CONNECT') is 1:
+            elif s.find('CONNECT') is 0:
                 self.FConnections.append(self.GetPdbConnect(s))
-            elif s.find('TER') is 1:
+            elif s.find('TER') is 0:
                 oldchain = '***'
                 # This forces an FChainCount increase, even if the chain ID remains the same
-            elif s.find('MODEL') is 1:
+            elif s.find('MODEL') is 0:
                 oldchain = '***'
                 self.FModelCount = int(stringutils.Deblank(s[8:]))
-            elif s.find('ENDMDL') is 1:
+            elif s.find('ENDMDL') is 0:
                 self.FModelCount = self.FModelCount + 1
 
     # Buf = TStringList
