@@ -107,5 +107,5 @@ oclconfiguration.LoadAtomData()
 oclconfiguration.LoadAAData()
 FMolecules = pdbmolecules.TPDBModelMan(oclconfiguration.Config.MonomersPath)
 
-LoadTest()
-# BiggerTest()
+# LoadTest()
+BiggerTest()

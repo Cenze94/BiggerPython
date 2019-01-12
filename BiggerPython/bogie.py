@@ -64,6 +64,7 @@ class TModelManager:
         for f in range(len(self.FModels)):
             CSet.DockModels.append(self.FModels[f])
 
+
 class TDockManager:
     # FTargetCoords = TCoords, FTargetRads = TFloats, FProbeCoords = TCoords, FProbeRads = TFloats,
     # FResolution = TFloat, FTargetGrid, FProbeGrid = TDockingGrid, FModelManagers = TModelManagers,
