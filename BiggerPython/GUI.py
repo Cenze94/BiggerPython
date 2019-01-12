@@ -109,7 +109,7 @@ def threadBigger():
     textBiggerButton.value = 'Score: ' + str(models.FModels[0].OverlapScore)
     textCoordsBiggerButton.value = 'Coordinates: ' + str(models.FModels[0].TransVec[0]) + ', ' + \
                                    str(models.FModels[0].TransVec[1]) + ', ' + str(models.FModels[0].TransVec[2])
-    textTimeBiggerButton.value = 'Execution time: ' + str((endTick - startTick) / 1000) + 'seconds'
+    textTimeBiggerButton.value = 'Execution time: ' + str((endTick - startTick) / 1000) + ' seconds'
     loadFileButton1.enable()
     loadFileButton2.enable()
 
