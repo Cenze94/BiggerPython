@@ -11,6 +11,7 @@ import dockdomains
 
 
 def LoadTest():
+    startTick = basetypes.GetTickCount()
     mol = FMolecules.LoadLayer('../PDB/4a0q.pdb')
     print('FName: ' + mol.FName)
     print('FID: ' + str(mol.FID))
@@ -58,10 +59,14 @@ def LoadTest():
     print('')
     print('FType: ' + mol.FType)
 
+    endTick = basetypes.GetTickCount()
+    print('Execution time: ' + str((endTick - startTick) / 1000) + ' seconds')
+
 
 def BiggerTest():
     target = FMolecules.LoadLayer('../PDB/3f6u.pdb')
     probe = FMolecules.LoadLayer('../PDB/4a0q.pdb')
+    startTick = basetypes.GetTickCount()
     target.Transform(geomutils.Simmetric(molutils.FindCenter(target)))
     probe.Transform(geomutils.Simmetric(molutils.FindCenter(probe)))
     targetrads = geomutils.Add(molutils.ListRadii(target), 1.4)
@@ -99,7 +104,9 @@ def BiggerTest():
     for f in range(len(models.FModels)):
         print(str(models.FModels[f].OverlapScore) + ' (' + str(models.FModels[f].TransVec[0]) + ', ' +
               str(models.FModels[f].TransVec[1]) + ', ' + str(models.FModels[f].TransVec[2]) + ')')
-    print('')
+
+    endTick = basetypes.GetTickCount()
+    print('Execution time: ' + str((endTick - startTick) / 1000) + ' seconds')
 
 
 oclconfiguration.DefaultConfig()

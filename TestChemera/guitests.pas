@@ -23,14 +23,15 @@ begin
   LoadAAData();
   FMolecules:=TPdbModelMan.Create(Config.MonomersPath);
 
-  // LoadTest();
-  BiggerTest();
+  LoadTest();
+  // BiggerTest();
 end;
 
 procedure LoadTest();
-var mol:TMolecule; atom:TAtom; bond:TAtomBond; f:integer;
+var mol:TMolecule; atom:TAtom; bond:TAtomBond; f:integer; startTick,endTick:DWORD;
 
 begin
+  startTick:=GetTickCount;
   mol:=FMolecules.LoadLayer('../PDB/4a0q.pdb');
   WriteLn('FName: ' + mol.Name);
   WriteLn('FID: ' + IntToStr(mol.ID));
@@ -70,6 +71,9 @@ begin
 
   WriteLn('');
   WriteLn('FType: ' + mol.MolType);
+
+  endTick:=GetTickCount;
+  WriteLn('Execution time: ' + FloatToStr((endTick - startTick) / 1000) + ' seconds');
 end;
 
 procedure BiggerTest();
@@ -77,7 +81,7 @@ var targetrads,proberads:TFloats;
   targetcoords,probecoords:TCoords;
   targetgrid,probegrid:TDockingGrid;
   domain:TDockDomain;
-  tick1,tick2:DWORD;
+  tick1,tick2,startTick,endTick:DWORD;
   models:TModelManager;
   f:Integer;
   target,probe:TMolecule;
@@ -86,6 +90,7 @@ var targetrads,proberads:TFloats;
 begin
   target:=FMolecules.LoadLayer('..\PDB\3f6u.pdb');
   probe:=FMolecules.LoadLayer('..\PDB\4a0q.pdb');
+  startTick:=GetTickCount;
 
   target.Transform(Simmetric(FindCenter(target)));
   probe.Transform(Simmetric(FindCenter(probe)));
@@ -134,6 +139,9 @@ begin
   for f:=0 to 20 do
     with models.Models[f] do
       writeLn(OverlapScore,' (',TransVec[0],',',TransVec[1],',',TransVec[2],')');
+
+  endTick:=GetTickCount;
+  WriteLn('Execution time: ' + FloatToStr((endTick - startTick) / 1000) + ' seconds');
 end;
 
 end.
