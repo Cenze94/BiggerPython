@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3a5d4cd-4e09-4507-9323-95c42a60ef12" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUITests.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUITests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Relazione/.~lock.Appunti.odt#" beforeDir="false" afterPath="$PROJECT_DIR$/../Relazione/.~lock.Appunti.odt#" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Relazione/.~lock.Relazione parte Andrea.odt#" beforeDir="false" afterPath="$PROJECT_DIR$/../Relazione/.~lock.Relazione parte Andrea.odt#" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Relazione/Appunti.odt" beforeDir="false" afterPath="$PROJECT_DIR$/../Relazione/Appunti.odt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Relazione/Relazione parte Andrea.odt" beforeDir="false" afterPath="$PROJECT_DIR$/../Relazione/Relazione parte Andrea.odt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestChemera/TestChemera.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../TestChemera/TestChemera.exe" afterDir="false" />
-    </list>
+    <list default="true" id="e3a5d4cd-4e09-4507-9323-95c42a60ef12" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +12,7 @@
     <session id="2109489389">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
+          <entry key="project.closed" value="21" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="2" />
           <entry key="project.open.time.17" value="2" />
@@ -87,7 +79,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GUITests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="770">
+            <state relative-caret-position="-46">
               <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
@@ -484,14 +476,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-50" y="85" width="1272" height="744" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2471637" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32786885" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32786885" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3852459" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -787,7 +778,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GUITests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
+        <state relative-caret-position="-46">
           <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />

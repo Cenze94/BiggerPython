@@ -23,8 +23,8 @@ begin
   LoadAAData();
   FMolecules:=TPdbModelMan.Create(Config.MonomersPath);
 
-  LoadTest();
-  // BiggerTest();
+  // LoadTest();
+  BiggerTest();
 end;
 
 procedure LoadTest();
